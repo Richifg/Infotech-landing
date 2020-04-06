@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/Infotech-letras-1_pq59qj.png",
+    "logoAlt": "Logo InfoTech",
+    "links": [
+      {
+        "to": "quienes-somos",
+        "text": "Quienes somos"
+      },
+      {
+        "to": "experiencia",
+        "text": "Experiencia"
+      }
+    ]
+  },
+  "banner": {
+    "imgUrl": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
+    "imgAlt": "Sala de clases con estudiantes",
+    "text": "Buscamos profesores de inglés  capacitados para impartir cursos avalados por el INA",
+    "buttonText": "Aplicá aquí"
+  }
+}
