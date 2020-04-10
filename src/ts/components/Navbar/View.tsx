@@ -1,24 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import { INavbarContent } from 'interfaces';
+
 import Navlink from 'components/Navlink';
+import ContentContainer from 'components/ContentContainer';
 
 interface INavbar extends INavbarContent {
   activeIndex: number;
 }
 
-const Nav = styled.nav`
-  height: 120px;
-  background-color: var(--clr-white);
+const Nav = styled.div`
+  width: 100vw;
+  height: ${(p) => p.theme.navbar.root.height};
+  background-color: ${(p) => p.theme.navbar.root.backgroundColor};
+  opacity: ${(p) => p.theme.navbar.root.opacity};
   display: flex;
   align-items: center;
-  width: 100vw;
   position: fixed;
   top: 0;
 `;
 
 const Ul = styled.ul`
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -33,21 +35,25 @@ const Ul = styled.ul`
 `;
 
 const Logo = styled.img`
-  width: 230px;
+  max-width: ${(p) => p.theme.navlogo.root.maxWidth};
 `;
 
 const Navbar = ({ logoUrl, logoAlt, links, activeIndex }: INavbar): React.ReactElement => (
   <Nav>
-    <Ul>
-      <li>
-        <Logo src={logoUrl} alt={logoAlt} />
-      </li>
-      {links.map((link, index) => (
-        <li key={index}>
-          <Navlink to={link.to} text={link.text} active={index === activeIndex} />
+    <ContentContainer>
+      <Ul>
+        <li>
+          <a href="/">
+            <Logo src={logoUrl} alt={logoAlt} />
+          </a>
         </li>
-      ))}
-    </Ul>
+        {links.map((link, index) => (
+          <li key={index}>
+            <Navlink to={link.to} text={link.text} active={index === activeIndex} />
+          </li>
+        ))}
+      </Ul>
+    </ContentContainer>
   </Nav>
 );
 

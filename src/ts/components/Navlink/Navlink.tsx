@@ -10,22 +10,27 @@ interface INavlink extends ILinkContent {
 const Link = styled.a`
   text-decoration: none;
   position: relative;
-
-  &.active::after {
+  color: ${(p) => p.theme.navlink.root.color};
+  &::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: -1px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background-color: var(--clr-secondary);
+    bottom: ${(p) => p.theme.navlink.activeBar.bottom};
+    left: ${(p) => p.theme.navlink.activeBar.left};
+    height: ${(p) => p.theme.navlink.activeBar.height};
+    background-color: ${(p) => p.theme.navlink.activeBar.backgroundColor};
+    width: 0%;
+    transition: width 0.2s ease-out;
+  }
+
+  &.active::after {
+    width: ${(p) => p.theme.navlink.activeBar.width};
   }
 `;
 
 const Navlink = ({ to, text, active }: INavlink): React.ReactElement => (
   <Link className={active && 'active'} href={`#${to}`}>
-    <Typography tag="span" type="body-1">
+    <Typography tag="span" type="body1">
       {text}
     </Typography>
   </Link>

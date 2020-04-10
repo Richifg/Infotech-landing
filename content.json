@@ -1,7 +1,7 @@
 {
   "navbar": {
     "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/Infotech-letras-1_pq59qj.png",
-    "logoAlt": "Logo InfoTech",
+    "logoAlt": "Infotech logo",
     "links": [
       {
         "to": "quienes-somos",
@@ -10,13 +10,154 @@
       {
         "to": "experiencia",
         "text": "Experiencia"
+      },
+      {
+        "to": "proximos-proyectos",
+        "text": "Proximos Proyectos"
+      },
+      {
+        "to": "beneficios",
+        "text": "Beneficios"
       }
     ]
   },
   "banner": {
-    "imgUrl": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
-    "imgAlt": "Sala de clases con estudiantes",
+    "url": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
     "text": "Buscamos profesores de inglés  capacitados para impartir cursos avalados por el INA",
     "buttonText": "Aplicá aquí"
-  }
+  },
+  "sections": [
+    {
+      "id": "quienes-somos",
+      "columns": [
+        { 
+          "background": false,
+          "mobile": false, 
+          "elements": [
+            {
+              "type": "image",
+              "url": "https://res.cloudinary.com/richi/image/upload/v1586322580/Infotech/Infotech-completo-2_ob7vg1.png",
+              "alt": "Logo Infotech 25 aniversario"
+            }
+          ]
+        },
+        { 
+          "background": true,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "title",
+              "text": "Quienes somos."
+            },
+            {
+              "type": "paragraph",
+              "text": "InfoTech es una empresa dedicada a la capacitación fundada 1995 en San Isidro, Pérez Zeledón."
+            },
+            {
+              "type": "paragraph",
+              "text": "En nuestros primeros años nos dedicamos a ofrecer cursos libres de herramientas informáticas a instituciones, cooperativas y al público en general."
+            },
+            {
+              "type": "paragraph",
+              "text": "A partir de 1998, nos hemos dedicado a dar el servicio de llave en mano para cursos del INA por medio de licitaciones, es decir aportar las instalaciones, los equipos, el personal docente y los materiales didáctivos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "columns": [
+        { 
+          "background": false,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "title",
+              "text": "Experiencia."
+            },
+            {
+              "type": "paragraph",
+              "text": "Contamos con 7 años de experiencia organizando diversos cursos de Inglés en diferentes zonas del país como San Marcos de Tarrazú, Santo Domingo de Heredia y Pérez Zeledón.",
+              "variant": "align-center"
+            },
+            {
+              "type": "paragraph",
+              "text": "En estos años hemos impartido alrededor 50 programas completos en los que se han graduado aproximadamente 850 estudiantes.",
+              "variant": "align-center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proximos-proyectos",
+      "columns": [
+        { 
+          "background": true,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "title",
+              "text": "Proximos proyectos."
+            },
+            {
+              "type": "paragraph",
+              "text": "Gracias al impulso que el gobierno le ha dado a la capacitación en inglés; el INA promovió una gran cantidad de licitaciones durante el año 2019."
+            },
+            {
+              "type": "paragraph",
+              "text": "InfoTech ha sido elegido para impartir por 4 años los programas de: Inglés para Centros de Servicio, Inglés para Sector Turismo e Inglés para Sector Empresarial."
+            },
+            {
+              "type": "paragraph",
+              "text": "Estos programas de capacitación serán desarrollados a partir del 2020 en Liberia, Ciudad Quesada, Puntarenas y Quepos."
+            }
+          ]
+        },
+        { 
+          "background": false,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "map"
+            }
+          ]
+        }       
+      ]
+    },
+    {
+      "id": "beneficios",
+      "columns": [
+        { 
+          "background": false,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "title",
+              "variant": "align-right",
+              "text": "Beneficios."
+            },
+            {
+              "type": "icons",
+              "content": [
+                {
+                  "icon": "money",
+                  "caption": "Salario competitivo"
+                },
+                {
+                  "icon": "sthetoscope",
+                  "caption": "Seguro médico con CCSS"
+                },
+                {
+                  "icon": "teamwork",
+                  "caption": "Experiencia laboral trabajando con el INA"
+                }
+              ]
+            }
+          ]
+        }     
+      ]
+    }
+  ]
 }

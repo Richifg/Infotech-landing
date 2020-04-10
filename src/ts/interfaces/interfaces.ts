@@ -12,8 +12,27 @@ export interface ILinkContent {
 
 export interface IBannerContent {
   id?: string;
-  imgUrl: string;
-  imgAlt?: string;
+  url: string;
   text: string;
   buttonText: string;
+}
+
+export interface ISection {
+  id: string;
+  columns: Array<ISectionColumn>;
+}
+
+export interface ISectionColumn {
+  background: boolean;
+  mobile: boolean;
+  elements: Array<ISectionElement>;
+}
+
+export interface ISectionElement {
+  type: string;
+  text?: string;
+  url?: string;
+  alt?: string;
+  variant?: string;
+  content?: any;
 }

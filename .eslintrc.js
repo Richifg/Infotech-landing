@@ -13,8 +13,10 @@ module.exports = {
       jsx: true // Allows for the parsing of JSX
     }
   },
+  // rule overrides
   rules: {
     "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
   },
   settings: {
     react: {

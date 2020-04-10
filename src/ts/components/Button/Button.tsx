@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import Typography from 'components/Typography';
 
 const StyledButton = styled.button`
   cursor: pointer;
-  padding: var(--btn-padding);
-  border: var(--btn-border);
-  border-radius: var(--btn-border-radius);
-  color: var(--btn-fnt-clr);
-  background-color: var(--btn-bck-clr);
+  padding: ${(p) => p.theme.button.root.padding};
+  border: ${(p) => p.theme.button.root.border};
+  border-radius: ${(p) => p.theme.button.root.borderRadius};
+  color: ${(p) => p.theme.button.root.color};
+  background-color: ${(p) => p.theme.button.root.backgroundColor};
   transition: background-color 0.2s;
   &:hover {
-    background-color: var(--btn-bck-clr-hover);
+    background-color: ${(p) => p.theme.button.hover.backgroundColor};
   }
   &:active {
-    background-color: var(--btn-bck-clr-click);
+    background-color: ${(p) => p.theme.button.active.backgroundColor};
+    outline: none;
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
-const Button = (props: any): React.ReactElement => (
+const Button = (props: any): ReactElement => (
   <StyledButton {...props}>
     <Typography tag="span" type="button" color="white">
       {props.children}
