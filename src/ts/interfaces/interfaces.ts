@@ -34,5 +34,12 @@ export interface ISectionElement {
   url?: string;
   alt?: string;
   variants?: object;
-  content?: any;
+  cards?: ICard[];
+}
+
+export interface ICard {
+  url: string;
+  alt: string;
+  title: string;
+  subtitle: string;
 }

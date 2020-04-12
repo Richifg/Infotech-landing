@@ -1,17 +1,20 @@
 const colors = {
-  neutral: {
-    white: '#F8F8F8',
-    black: '#000',
+  white: {
+    base: '#F8F8F8',
+  },
+  black: {
+    base: '#000',
+    light: '#111',
   },
   // dark blue
   primary: {
-    normal: '#003E7F',
+    base: '#003E7F',
     light: '#0D4B8C',
     dark: '#003172',
   },
   // orange
   secondary: {
-    normal: '#C75629',
+    base: '#C75629',
     light: '#D46336',
     dark: '#BA491C',
   },
@@ -26,12 +29,12 @@ const theme = {
   },
   column: {
     root: {
-      color: colors.neutral.black,
+      color: colors.black.base,
       backgroundColor: 'transparent',
     },
     alt: {
-      color: colors.neutral.white,
-      backgroundColor: colors.primary.normal,
+      color: colors.white.base,
+      backgroundColor: colors.primary.base,
     },
   },
   typography: {
@@ -61,14 +64,14 @@ const theme = {
       fontSize: `${17 / 16}rem`,
       lineHeight: '1.5',
       letterSpacing: '0.15px',
-      fontWeight: '500',
+      fontWeight: '600',
       textTransform: 'none',
     },
     subtitle2: {
       fontSize: `${15 / 16}rem`,
       lineHeight: '1.5',
       letterSpacing: '0.1px',
-      fontWeight: '600',
+      fontWeight: '400',
       textTransform: 'none',
     },
     body1: {
@@ -98,8 +101,8 @@ const theme = {
       padding: '1em 1.5em',
       border: 'none',
       borderRadius: '8px',
-      backgroundColor: colors.secondary.normal,
-      color: colors.neutral.white,
+      backgroundColor: colors.secondary.base,
+      color: colors.white.base,
     },
     hover: {
       backgroundColor: colors.secondary.light,
@@ -110,21 +113,21 @@ const theme = {
   },
   navbar: {
     root: {
-      backgroundColor: colors.neutral.white,
+      backgroundColor: colors.white.base,
       height: '120px',
       opacity: '0.95',
     },
   },
   navlink: {
     root: {
-      color: colors.neutral.black,
+      color: colors.black.base,
     },
     activeBar: {
       bottom: '-4px',
       left: '0',
       height: '2px',
       width: '100%',
-      backgroundColor: colors.secondary.normal,
+      backgroundColor: colors.secondary.base,
     },
   },
   navlogo: {
@@ -139,7 +142,7 @@ const theme = {
       width: '150px',
       top: '-4px',
       left: '0',
-      backgroundColor: colors.secondary.normal,
+      backgroundColor: colors.secondary.base,
     },
   },
   sectionParagraph: {
@@ -151,6 +154,27 @@ const theme = {
     root: {
       maxWidth: '75%',
       maxHeight: '75%',
+    },
+  },
+  card: {
+    root: {
+      maxWidth: '305px',
+      padding: '.5em',
+      textAlign: 'left',
+    },
+    image: {
+      paddingBottom: `${(100 * 162) / 305}%`,
+    },
+  },
+  carousel: {
+    root: {},
+    arrow: {
+      height: '50px',
+      width: '25px',
+      thickness: '4px',
+      angle: '30deg',
+      color: colors.secondary.base,
+      backgroundColor: 'transparent',
     },
   },
 };

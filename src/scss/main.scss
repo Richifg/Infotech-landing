@@ -1,5 +1,7 @@
-//--- Fonts ---//
+//--- MODULES ---/
+@import "./slick";
 
+//--- FONTS ---//
 $fonts: (
   ('Light', 400),
   ('Medium', 500),
@@ -15,9 +17,12 @@ $fonts: (
   }
 }
 
+//--- GENERAL OVERWRITES ---//
+
 html {
   font-size: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   font-family: 'WorkSans', sans-serif;
 }
 

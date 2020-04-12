@@ -23,7 +23,7 @@
   },
   "banner": {
     "url": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
-    "text": "Buscamos profesores de inglés  capacitados para impartir cursos avalados por el INA",
+    "text": "Buscamos profesores de inglés capacitados para impartir cursos avalados por el INA",
     "buttonText": "Aplicá aquí"
   },
   "sections": [
@@ -83,6 +83,71 @@
             {
               "type": "paragraph",
               "text": "En estos años hemos impartido alrededor <strong>50 programas</strong> completos en los que se han graduado aproximadamente <strong>850 estudiantes</strong>."
+            },
+            {
+              "type": "slider",
+              "cards": [
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/ingles1_xrupjv.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Inglés",
+                  "subtitle": "San Marcos, Tarrazú: 2014-2018"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/ingles2_n2wdtg.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Inglés",
+                  "subtitle": "Santo Domingo, Heredia: 2016-2020"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/ingles1_xrupjv.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Inglés",
+                  "subtitle": "San Isidro, Pérez Zeledón: 2008"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/aire_comprimido_h6bl1f.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Sistemas de Aire Comprimido",
+                  "subtitle": "San José, Alajuela: 2002-2007"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/preparion_colores_wd02u0.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Preparación de Colores Automotrices",
+                  "subtitle": "San José: 2002"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707447/Infotech/slides/camarera_hotel_whmyql.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Camarera de Hotel",
+                  "subtitle": "Quepos: 2002"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707447/Infotech/slides/cerigrafia_csxpiy.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Serigrafía",
+                  "subtitle": "Alajuela: 2003"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/mantenimiento_computadoras_goapqx.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Mantenimiento de Computadoras",
+                  "subtitle": "Ciudad Quesada, Liberia, Santa Cruz: 2001-2002"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/mantenimiento_computadoras_goapqx.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Mantenimiento de Computadoras",
+                  "subtitle": "San Isidro, Buenos Aires, San Vito, Palmar Norte, Golfito, Ciudad Neily, 1999-2000"
+                },
+                {
+                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/informatica_ag14sx.png",
+                  "alt": "THIS IS THE ALT",
+                  "title": "Informática",
+                  "subtitle": "San Vito: 1998-1999"
+                }
+              ]
             }
           ]
         }
@@ -114,7 +179,7 @@
           ]
         },
         { 
-          "background": false,
+          "background": true,
           "mobile": true, 
           "elements": [
             {
@@ -159,3 +224,4 @@
     }
   ]
 }
+

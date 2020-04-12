@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from 'theme/defaultTheme';
 
 type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'caption' | 'span';
-type Color = 'primary' | 'secondary' | 'white' | 'black';
 type Type =
   | 'headline1'
   | 'headline2'
@@ -16,7 +14,7 @@ type Type =
 
 interface ITypo {
   type: Type;
-  color?: Color;
+  color?: string;
 }
 
 const Typo = styled.p<ITypo>`
@@ -25,13 +23,7 @@ const Typo = styled.p<ITypo>`
   line-height: ${(p) => p.theme.typography[p.type].lineHeight};
   letter-spacing: ${(p) => p.theme.typography[p.type].letterSpacing};
   text-transform: ${(p) => p.theme.typography[p.type].textTransform};
-  color: ${(p) => {
-    if (p.color === 'white') return colors.neutral.white;
-    if (p.color === 'black') return colors.neutral.black;
-    if (p.color === 'primary') return colors.primary.normal;
-    if (p.color === 'secondary') return colors.secondary.normal;
-    return 'inherit';
-  }};
+  color: ${(p) => (p.color ? p.color : 'inherit')};
 `;
 
 interface ITypography extends ITypo {
