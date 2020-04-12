@@ -5,6 +5,7 @@ import SectionTitle from 'components/SectionTitle';
 import SectionParagraph from 'components/SectionParagraph';
 import SectionImage from 'components/SectionImage';
 import CardsCarousel from 'components/CardsCarousel';
+import IconList from 'components/IconList';
 
 const SectionElement = ({
   type,
@@ -13,9 +14,9 @@ const SectionElement = ({
   url,
   alt,
   cards,
+  icons,
 }: ISectionElement): ReactElement => {
   let Element = null;
-  console.log(type, text, variants, url, alt);
   switch (type) {
     case 'title':
       Element = <SectionTitle text={text} variants={variants} />;
@@ -29,8 +30,11 @@ const SectionElement = ({
     case 'slider':
       Element = <CardsCarousel cards={cards} />;
       break;
+    case 'icon-list':
+      Element = <IconList icons={icons} />;
+      break;
     default:
-      Element = null;
+      console.log(`WARNING: uknown element type: ${type}. Retuning null...`);
   }
 
   return Element;

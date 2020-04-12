@@ -1,7 +1,7 @@
 {
   "navbar": {
     "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/Infotech-letras-1_pq59qj.png",
-    "logoAlt": "Infotech logo",
+    "logoAlt": "Logo Infotech",
     "links": [
       {
         "to": "quienes-somos",
@@ -157,7 +157,7 @@
       "id": "proximos-proyectos",
       "columns": [
         { 
-          "background": true,
+          "background": false,
           "mobile": true, 
           "elements": [
             {
@@ -202,19 +202,23 @@
               "text": "Beneficios."
             },
             {
-              "type": "icons",
-              "content": [
+              "type": "icon-list",
+              "icons": [
                 {
-                  "icon": "money",
+                  "name": "money",
                   "caption": "Salario competitivo"
                 },
                 {
-                  "icon": "sthetoscope",
+                  "name": "health",
                   "caption": "Seguro médico con CCSS"
                 },
                 {
-                  "icon": "teamwork",
-                  "caption": "Experiencia laboral trabajando con el INA"
+                  "name": "teamwork",
+                  "caption": "Desarrollar experiencia en metodología del INA"
+                },
+                {
+                  "name": "clock",
+                  "caption": "Disponibilidad de horarios completos o parciales"
                 }
               ]
             }

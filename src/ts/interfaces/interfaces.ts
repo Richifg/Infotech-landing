@@ -35,6 +35,7 @@ export interface ISectionElement {
   alt?: string;
   variants?: object;
   cards?: ICard[];
+  icons?: IIcon[];
 }
 
 export interface ICard {
@@ -42,4 +43,9 @@ export interface ICard {
   alt: string;
   title: string;
   subtitle: string;
+}
+
+export interface IIcon {
+  name: string;
+  caption: string;
 }

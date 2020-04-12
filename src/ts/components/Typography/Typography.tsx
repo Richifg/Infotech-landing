@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
 type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'caption' | 'span';
@@ -15,6 +15,7 @@ type Type =
 interface ITypo {
   type: Type;
   color?: string;
+  style?: CSSProperties;
 }
 
 const Typo = styled.p<ITypo>`
@@ -31,8 +32,14 @@ interface ITypography extends ITypo {
   children: string;
 }
 
-const Typography = ({ tag, type, color, children }: ITypography): React.ReactElement => (
-  <Typo as={tag} type={type} color={color} dangerouslySetInnerHTML={{ __html: children }} />
+const Typography = ({ tag, type, color, children, style }: ITypography): React.ReactElement => (
+  <Typo
+    as={tag}
+    type={type}
+    color={color}
+    style={style}
+    dangerouslySetInnerHTML={{ __html: children }}
+  />
 );
 
 Typography.defaultProps = {

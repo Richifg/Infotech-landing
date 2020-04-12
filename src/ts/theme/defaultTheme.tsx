@@ -4,7 +4,8 @@ const colors = {
   },
   black: {
     base: '#000',
-    light: '#656565',
+    light: '#444',
+    lighter: '#656565',
   },
   // dark blue
   primary: {
@@ -21,6 +22,7 @@ const colors = {
 };
 
 const theme = {
+  colors,
   layout: {
     root: {
       maxWidth: '1440px',
@@ -188,6 +190,18 @@ const theme = {
       angle: '30deg',
       color: colors.secondary.base,
       backgroundColor: 'transparent',
+    },
+  },
+  iconList: {
+    root: {},
+    icon: {
+      maxWidth: '150px',
+      color: colors.secondary.base,
+      margin: '20px',
+    },
+    caption: {
+      maxWidth: '200px',
+      marginTop: '2em',
     },
   },
 };
