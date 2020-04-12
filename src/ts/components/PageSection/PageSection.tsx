@@ -15,8 +15,10 @@ interface IStyledColumn {
 }
 
 const Column = styled.div<IStyledColumn>`
-  padding: 2em;
   flex: 0 1 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: ${(p) => p.theme.column.root.padding};
   text-align: ${(p) => (p.full ? 'center' : 'left')};
   background-color: ${(p) =>
     p.background ? p.theme.column.alt.backgroundColor : p.theme.column.root.backgroundColor};

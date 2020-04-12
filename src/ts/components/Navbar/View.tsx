@@ -9,7 +9,7 @@ interface INavbar extends INavbarContent {
   activeIndex: number;
 }
 
-const Nav = styled.div`
+const Nav = styled.nav`
   width: 100vw;
   height: ${(p) => p.theme.navbar.root.height};
   background-color: ${(p) => p.theme.navbar.root.backgroundColor};

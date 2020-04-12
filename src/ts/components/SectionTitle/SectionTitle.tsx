@@ -11,9 +11,7 @@ const Container = styled.div<IContainer>`
   position: relative;
   width: fit-content;
   text-align: left;
-
-  margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: ${(p) => p.theme.sectionTitle.root.marginBottom};
 
   align-self: ${(p) => {
     if (p.align === 'right') return 'flex-end';

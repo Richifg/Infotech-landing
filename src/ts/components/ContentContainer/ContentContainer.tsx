@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactChildren, ReactChild } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
 const ContentContainer = styled.div`
@@ -10,11 +10,10 @@ const ContentContainer = styled.div`
 const Content = styled.div`
   width: 100%;
   max-width: ${(p) => p.theme.layout.root.maxWidth};
-  padding: 0 ${(p) => p.theme.layout.root.paddingX};
 `;
 
 interface IContainer {
-  children: ReactChildren | ReactChild;
+  children: ReactNode;
 }
 
 const Container = ({ children }: IContainer): ReactElement => (

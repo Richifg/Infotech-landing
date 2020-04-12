@@ -24,13 +24,13 @@ const theme = {
   layout: {
     root: {
       maxWidth: '1440px',
-      paddingX: '2em',
     },
   },
   column: {
     root: {
       color: colors.black.base,
       backgroundColor: 'transparent',
+      padding: '4em 2em',
     },
     alt: {
       color: colors.white.base,
@@ -138,12 +138,17 @@ const theme = {
   },
   banner: {
     root: {
+      maxHeight: '1040px',
+    },
+    content: {
       maxWidth: '650px',
       marginTop: '4em',
     },
   },
   sectionTitle: {
-    root: {},
+    root: {
+      marginBottom: '2.5em',
+    },
     decoration: {
       height: '4px',
       width: '150px',
@@ -154,6 +159,7 @@ const theme = {
   },
   sectionParagraph: {
     root: {
+      marginBottom: '1em',
       maxWidth: '600px',
     },
   },

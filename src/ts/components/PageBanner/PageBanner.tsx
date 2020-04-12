@@ -15,11 +15,12 @@ const BannerContainer = styled.section<IBannerContainer>`
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - ${(p) => p.theme.navbar.root.height});
+  max-height: ${(p) => p.theme.banner.root.maxHeight};
 `;
 
 const BannerContent = styled.div`
-  max-width: ${(p) => p.theme.banner.root.maxWidth};
-  margin-top: ${(p) => p.theme.banner.root.marginTop};
+  max-width: ${(p) => p.theme.banner.content.maxWidth};
+  margin-top: ${(p) => p.theme.banner.content.marginTop};
 `;
 
 const PageBanner = ({ id, url, text, buttonText }: IBannerContent): React.ReactElement => (
