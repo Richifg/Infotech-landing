@@ -9,6 +9,7 @@ const StyledButton = styled.button`
   border-radius: ${(p) => p.theme.button.root.borderRadius};
   color: ${(p) => p.theme.button.root.color};
   background-color: ${(p) => p.theme.button.root.backgroundColor};
+  margin: ${(p) => p.theme.button.root.margin};
   transition: background-color 0.2s;
   &:hover {
     background-color: ${(p) => p.theme.button.hover.backgroundColor};

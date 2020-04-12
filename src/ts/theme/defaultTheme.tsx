@@ -4,7 +4,7 @@ const colors = {
   },
   black: {
     base: '#000',
-    light: '#111',
+    light: '#656565',
   },
   // dark blue
   primary: {
@@ -61,7 +61,7 @@ const theme = {
       textTransform: 'none',
     },
     subtitle1: {
-      fontSize: `${17 / 16}rem`,
+      fontSize: `${19 / 16}rem`,
       lineHeight: '1.5',
       letterSpacing: '0.15px',
       fontWeight: '600',
@@ -89,10 +89,10 @@ const theme = {
       textTransform: 'none',
     },
     button: {
-      fontSize: `${15 / 16}rem`,
+      fontSize: `${16 / 16}rem`,
       lineHeight: '1.5',
       letterSpacing: '1.25px',
-      fontWeight: '600',
+      fontWeight: '700',
       textTransform: 'uppercase',
     },
   },
@@ -103,6 +103,7 @@ const theme = {
       borderRadius: '8px',
       backgroundColor: colors.secondary.base,
       color: colors.white.base,
+      margin: '2em 1em 2em 0',
     },
     hover: {
       backgroundColor: colors.secondary.light,
@@ -135,6 +136,12 @@ const theme = {
       maxWidth: '230px',
     },
   },
+  banner: {
+    root: {
+      maxWidth: '650px',
+      marginTop: '4em',
+    },
+  },
   sectionTitle: {
     root: {},
     decoration: {
@@ -158,7 +165,7 @@ const theme = {
   },
   card: {
     root: {
-      maxWidth: '305px',
+      maxWidth: '100%',
       padding: '.5em',
       textAlign: 'left',
     },
