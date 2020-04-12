@@ -33,7 +33,7 @@ module.exports = () => ({
         use: [MiniCssExtractplugin.loader, 'css-loader'],
       },
       {
-        test: /\.(ttf|eot)$/,
+        test: /fonts.*\.(ttf|eot|woff|svg)$/,
         loader: 'file-loader',
         options: {
           name: 'assets/fonts/[name].[ext]',

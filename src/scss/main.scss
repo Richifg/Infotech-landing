@@ -1,21 +1,7 @@
 //--- MODULES ---/
 @import "./slick";
+@import "./icons";
 
-//--- FONTS ---//
-$fonts: (
-  ('Light', 400),
-  ('Medium', 500),
-  ('SemiBold', 600),
-  ('Bold', 700)
-);
-
-@each $name, $weight in $fonts {
-  @font-face {
-    font-family: WorkSans;
-    font-weight: $weight;
-    src: url('../assets/fonts/WorkSans-#{$name}.ttf') format('truetype');
-  }
-}
 
 //--- GENERAL OVERWRITES ---//
 
