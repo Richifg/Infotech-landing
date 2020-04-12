@@ -12,34 +12,40 @@ type Type =
   | 'subtitle2'
   | 'body1'
   | 'body2'
-  | 'button'
+  | 'button';
 
-interface ITypography {
-  tag: Tag;
+interface ITypo {
   type: Type;
   color?: Color;
+}
+
+const Typo = styled.p<ITypo>`
+  font-size: ${(p) => p.theme.typography[p.type].fontSize};
+  font-weight: ${(p) => p.theme.typography[p.type].fontWeight};
+  line-height: ${(p) => p.theme.typography[p.type].lineHeight};
+  letter-spacing: ${(p) => p.theme.typography[p.type].letterSpacing};
+  text-transform: ${(p) => p.theme.typography[p.type].textTransform};
+  color: ${(p) => {
+    if (p.color === 'white') return colors.neutral.white;
+    if (p.color === 'black') return colors.neutral.black;
+    if (p.color === 'primary') return colors.primary.normal;
+    if (p.color === 'secondary') return colors.secondary.normal;
+    return 'inherit';
+  }};
+`;
+
+interface ITypography extends ITypo {
+  tag?: Tag;
   children: string;
 }
 
-const Typography = ({ tag, type, color, children }: ITypography): React.ReactElement => {
-  const Typo = styled[tag]`
-    font-size: ${(p) => p.theme.typography[type].fontSize};
-    font-weight: ${(p) => p.theme.typography[type].fontWeight};
-    line-height: ${(p) => p.theme.typography[type].lineHeight};
-    letter-spacing: ${(p) => p.theme.typography[type].letterSpacing};
-    text-transform: ${(p) => p.theme.typography[type].textTransform};
-    color: ${() => {
-      if (color === 'white') return colors.neutral.white;
-      if (color === 'black') return colors.neutral.black;
-      if (color === 'primary') return colors.primary.normal;
-      if (color === 'secondary') return colors.secondary.normal;
-    }};
-  `;
-  return <Typo>{children}</Typo>;
-};
+const Typography = ({ tag, type, color, children }: ITypography): React.ReactElement => (
+  <Typo as={tag} type={type} color={color} dangerouslySetInnerHTML={{ __html: children }} />
+);
 
 Typography.defaultProps = {
-  color: 'black',
+  color: '',
+  tag: 'p',
 };
 
 export default Typography;

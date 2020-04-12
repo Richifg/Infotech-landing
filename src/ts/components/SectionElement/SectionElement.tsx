@@ -4,11 +4,11 @@ import SectionTitle from './SectionTitle';
 import SectionParagraph from './SectionParagraph';
 import SectionImage from './SectionImage';
 
-const SectionElement = ({ type, text, variant, url, alt }: ISectionElement): ReactElement => {
+const SectionElement = ({ type, text, variants, url, alt }: ISectionElement): ReactElement => {
   let Element = null;
   switch (type) {
     case 'title':
-      Element = <SectionTitle text={text} />;
+      Element = <SectionTitle text={text} variants={variants} />;
       break;
     case 'paragraph':
       Element = <SectionParagraph text={text} />;

@@ -18,7 +18,24 @@ const colors = {
 };
 
 const theme = {
+  layout: {
+    root: {
+      maxWidth: '1440px',
+      paddingX: '2em',
+    },
+  },
+  column: {
+    root: {
+      color: colors.neutral.black,
+      backgroundColor: 'transparent',
+    },
+    alt: {
+      color: colors.neutral.white,
+      backgroundColor: colors.primary.normal,
+    },
+  },
   typography: {
+    root: {},
     headline1: {
       fontSize: `${64 / 16}rem`,
       lineHeight: '1.2',
@@ -76,12 +93,6 @@ const theme = {
       textTransform: 'uppercase',
     },
   },
-  layout: {
-    root: {
-      maxWidth: '1440px',
-      paddingX: '2em',
-    },
-  },
   button: {
     root: {
       padding: '1em 1.5em',
@@ -101,7 +112,7 @@ const theme = {
     root: {
       backgroundColor: colors.neutral.white,
       height: '120px',
-      opacity: '0.9',
+      opacity: '0.95',
     },
   },
   navlink: {
@@ -119,6 +130,27 @@ const theme = {
   navlogo: {
     root: {
       maxWidth: '230px',
+    },
+  },
+  sectionTitle: {
+    root: {},
+    decoration: {
+      height: '4px',
+      width: '150px',
+      top: '-4px',
+      left: '0',
+      backgroundColor: colors.secondary.normal,
+    },
+  },
+  sectionParagraph: {
+    root: {
+      maxWidth: '600px',
+    },
+  },
+  sectionImage: {
+    root: {
+      maxWidth: '75%',
+      maxHeight: '75%',
     },
   },
 };

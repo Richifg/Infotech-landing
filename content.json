@@ -78,13 +78,11 @@
             },
             {
               "type": "paragraph",
-              "text": "Contamos con 7 años de experiencia organizando diversos cursos de Inglés en diferentes zonas del país como San Marcos de Tarrazú, Santo Domingo de Heredia y Pérez Zeledón.",
-              "variant": "align-center"
+              "text": "Contamos con <strong>7 años</strong> de experiencia organizando diversos cursos de Inglés en diferentes zonas del país como San Marcos de Tarrazú, Santo Domingo de Heredia y Pérez Zeledón."
             },
             {
               "type": "paragraph",
-              "text": "En estos años hemos impartido alrededor 50 programas completos en los que se han graduado aproximadamente 850 estudiantes.",
-              "variant": "align-center"
+              "text": "En estos años hemos impartido alrededor <strong>50 programas</strong> completos en los que se han graduado aproximadamente <strong>850 estudiantes</strong>."
             }
           ]
         }
@@ -135,7 +133,7 @@
           "elements": [
             {
               "type": "title",
-              "variant": "align-right",
+              "variants": { "align": "right" },
               "text": "Beneficios."
             },
             {

@@ -7,12 +7,24 @@ interface ISectionImage {
 }
 
 const Image = styled.img`
-  max-width: 75%;
+  max-width: ${(p) => p.theme.sectionImage.root.maxWidth};
+  max-height: ${(p) => p.theme.sectionImage.root.maxHeight};
   width: 100%;
-  max-height: 75%;
   height: auto;
 `;
 
-const SectionImage = ({ url, alt }: ISectionImage): ReactElement => <Image src={url} alt={alt} />;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SectionImage = ({ url, alt }: ISectionImage): ReactElement => (
+  <Container>
+    <Image src={url} alt={alt} />;
+  </Container>
+);
 
 export default SectionImage;

@@ -33,6 +33,6 @@ export interface ISectionElement {
   text?: string;
   url?: string;
   alt?: string;
-  variant?: string;
+  variants?: object;
   content?: any;
 }
