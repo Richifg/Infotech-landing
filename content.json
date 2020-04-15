@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/Infotech-letras-1_pq59qj.png",
+    "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/logos/Infotech-letras-1_pq59qj.png",
     "logoAlt": "Logo Infotech",
     "links": [
       {
@@ -18,6 +18,10 @@
       {
         "to": "beneficios",
         "text": "Beneficios"
+      },
+      {
+        "to": "contactenos",
+        "text": "Contactenos"
       }
     ]
   },
@@ -219,6 +223,101 @@
                 {
                   "name": "clock",
                   "caption": "Disponibilidad de horarios completos o parciales"
+                }
+              ]
+            }
+          ]
+        }     
+      ]
+    },
+    {
+      "id": "contactenos",
+      "columns": [
+        { 
+          "background": true,
+          "mobile": true, 
+          "elements": [
+            {
+              "type": "title",
+              "text": "Trabaje con nosotros."
+            },
+            {
+              "type": "contact-form",
+              "formSections": [
+                {
+                  "name": "datosPersonales",
+                  "title": "Datos personales",
+                  "expandable": false,
+                  "inputs": [
+                    {
+                      "name": "nombre",
+                      "type": "text",
+                      "label": "Nombre completo"
+                    },
+                    {
+                      "name": "telefono",
+                      "type": "number",
+                      "label": "Telefono"
+                    },
+                    {
+                      "name": "correo",
+                      "type": "text",
+                      "label": "Correo electrónico"
+                    }
+                  ]
+                },
+                {
+                  "name": "curriculum",
+                  "title": "Curriculum",
+                  "expandable": false,
+                  "inputs": [
+                    {
+                      "name": "cv",
+                      "type": "file",
+                      "label": "CV"
+                    }
+                  ]
+                },
+                {
+                  "name": "gradoAcademico",
+                  "title": "Título de grado Académico",
+                  "subtitle": "Mínimo Bachillerato en la enseñanza del Inglés o afín. Puede adjuntar títulos posteriores.",
+                  "expandable": true,
+                  "inputs": [
+                    {
+                      "name": "titulo",
+                      "type": "file",
+                      "label": "Título"
+                    }
+                  ]
+                },
+                {
+                  "name": "experiencia",
+                  "title": "Experiencia Laboral",
+                  "subtitle": "Mínimo un año de eperiencia como docente luego de obtener el título de bachillerato. Puede agregar más de uno.",
+                  "expandable": true,
+                  "inputs": [
+                    {
+                      "name": "compania",
+                      "type": "text",
+                      "label": "compañia"
+                    },
+                    {
+                      "name": "fechaInicio",
+                      "type": "date",
+                      "label": "Fecha Inicio"
+                    },
+                    {
+                      "name": "fechaFinal",
+                      "type": "date",
+                      "label": "Fecha Final"
+                    },
+                    {
+                      "name": "descripcion",
+                      "type": "text",
+                      "label": "Descripción"
+                    }
+                  ]
                 }
               ]
             }

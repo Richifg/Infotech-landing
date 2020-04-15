@@ -36,6 +36,7 @@ export interface ISectionElement {
   variants?: object;
   cards?: ICard[];
   icons?: IIcon[];
+  formSections?: IFormSection[];
 }
 
 export interface ICard {
@@ -48,4 +49,18 @@ export interface ICard {
 export interface IIcon {
   name: string;
   caption: string;
+}
+
+export interface IFormSection {
+  name: string;
+  title: string;
+  subtitle?: string;
+  expandable: boolean;
+  inputs: IInput[];
+}
+
+export interface IInput {
+  name: string;
+  type: string;
+  label: string;
 }

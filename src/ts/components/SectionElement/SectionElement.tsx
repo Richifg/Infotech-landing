@@ -5,6 +5,7 @@ import SectionTitle from 'components/SectionTitle';
 import SectionParagraph from 'components/SectionParagraph';
 import SectionImage from 'components/SectionImage';
 import CardsCarousel from 'components/CardsCarousel';
+import ContactForm from 'components/ContactForm';
 import IconList from 'components/IconList';
 
 const SectionElement = ({
@@ -15,6 +16,7 @@ const SectionElement = ({
   alt,
   cards,
   icons,
+  formSections,
 }: ISectionElement): ReactElement => {
   let Element = null;
   switch (type) {
@@ -32,6 +34,9 @@ const SectionElement = ({
       break;
     case 'icon-list':
       Element = <IconList icons={icons} />;
+      break;
+    case 'contact-form':
+      Element = <ContactForm sections={formSections} />;
       break;
     default:
       console.log(`WARNING: uknown element type: ${type}. Retuning null...`);
