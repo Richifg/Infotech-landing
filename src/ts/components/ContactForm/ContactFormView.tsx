@@ -15,7 +15,7 @@ const Input = styled.input`
   margin-bottom: 2em;
 `;
 
-const Form = styled.form`
+const FormContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -29,43 +29,47 @@ const FormSection = styled.div`
 `;
 
 interface IContactFormView {
-  onSubmit(): void;
   onAddGroup?(index: number): void;
   onRemoveGroup?(index: number): void;
   register: ReturnType<typeof useForm>['register'];
+  errors: ReturnType<typeof useForm>['errors'];
   sections: IFormSection[];
 }
 
 const ContactFormView = ({
-  onSubmit,
   onAddGroup,
   onRemoveGroup,
-  register,
   sections,
+  errors,
 }: IContactFormView): ReactElement => {
-  //console.log(sections);
+  //console.log(errors);
   return (
-    <Form onSubmit={onSubmit}>
+    <FormContent>
       {sections.map((section, index) => (
         <FormSection key={index}>
           <Typography type="headline3">{section.title}</Typography>
           <Typography type="subtitle1">{section.subtitle}</Typography>
           {section.inputs.map((input, index) => (
             <Fragment key={index}>
-              <Typography type="subtitle2">{input.label}</Typography>
-              <Input type={input.type} name={input.name} ref={register} />
+              <Typography type="subtitle1">{input.name}</Typography>
+              <Input type={input.type} name={input.name} ref={input.register} />
+              <Typography type="subtitle2">{errors?.[input.name]?.message}</Typography>
             </Fragment>
           ))}
           {section.expandable && (
             <ButtonsContainer>
-              <Button type="button" onClick={() => onAddGroup(index)}>+</Button>
-              <Button type="button" onClick={() => onRemoveGroup(index)}>-</Button>
+              <Button type="button" onClick={() => onAddGroup(index)}>
+                +
+              </Button>
+              <Button type="button" onClick={() => onRemoveGroup(index)}>
+                -
+              </Button>
             </ButtonsContainer>
           )}
         </FormSection>
       ))}
       <Button type="submit">SUBMIT!!!</Button>
-    </Form>
+    </FormContent>
   );
 };
 

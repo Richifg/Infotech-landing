@@ -63,4 +63,14 @@ export interface IInput {
   name: string;
   type: string;
   label: string;
+  rules?: IRules;
+  register?: any;
+}
+
+export interface IRules {
+  required?: boolean;
+  maxLength?: number;
+  minLength?: number;
+  size?: number;
+  fileType?: string;
 }
