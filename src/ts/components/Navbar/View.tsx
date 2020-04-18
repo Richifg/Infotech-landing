@@ -14,6 +14,7 @@ const Nav = styled.nav`
   height: ${(p) => p.theme.navbar.root.height};
   background-color: ${(p) => p.theme.navbar.root.backgroundColor};
   opacity: ${(p) => p.theme.navbar.root.opacity};
+
   display: flex;
   align-items: center;
   position: fixed;
@@ -26,7 +27,7 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  padding: 0;
+  padding: ${(p) => p.theme.navbar.root.padding};
   & li {
     margin: 0 1em;
   }

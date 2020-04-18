@@ -119,6 +119,7 @@ const theme = {
       backgroundColor: colors.white.base,
       height: '120px',
       opacity: '0.95',
+      padding: '0 2em',
     },
   },
   navlink: {
@@ -141,10 +142,11 @@ const theme = {
   banner: {
     root: {
       maxHeight: '1040px',
+      height: '95vh',
+      padding: '4em 2em 0',
     },
     content: {
       maxWidth: '650px',
-      marginTop: '4em',
     },
   },
   sectionTitle: {
@@ -168,7 +170,6 @@ const theme = {
   sectionImage: {
     root: {
       maxWidth: '75%',
-      maxHeight: '75%',
     },
   },
   card: {

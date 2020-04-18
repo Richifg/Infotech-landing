@@ -14,13 +14,21 @@ const BannerContainer = styled.section<IBannerContainer>`
   background: url("${(p) => p.url}"), black;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - ${(p) => p.theme.navbar.root.height});
+  background-position: center;
+  height: calc(${(p) => p.theme.banner.root.height} - ${(p) => p.theme.navbar.root.height});
   max-height: ${(p) => p.theme.banner.root.maxHeight};
+  padding: ${(p) => p.theme.banner.root.padding};
+  box-sizing: border-box;
 `;
 
 const BannerContent = styled.div`
   max-width: ${(p) => p.theme.banner.content.maxWidth};
-  margin-top: ${(p) => p.theme.banner.content.marginTop};
+  display: flex;
+  flex-direction: column;
+`;
+
+const ButtonContainer = styled.div`
+  margin-left: 2em;
 `;
 
 const PageBanner = ({ id, url, text, buttonText }: IBannerContent): React.ReactElement => (
@@ -30,7 +38,11 @@ const PageBanner = ({ id, url, text, buttonText }: IBannerContent): React.ReactE
         <Typography type="headline1" tag="h1" color="white">
           {text}
         </Typography>
-        <Button>{buttonText}</Button>
+        <ButtonContainer>
+          <a href="#contactenos">
+            <Button>{buttonText}</Button>
+          </a>
+        </ButtonContainer>
       </BannerContent>
     </ContentContainer>
   </BannerContainer>

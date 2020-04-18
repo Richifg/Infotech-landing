@@ -40,7 +40,7 @@
           "elements": [
             {
               "type": "image",
-              "url": "https://res.cloudinary.com/richi/image/upload/v1586322580/Infotech/Infotech-completo-2_ob7vg1.png",
+              "url": "https://res.cloudinary.com/richi/image/upload/v1586322580/Infotech/logos/Infotech-completo-2_ob7vg1.png",
               "alt": "Logo Infotech 25 aniversario"
             }
           ]
@@ -161,7 +161,7 @@
       "id": "proximos-proyectos",
       "columns": [
         { 
-          "background": false,
+          "background": true,
           "mobile": true, 
           "elements": [
             {
@@ -183,7 +183,7 @@
           ]
         },
         { 
-          "background": true,
+          "background": false,
           "mobile": true, 
           "elements": [
             {
@@ -257,11 +257,12 @@
                     {
                       "name": "telefono",
                       "type": "number",
-                      "label": "Telefono"
+                      "label": "Telefono",
+                      "rules": { "required": true, "minLength": 8, "maxLength": 11 }
                     },
                     {
                       "name": "correo",
-                      "type": "text",
+                      "type": "email",
                       "label": "Correo electrónico"
                     }
                   ]
@@ -274,7 +275,8 @@
                     {
                       "name": "cv",
                       "type": "file",
-                      "label": "CV"
+                      "label": "CV",
+                      "rules": { "required": true, "size": 500, "fileType": "pdf" }
                     }
                   ]
                 },

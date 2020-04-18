@@ -8,7 +8,6 @@ interface ISectionImage {
 
 const Image = styled.img`
   max-width: ${(p) => p.theme.sectionImage.root.maxWidth};
-  max-height: ${(p) => p.theme.sectionImage.root.maxHeight};
   width: 100%;
   height: auto;
 `;
@@ -23,7 +22,7 @@ const Container = styled.div`
 
 const SectionImage = ({ url, alt }: ISectionImage): ReactElement => (
   <Container>
-    <Image src={url} alt={alt} />;
+    <Image src={url} alt={alt} />
   </Container>
 );
 
