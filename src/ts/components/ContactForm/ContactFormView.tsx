@@ -1,19 +1,11 @@
-import React, { ReactElement, Fragment } from 'react';
+import React, { ReactElement, Fragment, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
 import { IFormSection } from 'interfaces';
+import ContactFormInput from 'components/ContactFormInput';
 import Typography from 'components/Typography';
 import Button from 'components/Button';
-
-const Input = styled.input`
-  border: none;
-  background-color: white;
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  margin-bottom: 2em;
-`;
 
 const FormContent = styled.div`
   display: flex;
@@ -32,7 +24,9 @@ interface IContactFormView {
   onAddGroup?(index: number): void;
   onRemoveGroup?(index: number): void;
   register: ReturnType<typeof useForm>['register'];
-  errors: ReturnType<typeof useForm>['errors'];
+  unregister: ReturnType<typeof useForm>['unregister'];
+  setValue: ReturnType<typeof useForm>['setValue'];
+  errors: any;
   sections: IFormSection[];
 }
 
@@ -40,9 +34,12 @@ const ContactFormView = ({
   onAddGroup,
   onRemoveGroup,
   sections,
+  register,
+  unregister,
+  setValue,
   errors,
 }: IContactFormView): ReactElement => {
-  //console.log(errors);
+  useEffect(() => console.log('RE-RENDER'));
   return (
     <FormContent>
       {sections.map((section, index) => (
@@ -52,7 +49,14 @@ const ContactFormView = ({
           {section.inputs.map((input, index) => (
             <Fragment key={index}>
               <Typography type="subtitle1">{input.name}</Typography>
-              <Input type={input.type} name={input.name} ref={input.register} />
+              <ContactFormInput
+                name={input.name}
+                type={input.type}
+                rules={input.rules}
+                register={register}
+                unregister={unregister}
+                setValue={setValue}
+              />
               <Typography type="subtitle2">{errors?.[input.name]?.message}</Typography>
             </Fragment>
           ))}

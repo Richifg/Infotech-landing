@@ -1,7 +1,8 @@
 import { IRules } from 'interfaces';
 import { Validate } from 'react-hook-form';
 
-const validate = (rules: IRules): Validate => (data) => {
+// returns a validate object
+const getValidateFunction = (rules: IRules): Validate => (data) => {
   if (rules) {
     if (data) {
       if (typeof data === 'string') {
@@ -27,4 +28,4 @@ const validate = (rules: IRules): Validate => (data) => {
   return true;
 };
 
-export { validate };
+export { getValidateFunction };

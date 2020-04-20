@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
 import googleScript from 'services/googleScript';
-import { validate } from 'shared/validationRules';
+import { getValidateFunction } from 'shared/validationRules';
 import { IFormSection } from 'interfaces';
 import { useArrayCounter } from 'shared/customHooks';
 import ContactFormView from './ContactFormView';
@@ -13,12 +13,12 @@ interface IContactForm {
 
 const ContactForm = ({ sections }: IContactForm): ReactElement => {
   const [groupCounts, addGroup, removeGroup] = useArrayCounter(sections.length);
-  const { register, errors, handleSubmit } = useForm();
+  const { register, unregister, setValue, errors, handleSubmit } = useForm();
 
   // some complicated shit conecting to the email server
   const doFancyShit = (data: any): void => {
     console.log(data);
-    googleScript.send(data);
+    //googleScript.send(data);
   };
 
   // set each section's inputs based on group count
@@ -26,25 +26,38 @@ const ContactForm = ({ sections }: IContactForm): ReactElement => {
     const sectionInputs = [];
     for (let i = 0; i < groupCounts[index]; i++) {
       // react-hook-form field array name notation
-      const nameSuffix = section.expandable ? i + 1 : '';
+      const nameSuffix = section.expandable ? `[${i}]` : '';
       sectionInputs.push(
         ...section.inputs.map((input) => ({
           ...input,
           name: input.name + nameSuffix,
-          register: register({ validate: validate(input.rules) }),
+          register: register({ validate: getValidateFunction(input.rules) }),
         })),
       );
     }
     return { ...section, inputs: sectionInputs };
   });
 
-  console.log(errors);
+  // flatten errors object so view can blindly access them by input name alone
+  const flattenErrors: any = {};
+  Object.keys(errors).forEach((key) => {
+    if (Array.isArray(errors[key])) {
+      errors[key].forEach((item: any, index: number) => {
+        flattenErrors[`${key}[${index}]`] = item;
+      });
+    } else {
+      flattenErrors.key = errors.key;
+    }
+  });
+  console.log(errors, flattenErrors);
 
   return (
     <form onSubmit={handleSubmit(doFancyShit)}>
       <ContactFormView
         register={register}
-        errors={errors}
+        unregister={unregister}
+        setValue={setValue}
+        errors={flattenErrors}
         sections={sectionToRender}
         onAddGroup={addGroup}
         onRemoveGroup={removeGroup}
