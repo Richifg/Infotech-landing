@@ -1,7 +1,7 @@
 import React, { useEffect, ReactElement, ReactType } from 'react';
 import { useForm } from 'react-hook-form';
 import { getValidateFunction } from 'shared/validationRules';
-import { IRules } from 'interfaces';
+import { IRules, IFileInfo } from 'interfaces';
 import DefaultView from './InputFileView';
 
 interface IInputText {
@@ -27,11 +27,24 @@ const InputTextController = ({
   }, []);
 
   const handleOnChange = ({ target }: any): void => {
-    // DO SOME FILE READER SHIT HERE
-    setValue(name, target.value);
+    if (target?.files.length > 0) {
+      const file = target.files[0];
+      // make a ref for filereader on mount
+      const reader = new FileReader();
+      reader.onloadend = function (e) {
+        if (e.target.error != null) {
+          // set state as error, also add loading state and let view handle loader
+          console.log('File ' + name + ' could not be read.');
+        } else {
+          const fileValue: IFileInfo = { name: file.name, size: file.size, url: e.target.result };
+          setValue(name, fileValue, true);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
-  return <View type="input" name={name} onChange={handleOnChange} />;
+  return <View type="file" name={name} onChange={handleOnChange} />;
 };
 
 InputTextController.defaultProps = {

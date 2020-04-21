@@ -252,31 +252,33 @@
                     {
                       "name": "nombre",
                       "type": "text",
-                      "label": "Nombre completo"
+                      "label": "Nombre completo",
+                      "rules": { "required": true }
                     },
                     {
                       "name": "telefono",
                       "type": "number",
-                      "label": "Telefono",
+                      "label": "Teléfono",
                       "rules": { "required": true, "minLength": 8, "maxLength": 11 }
                     },
                     {
                       "name": "correo",
                       "type": "email",
-                      "label": "Correo electrónico"
+                      "label": "Correo electrónico",
+                      "rules": { "required": true }
                     }
                   ]
                 },
                 {
                   "name": "curriculum",
-                  "title": "Curriculum",
+                  "title": "Curriculum Vitae",
                   "expandable": false,
                   "inputs": [
                     {
                       "name": "cv",
                       "type": "file",
                       "label": "CV",
-                      "rules": { "required": true, "size": 500, "fileType": "pdf" }
+                      "rules": { "required": true, "size": 4000000, "fileType": "pdf" }
                     }
                   ]
                 },
@@ -289,7 +291,8 @@
                     {
                       "name": "titulo",
                       "type": "file",
-                      "label": "Título"
+                      "label": "Título",
+                      "rules": { "required": true, "size": 4000000, "fileType": "pdf" }
                     }
                   ]
                 },
@@ -300,24 +303,28 @@
                   "expandable": true,
                   "inputs": [
                     {
-                      "name": "compania",
+                      "name": "empresa",
                       "type": "text",
-                      "label": "compañia"
+                      "label": "Empresa",
+                      "rules": { "required": true }
                     },
                     {
                       "name": "fechaInicio",
                       "type": "date",
-                      "label": "Fecha Inicio"
+                      "label": "Fecha Inicio",
+                      "rules": { "required": true }
                     },
                     {
                       "name": "fechaFinal",
                       "type": "date",
-                      "label": "Fecha Final"
+                      "label": "Fecha Final",
+                      "rules": { "required": true }
                     },
                     {
                       "name": "descripcion",
                       "type": "text",
-                      "label": "Descripción"
+                      "label": "Descripción corta de sus labolores",
+                      "rules": { "required": true }
                     }
                   ]
                 }

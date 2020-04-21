@@ -48,7 +48,7 @@ const ContactFormView = ({
           <Typography type="subtitle1">{section.subtitle}</Typography>
           {section.inputs.map((input, index) => (
             <Fragment key={index}>
-              <Typography type="subtitle1">{input.name}</Typography>
+              <Typography type="body1">{input.label}</Typography>
               <ContactFormInput
                 name={input.name}
                 type={input.type}
@@ -57,7 +57,7 @@ const ContactFormView = ({
                 unregister={unregister}
                 setValue={setValue}
               />
-              <Typography type="subtitle2">{errors?.[input.name]?.message}</Typography>
+              <Typography type="body2">{errors?.[input.name]?.message}</Typography>
             </Fragment>
           ))}
           {section.expandable && (

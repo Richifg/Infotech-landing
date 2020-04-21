@@ -18,7 +18,7 @@ const ContactForm = ({ sections }: IContactForm): ReactElement => {
   // some complicated shit conecting to the email server
   const doFancyShit = (data: any): void => {
     console.log(data);
-    //googleScript.send(data);
+    googleScript.send(data);
   };
 
   // set each section's inputs based on group count
@@ -46,7 +46,7 @@ const ContactForm = ({ sections }: IContactForm): ReactElement => {
         flattenErrors[`${key}[${index}]`] = item;
       });
     } else {
-      flattenErrors.key = errors.key;
+      flattenErrors[key] = errors[key];
     }
   });
   console.log(errors, flattenErrors);

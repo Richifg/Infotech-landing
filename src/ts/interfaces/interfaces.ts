@@ -74,3 +74,13 @@ export interface IRules {
   size?: number;
   fileType?: string;
 }
+
+export interface IFileInfo {
+  name: string;
+  size: number;
+  url: string | ArrayBuffer;
+}
+
+export function isFileInfo(data: any): data is IFileInfo {
+  return !!(data.name && data.size && data.url);
+}

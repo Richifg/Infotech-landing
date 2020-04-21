@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   },
-  timeout: 10000,
+  timeout: 60000,
 });
 
 const googleScript = {

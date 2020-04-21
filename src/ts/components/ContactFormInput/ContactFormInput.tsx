@@ -26,6 +26,7 @@ const ContactFormInput = ({
     case 'text':
     case 'email':
     case 'number':
+    case 'date':
       return <InputText name={name} type={type} rules={rules} register={register} />;
     case 'file':
       return (
