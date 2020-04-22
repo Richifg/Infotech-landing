@@ -1,4 +1,4 @@
-import React, { ReactElement, Fragment, useEffect } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 
@@ -8,16 +8,48 @@ import Typography from 'components/Typography';
 import Button from 'components/Button';
 
 const FormContent = styled.div`
+  background-color: ${(p) => p.theme.contactForm.root.backgroundColor};
+  max-width: ${(p) => p.theme.contactForm.root.maxWidth};
+  text-align: ${(p) => p.theme.contactForm.root.textAlign};
+`;
+const FormSection = styled.div`
+  margin-bottom: ${(p) => p.theme.contactForm.section.marginBottom};
+`;
+const SectionTitle = styled.div`
+  border-bottom: ${(p) => p.theme.contactForm.sectionTitle.borderBottom};
+  max-width: ${(p) => p.theme.contactForm.sectionTitle.maxWidth};
+  margin-bottom: ${(p) => p.theme.contactForm.sectionTitle.marginBottom};
+`;
+const SectionSubtitle = styled.div`
+  max-width: ${(p) => p.theme.contactForm.sectionSubtitle.maxWidth};
+  margin-bottom: ${(p) => p.theme.contactForm.sectionSubtitle.marginBottom};
+`;
+const InputGroup = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: ${(p) => p.theme.contactForm.inputGroup.marginBottom};
+  & > :first-child {
+    width: 50%;
+    text-align: right;
+    margin-right: 0.5em;
+  }
+  & > :last-child {
+    width: 50%;
+    text-align: left;
+    margin-left: 0.5em;
+  }
+`;
+const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `;
-
+const ErrorContainer = styled.div`
+  color: ${(p) => p.theme.contactForm.error.color};
+  min-height: ${(p) => p.theme.contactForm.error.minHeight};
+`;
 const ButtonsContainer = styled.div`
   display: flex;
-`;
-
-const FormSection = styled.div`
-  background-color: gray;
 `;
 
 interface IContactFormView {
@@ -44,21 +76,30 @@ const ContactFormView = ({
     <FormContent>
       {sections.map((section, index) => (
         <FormSection key={index}>
-          <Typography type="headline3">{section.title}</Typography>
-          <Typography type="subtitle1">{section.subtitle}</Typography>
+          <SectionTitle>
+            <Typography type="headline3">{section.title}</Typography>
+          </SectionTitle>
+          <SectionSubtitle>
+            <Typography type="body2">{section.subtitle}</Typography>
+          </SectionSubtitle>
           {section.inputs.map((input, index) => (
-            <Fragment key={index}>
-              <Typography type="body1">{input.label}</Typography>
-              <ContactFormInput
-                name={input.name}
-                type={input.type}
-                rules={input.rules}
-                register={register}
-                unregister={unregister}
-                setValue={setValue}
-              />
-              <Typography type="body2">{errors?.[input.name]?.message}</Typography>
-            </Fragment>
+            <InputGroup key={index}>
+              <Typography type="body1">{input.label}:</Typography>
+              <InputContainer>
+                <ContactFormInput
+                  name={input.name}
+                  type={input.type}
+                  placeholder={input.placeholder}
+                  rules={input.rules}
+                  register={register}
+                  unregister={unregister}
+                  setValue={setValue}
+                />
+                <ErrorContainer>
+                  <Typography type="body2">{errors?.[input.name]?.message}</Typography>
+                </ErrorContainer>
+              </InputContainer>
+            </InputGroup>
           ))}
           {section.expandable && (
             <ButtonsContainer>

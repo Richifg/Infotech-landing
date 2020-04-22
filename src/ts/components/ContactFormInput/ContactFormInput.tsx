@@ -4,10 +4,12 @@ import { IRules } from 'interfaces';
 
 import InputFile from 'components/InputFile';
 import InputText from 'components/InputText';
+import InputArea from 'components/InputArea';
 
 interface IContactFormInput {
   name: string;
   type: string;
+  placeholder: string;
   rules: IRules;
   register: ReturnType<typeof useForm>['register'];
   unregister: ReturnType<typeof useForm>['unregister'];
@@ -17,6 +19,7 @@ interface IContactFormInput {
 const ContactFormInput = ({
   name,
   type,
+  placeholder,
   rules,
   register,
   unregister,
@@ -27,7 +30,17 @@ const ContactFormInput = ({
     case 'email':
     case 'number':
     case 'date':
-      return <InputText name={name} type={type} rules={rules} register={register} />;
+      return (
+        <InputText
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          rules={rules}
+          register={register}
+        />
+      );
+    case 'textarea':
+      return <InputArea name={name} placeholder={placeholder} rules={rules} register={register} />;
     case 'file':
       return (
         <InputFile

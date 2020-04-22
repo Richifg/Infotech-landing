@@ -19,6 +19,10 @@ const colors = {
     light: '#D46336',
     dark: '#BA491C',
   },
+  // red
+  alert: {
+    base: 'red',
+  },
 };
 
 const theme = {
@@ -32,7 +36,7 @@ const theme = {
     root: {
       color: colors.black.base,
       backgroundColor: 'transparent',
-      padding: '4em 2em',
+      padding: '4em 4em',
     },
     alt: {
       color: colors.white.base,
@@ -44,22 +48,22 @@ const theme = {
     headline1: {
       fontSize: `${64 / 16}rem`,
       lineHeight: '1.2',
-      letterSpacing: '-0.5px',
+      letterSpacing: '1px',
       fontWeight: '700',
       textTransform: 'none',
     },
     headline2: {
       fontSize: `${42 / 16}rem`,
       lineHeight: '1.5',
-      letterSpacing: '0px',
+      letterSpacing: '1.5px',
       fontWeight: '600',
-      textTransform: 'none',
+      textTransform: 'uppercase',
     },
     headline3: {
-      fontSize: `${24 / 16}rem`,
+      fontSize: `${28 / 16}rem`,
       lineHeight: '1.5',
-      letterSpacing: '0.25px',
-      fontWeight: '500',
+      letterSpacing: '1px',
+      fontWeight: '600',
       textTransform: 'none',
     },
     subtitle1: {
@@ -78,14 +82,14 @@ const theme = {
     },
     body1: {
       fontSize: `${16 / 16}rem`,
-      lineHeight: '1.5',
+      lineHeight: '1.7',
       letterSpacing: '0.5px',
       fontWeight: '500',
       textTransform: 'none',
     },
     body2: {
       fontSize: `${15 / 16}rem`,
-      lineHeight: '1.5',
+      lineHeight: '1.7',
       letterSpacing: '0.25px',
       fontWeight: '500',
       textTransform: 'none',
@@ -146,7 +150,7 @@ const theme = {
       padding: '4em 2em 0',
     },
     content: {
-      maxWidth: '650px',
+      maxWidth: '800px',
     },
   },
   sectionTitle: {
@@ -203,6 +207,55 @@ const theme = {
     caption: {
       maxWidth: '200px',
       marginTop: '2em',
+    },
+  },
+  contactForm: {
+    root: {
+      backgroundColor: colors.primary.base,
+      maxWidth: '800px',
+      textAlign: 'left',
+    },
+    section: {
+      marginBottom: '2em',
+    },
+    sectionTitle: {
+      borderBottom: '2px solid white',
+      maxWidth: '45%',
+      marginBottom: '2em',
+    },
+    sectionSubtitle: {
+      maxWidth: '55%',
+      marginBottom: '2em',
+    },
+    inputGroup: {
+      marginBottom: '1em',
+    },
+    label: {
+      color: colors.white.base,
+    },
+    input: {
+      root: {
+        border: 'none',
+        borderRadius: '10px',
+        color: colors.black.base,
+        backgroundColor: colors.white.base,
+        padding: '.5em 1em',
+        width: '100%',
+        marginBottom: '0',
+      },
+      small: {
+        width: '50%',
+      },
+      placeholder: {
+        color: colors.black.lighter,
+      },
+      textArea: {
+        height: '6.6em',
+      },
+    },
+    error: {
+      color: colors.alert.base,
+      minHeight: '1.4em',
     },
   },
 };

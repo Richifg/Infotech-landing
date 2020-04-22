@@ -29,18 +29,21 @@ const Typo = styled.p<ITypo>`
 
 interface ITypography extends ITypo {
   tag?: Tag;
-  children: string;
+  children: string | string[];
 }
 
-const Typography = ({ tag, type, color, children, style }: ITypography): React.ReactElement => (
-  <Typo
-    as={tag}
-    type={type}
-    color={color}
-    style={style}
-    dangerouslySetInnerHTML={{ __html: children }}
-  />
-);
+const Typography = ({ tag, type, color, children, style }: ITypography): React.ReactElement => {
+  const textToRender = Array.isArray(children) ? children.join('') : children;
+  return (
+    <Typo
+      as={tag}
+      type={type}
+      color={color}
+      style={style}
+      dangerouslySetInnerHTML={{ __html: textToRender }}
+    />
+  );
+};
 
 Typography.defaultProps = {
   color: '',

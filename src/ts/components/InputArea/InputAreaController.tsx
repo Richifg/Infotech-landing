@@ -2,10 +2,9 @@ import React, { ReactElement, ReactType } from 'react';
 import { useForm } from 'react-hook-form';
 import { getValidateFunction } from 'shared/validationRules';
 import { IRules } from 'interfaces';
-import DefaultView from './InputTextView';
+import DefaultView from './InputAreaView';
 
 interface IInputText {
-  type: 'number' | 'date' | 'email' | 'text';
   name: string;
   placeholder: string;
   rules: IRules;
@@ -13,28 +12,24 @@ interface IInputText {
   View: ReactType;
 }
 
-const InputTextController = ({
-  type,
+const InputAreaController = ({
   name,
   placeholder,
   rules,
   register,
   View,
 }: IInputText): ReactElement => {
-  const isSmall = ['number', 'email', 'date'].includes(type);
   return (
     <View
-      type={type}
       name={name}
       placeholder={placeholder}
-      small={isSmall}
       ref={register({ validate: getValidateFunction(rules) })}
     />
   );
 };
 
-InputTextController.defaultProps = {
+InputAreaController.defaultProps = {
   View: DefaultView,
 };
 
-export default InputTextController;
+export default InputAreaController;

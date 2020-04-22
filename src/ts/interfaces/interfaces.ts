@@ -63,6 +63,7 @@ export interface IInput {
   name: string;
   type: string;
   label: string;
+  placeholder?: string;
   rules?: IRules;
   register?: any;
 }
