@@ -29,7 +29,7 @@ const InputGroup = styled.div`
   align-items: flex-start;
   margin-bottom: ${(p) => p.theme.contactForm.inputGroup.marginBottom};
   & > :first-child {
-    width: 50%;
+    width: 30%;
     text-align: right;
     margin-right: 0.5em;
   }
@@ -90,6 +90,7 @@ const ContactFormView = ({
                   name={input.name}
                   type={input.type}
                   placeholder={input.placeholder}
+                  options={input.options}
                   rules={input.rules}
                   register={register}
                   unregister={unregister}

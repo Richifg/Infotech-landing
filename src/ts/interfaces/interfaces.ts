@@ -64,8 +64,14 @@ export interface IInput {
   type: string;
   label: string;
   placeholder?: string;
+  options?: IOption[];
   rules?: IRules;
   register?: any;
+}
+
+export interface IOption {
+  value: string;
+  label: string;
 }
 
 export interface IRules {

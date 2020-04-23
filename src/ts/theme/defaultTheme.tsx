@@ -1,6 +1,7 @@
 const colors = {
   white: {
     base: '#F8F8F8',
+    dark: '#E1E1E1',
   },
   black: {
     base: '#000',
@@ -221,11 +222,11 @@ const theme = {
     sectionTitle: {
       borderBottom: '2px solid white',
       maxWidth: '45%',
-      marginBottom: '2em',
+      marginBottom: '1.25em',
     },
     sectionSubtitle: {
       maxWidth: '55%',
-      marginBottom: '2em',
+      marginBottom: '3em',
     },
     inputGroup: {
       marginBottom: '1em',
@@ -251,6 +252,50 @@ const theme = {
       },
       textArea: {
         height: '6.6em',
+      },
+    },
+    radio: {
+      root: {
+        width: '24px',
+        height: '24px',
+        borderRadius: '25px',
+        border: `1px solid ${colors.black.lighter}`,
+        backgroundColor: colors.white.base,
+        marginRight: '.5em',
+      },
+      after: {
+        width: '0px',
+        height: '0px',
+      },
+      hover: {
+        root: {
+          borderWidth: '2px',
+          backgroundColor: colors.white.dark,
+        },
+      },
+      checked: {
+        root: {
+          borderColor: colors.secondary.base,
+          borderWidth: '1px !important',
+          backgroundColor: colors.white.base,
+        },
+        after: {
+          width: '18px',
+          height: '18px',
+          backgroundColor: colors.secondary.base,
+        },
+      },
+      active: {
+        root: {
+          borderColor: colors.secondary.dark,
+          borderWidth: '3px',
+          backgroundColor: colors.white.dark,
+        },
+        after: {
+          width: '10px',
+          height: '10px',
+          backgroundColor: colors.secondary.dark,
+        },
       },
     },
     error: {

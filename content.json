@@ -274,7 +274,7 @@
                 },
                 {
                   "name": "experiencia",
-                  "title": "Experiencia Laboral",
+                  "title": "Experiencia laboral",
                   "subtitle": "Mínimo un año de eperiencia como docente luego de obtener el título de bachillerato. Puede agregar más de una experiencia.",
                   "expandable": true,
                   "inputs": [
@@ -302,6 +302,118 @@
                       "label": "Descripción corta",
                       "rules": { "required": true, "maxLength": 200 },
                       "placeholder": "Descripción de funciones"
+                    }
+                  ]
+                },
+                {
+                  "name": "certificaciones",
+                  "title": "Certificaciones",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee",
+                  "expandable": false,
+                  "inputs": [
+                    {
+                      "name": "colypro",
+                      "type": "radio",
+                      "label": "Certificación COLYPRO",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a colegiarse con nosotros"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "c1",
+                      "type": "radio",
+                      "label": "Certificado C1",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a ser postulado para la prueba"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "avalIna",
+                      "type": "radio",
+                      "label": "Aval del INA",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a ser propuesto para prueba de aval"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "certificaciones",
+                  "title": "Certificaciones",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee",
+                  "expandable": false,
+                  "inputs": [
+                    {
+                      "name": "c1",
+                      "type": "radio",
+                      "label": "Certificado C1",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a ser postulado para la prueba"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "colypro",
+                      "type": "radio",
+                      "label": "Certificación COLYPRO",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a colegiarse con nosotros"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "avalIna",
+                      "type": "radio",
+                      "label": "Aval del INA",
+                      "placeholder": "no",
+                      "options": [
+                        {
+                          "value": "no",
+                          "label": "No, pero dispuesto a ser propuesto para prueba de aval"
+                        },
+                        {
+                          "value": "si",
+                          "label": "Sí"
+                        }
+                      ]
                     }
                   ]
                 },

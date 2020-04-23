@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
-type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'caption' | 'span';
+type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'caption' | 'span' | 'label';
 type Type =
   | 'headline1'
   | 'headline2'
@@ -15,6 +15,7 @@ type Type =
 interface ITypo {
   type: Type;
   color?: string;
+  htmlFor?: string;
   style?: CSSProperties;
 }
 
@@ -32,13 +33,21 @@ interface ITypography extends ITypo {
   children: string | string[];
 }
 
-const Typography = ({ tag, type, color, children, style }: ITypography): React.ReactElement => {
+const Typography = ({
+  tag,
+  type,
+  color,
+  htmlFor,
+  children,
+  style,
+}: ITypography): React.ReactElement => {
   const textToRender = Array.isArray(children) ? children.join('') : children;
   return (
     <Typo
       as={tag}
       type={type}
       color={color}
+      htmlFor={htmlFor}
       style={style}
       dangerouslySetInnerHTML={{ __html: textToRender }}
     />
