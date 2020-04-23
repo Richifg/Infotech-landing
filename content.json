@@ -20,8 +20,8 @@
         "text": "Beneficios"
       },
       {
-        "to": "contactenos",
-        "text": "Contactenos"
+        "to": "aplique",
+        "text": "Aplique"
       }
     ]
   },
@@ -231,7 +231,7 @@
       ]
     },
     {
-      "id": "contactenos",
+      "id": "aplique",
       "columns": [
         { 
           "background": true,
@@ -308,7 +308,7 @@
                 {
                   "name": "certificaciones",
                   "title": "Certificaciones",
-                  "subtitle": "Indique cuáles de las siguientes certificaciones posee",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias.",
                   "expandable": false,
                   "inputs": [
                     {
@@ -362,58 +362,37 @@
                   ]
                 },
                 {
-                  "name": "certificaciones",
-                  "title": "Certificaciones",
-                  "subtitle": "Indique cuáles de las siguientes certificaciones posee",
+                  "name": "interes",
+                  "title": "Zonas de Interés",
+                  "subtitle": "Marque las zonas en las cuales le interesa impartir clases. Puede marcar más de una.",
                   "expandable": false,
                   "inputs": [
                     {
-                      "name": "c1",
-                      "type": "radio",
-                      "label": "Certificado C1",
-                      "placeholder": "no",
+                      "name": "zona",
+                      "type": "checkbox",
+                      "label": "Zonas",
                       "options": [
                         {
-                          "value": "no",
-                          "label": "No, pero dispuesto a ser postulado para la prueba"
+                          "label": "Liberia",
+                          "value": "Liberia"
                         },
                         {
-                          "value": "si",
-                          "label": "Sí"
-                        }
-                      ]
-                    },
-                    {
-                      "name": "colypro",
-                      "type": "radio",
-                      "label": "Certificación COLYPRO",
-                      "placeholder": "no",
-                      "options": [
-                        {
-                          "value": "no",
-                          "label": "No, pero dispuesto a colegiarse con nosotros"
+                          "label": "Ciudad Quesada",
+                          "value": "Ciudad Quesada"
                         },
                         {
-                          "value": "si",
-                          "label": "Sí"
-                        }
-                      ]
-                    },
-                    {
-                      "name": "avalIna",
-                      "type": "radio",
-                      "label": "Aval del INA",
-                      "placeholder": "no",
-                      "options": [
-                        {
-                          "value": "no",
-                          "label": "No, pero dispuesto a ser propuesto para prueba de aval"
+                          "label": "Puntarenas",
+                          "value": "Puntarenas"
                         },
                         {
-                          "value": "si",
-                          "label": "Sí"
+                          "label": "Quepos",
+                          "value": "Quepos"
+                        },
+                        {
+                          "label": "Cartago",
+                          "value": "Cartago"
                         }
-                      ]
+                      ] 
                     }
                   ]
                 },

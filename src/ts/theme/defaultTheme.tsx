@@ -216,6 +216,14 @@ const theme = {
       maxWidth: '800px',
       textAlign: 'left',
     },
+    labelColumn: {
+      width: '40%',
+      margin: '.5em',
+    },
+    inputsColumn: {
+      width: '50%',
+      margin: '.5em',
+    },
     section: {
       marginBottom: '2em',
     },
@@ -294,6 +302,48 @@ const theme = {
         after: {
           width: '10px',
           height: '10px',
+          backgroundColor: colors.secondary.dark,
+        },
+      },
+    },
+    checkbox: {
+      root: {
+        width: '24px',
+        height: '24px',
+        borderRadius: '2px',
+        border: `1px solid ${colors.black.lighter}`,
+        backgroundColor: colors.white.base,
+        marginRight: '1em',
+        marginBottom: '1.5em',
+      },
+      after: {
+        size: '0px',
+      },
+      hover: {
+        root: {
+          borderWidth: '2px',
+          backgroundColor: colors.white.dark,
+        },
+      },
+      checked: {
+        root: {
+          borderColor: colors.secondary.base,
+          borderWidth: '1px !important',
+          backgroundColor: colors.white.base,
+        },
+        after: {
+          size: '20px !important',
+          backgroundColor: colors.secondary.base,
+        },
+      },
+      active: {
+        root: {
+          borderColor: colors.secondary.dark,
+          borderWidth: '3px',
+          backgroundColor: colors.white.dark,
+        },
+        after: {
+          size: '0px',
           backgroundColor: colors.secondary.dark,
         },
       },

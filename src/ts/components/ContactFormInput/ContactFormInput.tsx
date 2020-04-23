@@ -6,6 +6,7 @@ import InputFile from 'components/InputFile';
 import InputText from 'components/InputText';
 import InputArea from 'components/InputArea';
 import InputRadio from 'components/InputRadio';
+import InputCheckbox from 'components/InputCheckbox';
 
 interface IContactFormInput {
   name: string;
@@ -44,12 +45,30 @@ const ContactFormInput = ({
         />
       );
     case 'textarea':
-      return <InputArea name={name} placeholder={placeholder} rules={rules} register={register} />;
+      // eslint-disable-next-line prettier/prettier
+      return (
+        <InputArea 
+          name={name} 
+          placeholder={placeholder} 
+          rules={rules} 
+          register={register} 
+        />
+      );
     case 'radio':
       return (
         <InputRadio
           name={name}
           placeholder={placeholder}
+          options={options}
+          rules={rules}
+          register={register}
+        />
+      );
+    case 'checkbox':
+      // eslint-disable-next-line prettier/prettier
+      return (
+        <InputCheckbox
+          name={name}
           options={options}
           rules={rules}
           register={register}

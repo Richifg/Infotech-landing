@@ -20,14 +20,20 @@ const InputRadioController = ({
   options,
   register,
   View,
-}: IInputRadioController): ReactElement => (
-  <View
-    name={name}
-    placeholder={placeholder}
-    options={options}
-    ref={register({ validate: getValidateFunction(rules) })}
-  />
-);
+}: IInputRadioController): ReactElement => {
+  const checkedOptions = options.map((option) => ({
+    ...option,
+    checked: option.value === placeholder,
+    id: name + option.value,
+  }));
+  return (
+    <View
+      name={name}
+      options={checkedOptions}
+      ref={register({ validate: getValidateFunction(rules) })}
+    />
+  );
+};
 
 InputRadioController.defaultProps = {
   View: DefaultView,

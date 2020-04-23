@@ -29,14 +29,14 @@ const InputGroup = styled.div`
   align-items: flex-start;
   margin-bottom: ${(p) => p.theme.contactForm.inputGroup.marginBottom};
   & > :first-child {
-    width: 30%;
+    width: ${(p) => p.theme.contactForm.labelColumn.width};
     text-align: right;
-    margin-right: 0.5em;
+    margin-right: ${(p) => p.theme.contactForm.labelColumn.margin};
   }
   & > :last-child {
-    width: 50%;
+    width: ${(p) => p.theme.contactForm.inputsColumn.width};
     text-align: left;
-    margin-left: 0.5em;
+    margin-left: ${(p) => p.theme.contactForm.inputsColumn.margin};
   }
 `;
 const InputContainer = styled.div`

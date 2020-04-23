@@ -67,28 +67,32 @@ const Radio = styled.button`
   }
 `;
 
+interface IRadioOption extends IOption {
+  checked: boolean;
+  id: string;
+}
+
 interface IInputRadioView {
   name: string;
-  placeholder: string;
-  options: IOption[];
+  options: IRadioOption[];
 }
 
 const InputRadioView = forwardRef(function InputRadioView(
   props: IInputRadioView,
   ref: Ref<HTMLInputElement>,
 ) {
-  const { name, placeholder, options } = props;
+  const { name, options } = props;
   return (
     <Container>
       {options.map((option, index) => (
-        <Label key={index} htmlFor={name + option.value}>
+        <Label key={index} htmlFor={option.id}>
           <Input
             ref={ref}
             type="radio"
             name={name}
             value={option.value}
-            id={name + option.value}
-            defaultChecked={placeholder === option.value}
+            id={option.id}
+            defaultChecked={option.checked}
           />
           <Radio type="button" />
           <Typography type="body2" tag="span">
