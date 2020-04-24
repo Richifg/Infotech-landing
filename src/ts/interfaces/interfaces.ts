@@ -15,6 +15,7 @@ export interface IBannerContent {
   url: string;
   text: string;
   buttonText: string;
+  buttonTo: string;
 }
 
 export interface ISection {

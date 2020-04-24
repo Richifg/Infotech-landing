@@ -31,7 +31,13 @@ const ButtonContainer = styled.div`
   margin-left: 2em;
 `;
 
-const PageBanner = ({ id, url, text, buttonText }: IBannerContent): React.ReactElement => (
+const PageBanner = ({
+  id,
+  url,
+  text,
+  buttonText,
+  buttonTo,
+}: IBannerContent): React.ReactElement => (
   <BannerContainer id={id} url={url}>
     <ContentContainer>
       <BannerContent>
@@ -39,7 +45,7 @@ const PageBanner = ({ id, url, text, buttonText }: IBannerContent): React.ReactE
           {text}
         </Typography>
         <ButtonContainer>
-          <a href="#contactenos">
+          <a href={`#${buttonTo}`}>
             <Button>{buttonText}</Button>
           </a>
         </ButtonContainer>
