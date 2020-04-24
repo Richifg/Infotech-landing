@@ -365,7 +365,7 @@
                 {
                   "name": "interes",
                   "title": "Zonas de Interés",
-                  "subtitle": "Marque las zonas en las cuales le interesa impartir clases. Puede marcar más de una.",
+                  "subtitle": "Indique las zonas en las que le interesa impartir clases. Puede elejir más de una.",
                   "expandable": false,
                   "inputs": [
                     {

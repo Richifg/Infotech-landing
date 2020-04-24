@@ -49,9 +49,9 @@ const Radio = styled.button`
     border-width: ${(p) => p.theme.contactForm.radio.checked.root.borderWidth};
     background-color: ${(p) => p.theme.contactForm.radio.checked.root.backgroundColor};
     &::after {
-      width: ${(p) => p.theme.contactForm.radio.checked.after.width} !important;
-      height: ${(p) => p.theme.contactForm.radio.checked.after.height} !important;
-      background-color: ${(p) => p.theme.contactForm.radio.checked.after.backgroundColor};
+      width: ${(p) => p.theme.contactForm.radio.checked.dot.size} !important;
+      height: ${(p) => p.theme.contactForm.radio.checked.dot.size} !important;
+      background-color: ${(p) => p.theme.contactForm.radio.checked.dot.backgroundColor};
     }
   }
   input:active + &,
@@ -60,9 +60,9 @@ const Radio = styled.button`
     border-width: ${(p) => p.theme.contactForm.radio.active.root.borderWidth};
     background-color: ${(p) => p.theme.contactForm.radio.active.root.backgroundColor};
     &::after {
-      width: ${(p) => p.theme.contactForm.radio.active.after.width};
-      height: ${(p) => p.theme.contactForm.radio.active.after.height};
-      background-color: ${(p) => p.theme.contactForm.radio.active.after.backgroundColor};
+      width: ${(p) => p.theme.contactForm.radio.active.dot.size};
+      height: ${(p) => p.theme.contactForm.radio.active.dot.size};
+      background-color: ${(p) => p.theme.contactForm.radio.active.dot.backgroundColor};
     }
   }
 `;

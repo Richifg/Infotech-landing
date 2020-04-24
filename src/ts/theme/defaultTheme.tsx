@@ -271,52 +271,7 @@ const theme = {
         backgroundColor: colors.white.base,
         marginRight: '.5em',
       },
-      after: {
-        width: '0px',
-        height: '0px',
-      },
-      hover: {
-        root: {
-          borderWidth: '2px',
-          backgroundColor: colors.white.dark,
-        },
-      },
-      checked: {
-        root: {
-          borderColor: colors.secondary.base,
-          borderWidth: '1px !important',
-          backgroundColor: colors.white.base,
-        },
-        after: {
-          width: '18px',
-          height: '18px',
-          backgroundColor: colors.secondary.base,
-        },
-      },
-      active: {
-        root: {
-          borderColor: colors.secondary.dark,
-          borderWidth: '3px',
-          backgroundColor: colors.white.dark,
-        },
-        after: {
-          width: '10px',
-          height: '10px',
-          backgroundColor: colors.secondary.dark,
-        },
-      },
-    },
-    checkbox: {
-      root: {
-        width: '24px',
-        height: '24px',
-        borderRadius: '2px',
-        border: `1px solid ${colors.black.lighter}`,
-        backgroundColor: colors.white.base,
-        marginRight: '1em',
-        marginBottom: '1.5em',
-      },
-      after: {
+      dot: {
         size: '0px',
       },
       hover: {
@@ -331,7 +286,50 @@ const theme = {
           borderWidth: '1px !important',
           backgroundColor: colors.white.base,
         },
-        after: {
+        dot: {
+          size: '18px',
+          backgroundColor: colors.secondary.base,
+        },
+      },
+      active: {
+        root: {
+          borderColor: colors.secondary.dark,
+          borderWidth: '3px',
+          backgroundColor: colors.white.dark,
+        },
+        dot: {
+          size: '10px',
+          backgroundColor: colors.secondary.dark,
+        },
+      },
+    },
+    checkbox: {
+      root: {
+        width: '24px',
+        height: '24px',
+        borderRadius: '2px',
+        border: `1px solid ${colors.black.lighter}`,
+        backgroundColor: colors.white.base,
+        marginRight: '1em',
+        marginBottom: '1.5em',
+      },
+      checkmark: {
+        size: '0px',
+        backgroundColor: colors.secondary.base,
+      },
+      hover: {
+        root: {
+          borderWidth: '2px',
+          backgroundColor: colors.white.dark,
+        },
+      },
+      checked: {
+        root: {
+          borderColor: colors.secondary.base,
+          borderWidth: '1px',
+          backgroundColor: colors.white.base,
+        },
+        checkmark: {
           size: '20px !important',
           backgroundColor: colors.secondary.base,
         },
@@ -342,8 +340,8 @@ const theme = {
           borderWidth: '3px',
           backgroundColor: colors.white.dark,
         },
-        after: {
-          size: '0px',
+        checkmark: {
+          size: '7px',
           backgroundColor: colors.secondary.dark,
         },
       },

@@ -28,15 +28,25 @@ const Checkbox = styled.button`
   flex-shrink: 0;
   position: relative;
 
-  &::after {
+  &::after,
+  &::before {
     content: '';
     display: block;
-    border-radius: inherit;
-    transition: all 0.2s ease-out;
+    transition: all 0.1s ease-out;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    background-color: ${(p) => p.theme.contactForm.checkbox.checkmark.backgroundColor};
+    --size: ${(p) => p.theme.contactForm.checkbox.checkmark.size};
+    height: calc(var(--size) * 0.25);
+    border-radius: var(--size);
+  }
+
+  &::after {
+    width: var(--size);
+    transform: rotate(-44deg) translate(-7%, -82%);
+  }
+  &::before {
+    width: calc(var(--size) * 0.5);
+    transform: rotate(-134deg) translate(37%, -107%);
   }
 
   label:hover > & {
@@ -47,8 +57,10 @@ const Checkbox = styled.button`
     border-color: ${(p) => p.theme.contactForm.checkbox.checked.root.borderColor};
     border-width: ${(p) => p.theme.contactForm.checkbox.checked.root.borderWidth};
     background-color: ${(p) => p.theme.contactForm.checkbox.checked.root.backgroundColor};
-    &::after {
-      background-color: ${(p) => p.theme.contactForm.checkbox.checked.after.backgroundColor};
+    &::after,
+    &::before {
+      --size: ${(p) => p.theme.contactForm.checkbox.checked.checkmark.size};
+      background-color: ${(p) => p.theme.contactForm.checkbox.checked.checkmark.backgroundColor};
     }
   }
   input:active + &,
@@ -56,8 +68,10 @@ const Checkbox = styled.button`
     border-color: ${(p) => p.theme.contactForm.checkbox.active.root.borderColor};
     border-width: ${(p) => p.theme.contactForm.checkbox.active.root.borderWidth};
     background-color: ${(p) => p.theme.contactForm.checkbox.active.root.backgroundColor};
-    &::after {
-      background-color: ${(p) => p.theme.contactForm.checkbox.active.after.backgroundColor};
+    &::after,
+    &::before {
+      --size: ${(p) => p.theme.contactForm.checkbox.active.checkmark.size};
+      background-color: ${(p) => p.theme.contactForm.checkbox.active.checkmark.backgroundColor};
     }
   }
 `;
