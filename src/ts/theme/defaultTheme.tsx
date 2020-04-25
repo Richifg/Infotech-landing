@@ -4,25 +4,28 @@ const colors = {
     dark: '#E1E1E1',
   },
   black: {
-    base: '#000',
-    light: '#444',
     lighter: '#656565',
+    light: '#444',
+    base: '#000',
   },
   // dark blue
   primary: {
-    base: '#003E7F',
     light: '#0D4B8C',
+    base: '#003E7F',
     dark: '#003172',
   },
   // orange
   secondary: {
-    base: '#C75629',
     light: '#D46336',
+    base: '#C75629',
     dark: '#BA491C',
   },
   // red
   alert: {
     base: 'red',
+  },
+  success: {
+    base: 'green',
   },
 };
 
@@ -247,10 +250,14 @@ const theme = {
         border: 'none',
         borderRadius: '10px',
         color: colors.black.base,
+        outlineColor: colors.secondary.light,
         backgroundColor: colors.white.base,
-        padding: '.5em 1em',
+        paddingY: '.5em',
+        paddingX: '1em',
         width: '100%',
-        marginBottom: '0',
+        marginBottom: 0,
+        fontSize: '1rem',
+        lineHeight: 1.15,
       },
       small: {
         width: '50%',

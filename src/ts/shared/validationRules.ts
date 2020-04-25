@@ -1,21 +1,14 @@
-import { IRules, isFileInfo } from 'interfaces';
+import { IRules, IFileInfo } from 'interfaces';
 import { Validate } from 'react-hook-form';
 
 // returns a validate object
-const getValidateFunction = (rules: IRules): Validate => (data) => {
+export const getValidFunctionInput = (rules: IRules): Validate => (data) => {
   if (rules) {
     if (data) {
-      if (typeof data === 'string') {
-        if (rules.maxLength && data.length > rules.maxLength)
-          return `Máximo ${rules.maxLength} caractéres`;
-        if (rules.minLength && data.length < rules.minLength)
-          return `Mínimo ${rules.minLength} caractéres`;
-      }
-      if (isFileInfo(data)) {
-        const ext = data.name.split('.').reverse()[0];
-        if (rules.fileType && ext !== rules.fileType) return `Archivo debe ser de tipo ${ext}`;
-        if (rules.size && data.size > rules.size) return `Máximo tamaño de archivo ${rules.size}`;
-      }
+      if (rules.maxLength && data.length > rules.maxLength)
+        return `Máximo ${rules.maxLength} caractéres`;
+      if (rules.minLength && data.length < rules.minLength)
+        return `Mínimo ${rules.minLength} caractéres`;
     } else {
       if (rules.required) return 'Respuesta requerida';
     }
@@ -23,4 +16,17 @@ const getValidateFunction = (rules: IRules): Validate => (data) => {
   return true;
 };
 
-export { getValidateFunction };
+export const getValidFunctionFile = (rules: IRules): Validate => (data: IFileInfo) => {
+  if (rules) {
+    if (data) {
+      const ext = data.name.split('.').reverse()[0];
+      if (rules.fileType && ext !== rules.fileType)
+        return `Archivo debe ser de tipo ${rules.fileType}`;
+      if (rules.size && data.size > rules.size)
+        return `Archivo excede el tamáño máximo de ${rules.size}`;
+    } else {
+      if (rules.required) return 'Archivo requerido';
+    }
+  }
+  return true;
+};

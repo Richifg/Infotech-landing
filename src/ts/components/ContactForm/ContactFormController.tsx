@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
 import googleScript from 'services/googleScript';
-import { getValidateFunction } from 'shared/validationRules';
 import { IFormSection } from 'interfaces';
 import { useArrayCounter } from 'shared/customHooks';
 import ContactFormView from './ContactFormView';
@@ -31,14 +30,13 @@ const ContactForm = ({ sections }: IContactForm): ReactElement => {
         ...section.inputs.map((input) => ({
           ...input,
           name: input.name + nameSuffix,
-          register: register({ validate: getValidateFunction(input.rules) }),
         })),
       );
     }
     return { ...section, inputs: sectionInputs };
   });
 
-  // flatten errors object so view can blindly access them by input name alone
+  // flatten errors object so View can blindly access them by input name alone
   const flattenErrors: any = {};
   Object.keys(errors).forEach((key) => {
     if (Array.isArray(errors[key])) {

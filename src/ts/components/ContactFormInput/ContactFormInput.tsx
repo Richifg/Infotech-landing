@@ -17,6 +17,7 @@ interface IContactFormInput {
   register: ReturnType<typeof useForm>['register'];
   unregister: ReturnType<typeof useForm>['unregister'];
   setValue: ReturnType<typeof useForm>['setValue'];
+  errors: any;
 }
 
 const ContactFormInput = ({
@@ -28,6 +29,7 @@ const ContactFormInput = ({
   register,
   unregister,
   setValue,
+  errors,
 }: IContactFormInput): ReactElement => {
   //console.log(name, type, placeholder, options, rules);
   switch (type) {
@@ -81,7 +83,9 @@ const ContactFormInput = ({
           unregister={unregister}
           setValue={setValue}
           name={name}
+          placeholder={placeholder}
           rules={rules}
+          errors={errors}
         />
       );
     default:

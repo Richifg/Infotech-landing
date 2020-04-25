@@ -400,7 +400,7 @@
                 {
                   "name": "archivos",
                   "title": "Archivos",
-                  "subtitle": "Es necesario adjuntar su CV y su título de Bachillerato de Inglés o afín. Solo se aceptan archivos tipos PDF, máximo 4MB.",
+                  "subtitle": "Es necesario adjuntar su CV y su título de Bachillerato de Inglés o afín. Solo se aceptan archivos tipos PDF de máximo 4MB.",
                   "expandable": false,
                   "inputs": [
                     {

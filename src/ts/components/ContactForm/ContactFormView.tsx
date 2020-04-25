@@ -95,6 +95,7 @@ const ContactFormView = ({
                   register={register}
                   unregister={unregister}
                   setValue={setValue}
+                  errors={errors}
                 />
                 <ErrorContainer>
                   <Typography type="body2">{errors?.[input.name]?.message}</Typography>
