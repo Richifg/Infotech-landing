@@ -8,4 +8,6 @@ export type TIconName =
   | 'clock'
   | 'health'
   | 'teamwork'
-  | 'calendar';
+  | 'calendar'
+  | 'plus'
+  | 'minus';

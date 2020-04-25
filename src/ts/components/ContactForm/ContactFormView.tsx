@@ -1,11 +1,19 @@
 import React, { ReactElement, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { IFormSection } from 'interfaces';
 import ContactFormInput from 'components/ContactFormInput';
 import Typography from 'components/Typography';
+import IconButton from 'components/IconButton';
 import Button from 'components/Button';
+
+const slideUp = keyframes`
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const FormContent = styled.div`
   background-color: ${(p) => p.theme.contactForm.root.backgroundColor};
@@ -38,6 +46,10 @@ const InputGroup = styled.div`
     text-align: left;
     margin-left: ${(p) => p.theme.contactForm.inputsColumn.margin};
   }
+
+  opacity: 0;
+  transform: translateY(50%);
+  animation: ${slideUp} 0.3s ease-out forwards;
 `;
 const InputContainer = styled.div`
   display: flex;
@@ -50,6 +62,8 @@ const ErrorContainer = styled.div`
 `;
 const ButtonsContainer = styled.div`
   display: flex;
+  justify-content: flex-end;
+  width: 100%;
 `;
 
 interface IContactFormView {
@@ -74,16 +88,16 @@ const ContactFormView = ({
   useEffect(() => console.log('RE-RENDER'));
   return (
     <FormContent>
-      {sections.map((section, index) => (
-        <FormSection key={index}>
+      {sections.map((section, sectionIndex) => (
+        <FormSection key={sectionIndex}>
           <SectionTitle>
             <Typography type="headline3">{section.title}</Typography>
           </SectionTitle>
           <SectionSubtitle>
             <Typography type="body2">{section.subtitle}</Typography>
           </SectionSubtitle>
-          {section.inputs.map((input, index) => (
-            <InputGroup key={index}>
+          {section.inputs.map((input, inputIndex) => (
+            <InputGroup key={inputIndex}>
               <Typography type="body1">{input.label}:</Typography>
               <InputContainer>
                 <ContactFormInput
@@ -100,19 +114,15 @@ const ContactFormView = ({
                 <ErrorContainer>
                   <Typography type="body2">{errors?.[input.name]?.message}</Typography>
                 </ErrorContainer>
+                {section.expandable && inputIndex === section.inputs.length - 1 && (
+                  <ButtonsContainer>
+                    <IconButton name="plus" onClick={() => onAddGroup(sectionIndex)} />
+                    <IconButton name="minus" onClick={() => onRemoveGroup(sectionIndex)} />
+                  </ButtonsContainer>
+                )}
               </InputContainer>
             </InputGroup>
           ))}
-          {section.expandable && (
-            <ButtonsContainer>
-              <Button type="button" onClick={() => onAddGroup(index)}>
-                +
-              </Button>
-              <Button type="button" onClick={() => onRemoveGroup(index)}>
-                -
-              </Button>
-            </ButtonsContainer>
-          )}
         </FormSection>
       ))}
       <Button type="submit">SUBMIT!!!</Button>

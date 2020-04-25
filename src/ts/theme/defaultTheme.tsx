@@ -122,6 +122,35 @@ const theme = {
       backgroundColor: colors.secondary.dark,
     },
   },
+  iconButton: {
+    root: {
+      margin: '.5em',
+      padding: '1em',
+      border: 'none',
+      borderRadius: '2em',
+      backgroundColor: 'transparent',
+      color: 'inherit',
+    },
+    decoration: {
+      size: '0%',
+      backgroundColor: 'transparent',
+      borderRadius: 'inherit',
+    },
+    hover: {
+      root: {},
+      decoration: {
+        size: '75%',
+        backgroundColor: colors.secondary.dark,
+      },
+    },
+    active: {
+      root: {},
+      decoration: {
+        size: '100%',
+        backgroundColor: colors.secondary.light,
+      },
+    },
+  },
   navbar: {
     root: {
       backgroundColor: colors.white.base,
