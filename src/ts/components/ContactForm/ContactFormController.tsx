@@ -8,9 +8,10 @@ import ContactFormView from './ContactFormView';
 
 interface IContactForm {
   sections: IFormSection[];
+  buttonText: string;
 }
 
-const ContactForm = ({ sections }: IContactForm): ReactElement => {
+const ContactForm = ({ sections, buttonText }: IContactForm): ReactElement => {
   const [groupCounts, addGroup, removeGroup] = useArrayCounter(sections.length);
   const { register, unregister, setValue, errors, handleSubmit } = useForm();
 
@@ -57,6 +58,7 @@ const ContactForm = ({ sections }: IContactForm): ReactElement => {
         setValue={setValue}
         errors={flattenErrors}
         sections={sectionToRender}
+        buttonText={buttonText}
         onAddGroup={addGroup}
         onRemoveGroup={removeGroup}
       />

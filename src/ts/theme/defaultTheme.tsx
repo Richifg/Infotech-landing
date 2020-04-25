@@ -108,7 +108,7 @@ const theme = {
   },
   button: {
     root: {
-      padding: '1em 1.5em',
+      padding: '1em 3em',
       border: 'none',
       borderRadius: '8px',
       backgroundColor: colors.secondary.base,

@@ -65,6 +65,10 @@ const ButtonsContainer = styled.div`
   justify-content: flex-end;
   width: 100%;
 `;
+const SubmitContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 interface IContactFormView {
   onAddGroup?(index: number): void;
@@ -74,16 +78,18 @@ interface IContactFormView {
   setValue: ReturnType<typeof useForm>['setValue'];
   errors: any;
   sections: IFormSection[];
+  buttonText: string;
 }
 
 const ContactFormView = ({
   onAddGroup,
   onRemoveGroup,
-  sections,
   register,
   unregister,
   setValue,
   errors,
+  sections,
+  buttonText,
 }: IContactFormView): ReactElement => {
   useEffect(() => console.log('RE-RENDER'));
   return (
@@ -125,7 +131,9 @@ const ContactFormView = ({
           ))}
         </FormSection>
       ))}
-      <Button type="submit">SUBMIT!!!</Button>
+      <SubmitContainer>
+        <Button type="submit">{buttonText}</Button>
+      </SubmitContainer>
     </FormContent>
   );
 };

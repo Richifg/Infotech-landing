@@ -37,6 +37,7 @@ export interface ISectionElement {
   variants?: object;
   cards?: ICard[];
   icons?: IIcon[];
+  buttonText?: string;
   formSections?: IFormSection[];
 }
 
