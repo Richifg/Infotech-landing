@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactType } from 'react';
 import { useForm } from 'react-hook-form';
-import { getValidateFunction } from 'shared/validationRules';
+import { getValidFunctionInput } from 'shared/validationRules';
 import { IRules } from 'interfaces';
 import DefaultView from './InputTextView';
 
@@ -28,7 +28,7 @@ const InputTextController = ({
       name={name}
       placeholder={placeholder}
       small={isSmall}
-      ref={register({ validate: getValidateFunction(rules) })}
+      ref={register({ validate: getValidFunctionInput(rules) })}
     />
   );
 };

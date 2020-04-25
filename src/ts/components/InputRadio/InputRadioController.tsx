@@ -1,6 +1,6 @@
 import React, { ReactType, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
-import { getValidateFunction } from 'shared/validationRules';
+import { getValidFunctionInput } from 'shared/validationRules';
 import { IRules, IOption } from 'interfaces';
 import DefaultView from './InputRadioView';
 
@@ -30,7 +30,7 @@ const InputRadioController = ({
     <View
       name={name}
       options={checkedOptions}
-      ref={register({ validate: getValidateFunction(rules) })}
+      ref={register({ validate: getValidFunctionInput(rules) })}
     />
   );
 };

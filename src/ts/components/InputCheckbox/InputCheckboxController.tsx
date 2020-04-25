@@ -1,6 +1,6 @@
 import React, { ReactType, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
-import { getValidateFunction } from 'shared/validationRules';
+import { getValidFunctionInput } from 'shared/validationRules';
 import { IRules, IOption } from 'interfaces';
 import DefaultView from './InputCheckboxView';
 
@@ -20,7 +20,7 @@ const InputCheckboxController = ({
   View,
 }: IInputCheckboxController): ReactElement => {
   const namedOptions = options.map((option, index) => ({ ...option, name: `${name}[${index}]` }));
-  return <View options={namedOptions} ref={register({ validate: getValidateFunction(rules) })} />;
+  return <View options={namedOptions} ref={register({ validate: getValidFunctionInput(rules) })} />;
 };
 
 InputCheckboxController.defaultProps = {
