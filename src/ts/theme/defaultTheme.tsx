@@ -162,11 +162,28 @@ const theme = {
     root: {
       backgroundColor: colors.white.base,
       height: '100px',
-      opacity: '1',
-      padding: '0 2em',
+      padding: '0 32px',
+    },
+    menu: {
+      padding: 0,
+      backgroundColor: 'transparent',
     },
     logo: {
       maxWidth: '200px',
+    },
+    mobile: {
+      root: {
+        backgroundColor: colors.white.base,
+        height: '50px',
+        padding: '0 32px',
+      },
+      menu: {
+        padding: '32px 0 128px',
+        backgroundColor: colors.white.darker,
+      },
+      logo: {
+        maxWidth: '150px',
+      },
     },
   },
   navlink: {

@@ -10,7 +10,6 @@ interface IBannerContainer {
   url: string;
 }
 const BannerContainer = styled.section<IBannerContainer>`
-  margin-top: ${(p) => p.theme.navbar.root.height};
   background: url("${(p) => p.url}"), black;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +18,11 @@ const BannerContainer = styled.section<IBannerContainer>`
   max-height: ${(p) => p.theme.banner.root.maxHeight};
   padding: ${(p) => p.theme.banner.root.padding};
   box-sizing: border-box;
+
+  margin-top: ${(p) => p.theme.navbar.root.height};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    margin-top: ${(p) => p.theme.navbar.mobile.root.height}
+  }
 `;
 
 const BannerContent = styled.div`

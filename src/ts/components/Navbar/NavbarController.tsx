@@ -9,6 +9,7 @@ interface INavbar extends INavbarContent, RouteComponentProps {}
 
 const Navbar = ({ links, logoAlt, logoUrl, history }: INavbar): React.ReactElement => {
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [isOpen, setIsOpen] = useState(false);
 
   // keep track of active link based on url hash
   useEffect(() => {
@@ -16,7 +17,17 @@ const Navbar = ({ links, logoAlt, logoUrl, history }: INavbar): React.ReactEleme
     setActiveIndex(newIndex);
   }, [history.location.pathname, links]);
 
-  return <NavbarView links={links} logoUrl={logoUrl} logoAlt={logoAlt} activeIndex={activeIndex} />;
+  return (
+    <NavbarView
+      links={links}
+      logoUrl={logoUrl}
+      logoAlt={logoAlt}
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      onToggle={() => setIsOpen(!isOpen)}
+      activeIndex={activeIndex}
+    />
+  );
 };
 
 export default withRouter(Navbar);

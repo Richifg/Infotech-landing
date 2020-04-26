@@ -12,3 +12,4 @@ export type TIconName =
   | 'plus'
   | 'minus'
   | 'x';
+  | 'burger';
