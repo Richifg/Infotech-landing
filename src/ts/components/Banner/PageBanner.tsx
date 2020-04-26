@@ -14,14 +14,18 @@ const BannerContainer = styled.section<IBannerContainer>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: calc(${(p) => p.theme.banner.root.height} - ${(p) => p.theme.navbar.root.height});
-  max-height: ${(p) => p.theme.banner.root.maxHeight};
-  padding: ${(p) => p.theme.banner.root.padding};
   box-sizing: border-box;
 
+  max-height: ${(p) => p.theme.banner.root.maxHeight};
+  height: calc(${(p) => p.theme.banner.root.height} - ${(p) => p.theme.navbar.root.height});
   margin-top: ${(p) => p.theme.navbar.root.height};
+  padding: ${(p) => p.theme.banner.root.padding};
+
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
-    margin-top: ${(p) => p.theme.navbar.mobile.root.height}
+    max-height: none;
+    height: ${(p) => p.theme.banner.mobile.root.height};
+    margin-top: ${(p) => p.theme.navbar.mobile.root.height};
+    padding: ${(p) => p.theme.banner.mobile.root.padding};
   }
 `;
 
@@ -30,12 +34,19 @@ const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
   & > h1 {
-    text-shadow: ${(p) => p.theme.banner.content.textShadow};
+    text-shadow: 1px 1px 2px black;
+    & span {
+      color: ${(p) => p.theme.colors.primary.base};
+      text-shadow: 1px 1px 1px white;
+    }
   }
 `;
 
 const ButtonContainer = styled.div`
-  margin-left: 2em;
+  display: flex;
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    justify-content: center;
+  }
 `;
 
 const PageBanner = ({

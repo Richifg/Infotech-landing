@@ -27,7 +27,7 @@
   },
   "banner": {
     "url": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
-    "text": "Buscamos profesores de inglés capacitados para impartir cursos avalados por el INA",
+    "text": "Buscamos profesores de inglés capacitados </br><span>para impartir cursos avalados por el INA<span>",
     "buttonText": "Aplicá aquí",
     "buttonTo": "aplique"
   },

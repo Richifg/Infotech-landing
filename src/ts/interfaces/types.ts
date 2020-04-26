@@ -11,5 +11,5 @@ export type TIconName =
   | 'calendar'
   | 'plus'
   | 'minus'
-  | 'x';
+  | 'x'
   | 'burger';

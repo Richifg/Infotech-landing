@@ -21,7 +21,7 @@ const Container = styled.div`
   background-color: ${(p) => p.theme.message.root.backgroundColor};
   padding: ${(p) => p.theme.message.root.padding};
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 4;
 `;
 
 const slideUp = keyframes`

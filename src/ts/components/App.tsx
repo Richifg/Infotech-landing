@@ -5,9 +5,9 @@ import { ThemeProvider } from 'styled-components';
 import content from '../../../content.json';
 import theme from 'theme/defaultTheme';
 
-import Navbar from 'components/Navbar/NavbarController';
-import PageBanner from 'components/PageBanner';
-import PageSection from 'components/PageSection';
+import Navbar from 'components/Navbar';
+import Banner from 'components/Banner';
+import Section from 'components/Section';
 
 const App = (): React.ReactElement => (
   <ThemeProvider theme={theme}>
@@ -19,9 +19,9 @@ const App = (): React.ReactElement => (
           </header>
 
           <main>
-            <PageBanner {...content.banner} />
+            <Banner {...content.banner} />
             {content.sections.map((section) => (
-              <PageSection key={section.id} {...section} />
+              <Section key={section.id} {...section} />
             ))}
           </main>
         </Route>

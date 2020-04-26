@@ -26,6 +26,14 @@ const Typo = styled.p<ITypo>`
   letter-spacing: ${(p) => p.theme.typography[p.type].letterSpacing};
   text-transform: ${(p) => p.theme.typography[p.type].textTransform};
   color: ${(p) => (p.color ? p.color : 'inherit')};
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    font-size: ${(p) => p.theme.typography.mobile[p.type].fontSize};
+    font-weight: ${(p) => p.theme.typography.mobile[p.type].fontWeight};
+    line-height: ${(p) => p.theme.typography.mobile[p.type].lineHeight};
+    letter-spacing: ${(p) => p.theme.typography.mobile[p.type].letterSpacing};
+    text-transform: ${(p) => p.theme.typography.mobile[p.type].textTransform};
+  }
 `;
 
 interface ITypography extends ITypo {

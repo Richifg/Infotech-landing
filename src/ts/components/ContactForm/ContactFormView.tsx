@@ -37,6 +37,7 @@ const SectionSubtitle = styled.div`
   margin-bottom: ${(p) => p.theme.contactForm.sectionSubtitle.marginBottom};
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
     max-width: none;
+    margin-bottom: ${(p) => p.theme.contactForm.mobile.sectionSubtitle.marginBottom};
   }
 `;
 const InputGroup = styled.div`

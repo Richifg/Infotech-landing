@@ -43,14 +43,22 @@ const theme = {
       color: colors.black.base,
       backgroundColor: 'transparent',
       padding: '6em 4em',
+      margin: 0,
     },
     alt: {
       color: colors.white.base,
       backgroundColor: colors.primary.base,
+      margin: '-32px 0',
+    },
+    full: {
+      backgroundColor: colors.white.base,
     },
     mobile: {
       root: {
         padding: '3em 1.5em',
+      },
+      alt: {
+        margin: 0,
       },
     },
   },
@@ -112,15 +120,73 @@ const theme = {
       fontWeight: '700',
       textTransform: 'uppercase',
     },
+    mobile: {
+      headline1: {
+        fontSize: `${40 / 16}rem`,
+        lineHeight: '1.2',
+        letterSpacing: '1px',
+        fontWeight: '700',
+        textTransform: 'none',
+      },
+      headline2: {
+        fontSize: `${32 / 16}rem`,
+        lineHeight: '1.2',
+        letterSpacing: '1.25px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+      },
+      headline3: {
+        fontSize: `${24 / 16}rem`,
+        lineHeight: '1.5',
+        letterSpacing: '1px',
+        fontWeight: '600',
+        textTransform: 'none',
+      },
+      subtitle1: {
+        fontSize: `${16 / 16}rem`,
+        lineHeight: '1.5',
+        letterSpacing: '0.15px',
+        fontWeight: '600',
+        textTransform: 'none',
+      },
+      subtitle2: {
+        fontSize: `${14 / 16}rem`,
+        lineHeight: '1.5',
+        letterSpacing: '0.1px',
+        fontWeight: '400',
+        textTransform: 'none',
+      },
+      body1: {
+        fontSize: `${17 / 16}rem`,
+        lineHeight: '1.9',
+        letterSpacing: '0.5px',
+        fontWeight: '500',
+        textTransform: 'none',
+      },
+      body2: {
+        fontSize: `${16 / 16}rem`,
+        lineHeight: '1.7',
+        letterSpacing: '0.25px',
+        fontWeight: '500',
+        textTransform: 'none',
+      },
+      button: {
+        fontSize: `${16 / 16}rem`,
+        lineHeight: '1.5',
+        letterSpacing: '1.25px',
+        fontWeight: '700',
+        textTransform: 'uppercase',
+      },
+    },
   },
   button: {
     root: {
       padding: '1em 3em',
       border: 'none',
-      borderRadius: '8px',
+      borderRadius: '0px',
       backgroundColor: colors.secondary.light,
       color: colors.white.base,
-      margin: '2em 1em',
+      margin: '2em 0em',
     },
     hover: {
       backgroundColor: colors.secondary.base,
@@ -206,7 +272,12 @@ const theme = {
     },
     content: {
       maxWidth: '800px',
-      textShadow: '1px 1px 6px black',
+    },
+    mobile: {
+      root: {
+        height: 'auto',
+        padding: '2em 1em 3em',
+      },
     },
   },
   sectionTitle: {
@@ -307,7 +378,7 @@ const theme = {
     sectionTitle: {
       borderBottom: '2px solid white',
       maxWidth: '45%',
-      marginBottom: '1.25em',
+      marginBottom: '.5em',
     },
     sectionSubtitle: {
       maxWidth: '100%',
@@ -322,7 +393,7 @@ const theme = {
     input: {
       root: {
         border: 'none',
-        borderRadius: '10px',
+        borderRadius: '0px',
         color: colors.black.base,
         outlineColor: colors.secondary.light,
         backgroundColor: colors.white.base,
@@ -430,6 +501,11 @@ const theme = {
     error: {
       color: colors.alert.base,
       minHeight: '1.4em',
+    },
+    mobile: {
+      sectionSubtitle: {
+        marginBottom: '1.5em',
+      },
     },
   },
   message: {

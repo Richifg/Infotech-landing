@@ -15,7 +15,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
 
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
