@@ -11,7 +11,7 @@ const Arrow = styled.button<IArrow>`
   height: ${(p) => p.theme.carousel.arrow.height};
   position: absolute;
   left: ${(p) => (p.next ? '100%' : '0%')};
-  top: 50%;
+  top: 35%;
   transform: ${(p) =>
     p.next ? 'translateY(-50%) rotate(180deg) translateX(-50%)' : 'translate(-150%, -50%)'};
   cursor: pointer;

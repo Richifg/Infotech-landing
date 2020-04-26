@@ -20,6 +20,10 @@ const Container = styled.div<IContainer>`
     return 'flex-start';
   }};
 
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    align-self: flex-start;
+  }
+
   &::before {
     position: absolute;
     content: '';

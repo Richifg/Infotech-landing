@@ -2,6 +2,7 @@ const colors = {
   white: {
     base: '#F8F8F8',
     dark: '#E1E1E1',
+    darker: '#DDD',
   },
   black: {
     lighter: '#656565',
@@ -31,6 +32,7 @@ const colors = {
 
 const theme = {
   colors,
+  breakpoint: '768px',
   layout: {
     root: {
       maxWidth: '1440px',
@@ -40,11 +42,16 @@ const theme = {
     root: {
       color: colors.black.base,
       backgroundColor: 'transparent',
-      padding: '4em 4em',
+      padding: '6em 4em',
     },
     alt: {
       color: colors.white.base,
       backgroundColor: colors.primary.base,
+    },
+    mobile: {
+      root: {
+        padding: '3em 1.5em',
+      },
     },
   },
   typography: {
@@ -111,12 +118,12 @@ const theme = {
       padding: '1em 3em',
       border: 'none',
       borderRadius: '8px',
-      backgroundColor: colors.secondary.base,
+      backgroundColor: colors.secondary.light,
       color: colors.white.base,
-      margin: '2em 1em 2em 0',
+      margin: '2em 1em',
     },
     hover: {
-      backgroundColor: colors.secondary.light,
+      backgroundColor: colors.secondary.base,
     },
     active: {
       backgroundColor: colors.secondary.dark,
@@ -154,9 +161,12 @@ const theme = {
   navbar: {
     root: {
       backgroundColor: colors.white.base,
-      height: '120px',
+      height: '100px',
       opacity: '1',
       padding: '0 2em',
+    },
+    logo: {
+      maxWidth: '200px',
     },
   },
   navlink: {
@@ -171,11 +181,6 @@ const theme = {
       backgroundColor: colors.secondary.base,
     },
   },
-  navlogo: {
-    root: {
-      maxWidth: '230px',
-    },
-  },
   banner: {
     root: {
       maxHeight: '1040px',
@@ -184,6 +189,7 @@ const theme = {
     },
     content: {
       maxWidth: '800px',
+      textShadow: '1px 1px 6px black',
     },
   },
   sectionTitle: {
@@ -220,18 +226,27 @@ const theme = {
     },
   },
   carousel: {
-    root: {},
+    root: {
+      width: '100%',
+    },
     arrow: {
       height: '50px',
       width: '25px',
-      thickness: '4px',
+      thickness: '6px',
       angle: '30deg',
       color: colors.secondary.base,
       backgroundColor: 'transparent',
     },
+    mobile: {
+      root: {
+        width: 'calc(100% - 30px)',
+      },
+    },
   },
   iconList: {
-    root: {},
+    root: {
+      margin: '50px 0',
+    },
     icon: {
       maxWidth: '150px',
       color: colors.secondary.base,
@@ -240,6 +255,19 @@ const theme = {
     caption: {
       maxWidth: '200px',
       marginTop: '2em',
+    },
+    mobile: {
+      root: {
+        margin: '25px 0',
+      },
+      icon: {
+        maxWidth: '75px',
+        margin: '10px',
+      },
+      caption: {
+        maxWidth: '120px',
+        marginTop: '1em',
+      },
     },
   },
   contactForm: {
@@ -265,7 +293,7 @@ const theme = {
       marginBottom: '1.25em',
     },
     sectionSubtitle: {
-      maxWidth: '55%',
+      maxWidth: '100%',
       marginBottom: '3em',
     },
     inputGroup: {
@@ -289,7 +317,7 @@ const theme = {
         lineHeight: 1.15,
       },
       small: {
-        width: '50%',
+        width: '60%',
       },
       placeholder: {
         color: colors.black.lighter,

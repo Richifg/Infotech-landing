@@ -27,21 +27,28 @@ const SectionTitle = styled.div`
   border-bottom: ${(p) => p.theme.contactForm.sectionTitle.borderBottom};
   max-width: ${(p) => p.theme.contactForm.sectionTitle.maxWidth};
   margin-bottom: ${(p) => p.theme.contactForm.sectionTitle.marginBottom};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    max-width: none;
+  }
 `;
 const SectionSubtitle = styled.div`
+  color: ${(p) => p.theme.colors.white.darker};
   max-width: ${(p) => p.theme.contactForm.sectionSubtitle.maxWidth};
   margin-bottom: ${(p) => p.theme.contactForm.sectionSubtitle.marginBottom};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    max-width: none;
+  }
 `;
 const InputGroup = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: ${(p) => p.theme.contactForm.inputGroup.marginBottom};
-  & > :first-child {
+  & > *:first-child {
     width: ${(p) => p.theme.contactForm.labelColumn.width};
     text-align: right;
     margin-right: ${(p) => p.theme.contactForm.labelColumn.margin};
   }
-  & > :last-child {
+  & > *:last-child {
     width: ${(p) => p.theme.contactForm.inputsColumn.width};
     text-align: left;
     margin-left: ${(p) => p.theme.contactForm.inputsColumn.margin};
@@ -50,6 +57,25 @@ const InputGroup = styled.div`
   opacity: 0;
   transform: translateY(50%);
   animation: ${slideUp} 0.3s ease-out forwards;
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    flex-direction: column;
+    & > *:first-child {
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+    }
+    & > *:last-child {
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+`;
+const LabelContainer = styled.div`
+  & > * {
+    font-weight: 700;
+  }
 `;
 const InputContainer = styled.div`
   display: flex;
@@ -104,7 +130,9 @@ const ContactFormView = ({
           </SectionSubtitle>
           {section.inputs.map((input, inputIndex) => (
             <InputGroup key={inputIndex}>
-              <Typography type="body1">{input.label}:</Typography>
+              <LabelContainer>
+                <Typography type="body1">{input.label}:</Typography>
+              </LabelContainer>
               <InputContainer>
                 <ContactFormInput
                   name={input.name}

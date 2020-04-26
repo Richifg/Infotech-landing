@@ -1,9 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-
 import Typography from 'components/Typography';
 import Icon from 'components/Icon';
-import { colors } from 'theme/defaultTheme';
 import { IIcon } from 'interfaces';
 
 const List = styled.ul`
@@ -14,6 +12,10 @@ const List = styled.ul`
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin: ${(p) => p.theme.iconList.root.margin};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    margin: ${(p) => p.theme.iconList.mobile.root.margin};
+  }
 `;
 
 const Item = styled.li`
@@ -22,7 +24,26 @@ const Item = styled.li`
   justify-content: flex-start;
   align-items: center;
   margin: ${(p) => p.theme.iconList.icon.margin};
-  color: ${colors.secondary.base};
+  color: ${(p) => p.theme.iconList.icon.color};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    margin: ${(p) => p.theme.iconList.mobile.icon.margin};
+  }
+`;
+
+const CaptionContainer = styled.div`
+  max-width: ${(p) => p.theme.iconList.caption.maxWidth};
+  margin-top: ${(p) => p.theme.iconList.caption.marginTop};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    max-width: ${(p) => p.theme.iconList.mobile.caption.maxWidth};
+    margin-top: ${(p) => p.theme.iconList.mobile.caption.marginTop};
+  }
+`;
+
+const IconContainer = styled.div`
+  font-size: ${(p) => p.theme.iconList.icon.maxWidth};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    font-size: ${(p) => p.theme.iconList.mobile.icon.maxWidth};
+  }
 `;
 
 interface IIconList {
@@ -30,19 +51,18 @@ interface IIconList {
 }
 const IconList = ({ icons }: IIconList): ReactElement => {
   const theme = useContext(ThemeContext);
-  const textTheme = theme.iconList.caption;
   return (
     <List>
       {icons.map((icon, index) => (
         <Item key={index}>
-          <Icon name={icon.name} size={theme.iconList.icon.maxWidth} />
-          <Typography
-            type="subtitle1"
-            color={colors.black.light}
-            style={{ marginTop: textTheme.marginTop, maxWidth: textTheme.maxWidth }}
-          >
-            {icon.caption}
-          </Typography>
+          <IconContainer>
+            <Icon name={icon.name} />
+          </IconContainer>
+          <CaptionContainer>
+            <Typography type="subtitle1" color={theme.colors.black.light}>
+              {icon.caption}
+            </Typography>
+          </CaptionContainer>
         </Item>
       ))}
     </List>

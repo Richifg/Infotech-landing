@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { INavbarContent } from 'interfaces';
 
-import View from './View';
+import NavbarView from './NavbarView';
 
 interface INavbar extends INavbarContent, RouteComponentProps {}
 
@@ -16,7 +16,7 @@ const Navbar = ({ links, logoAlt, logoUrl, history }: INavbar): React.ReactEleme
     setActiveIndex(newIndex);
   }, [history.location.pathname, links]);
 
-  return <View links={links} logoUrl={logoUrl} logoAlt={logoAlt} activeIndex={activeIndex} />;
+  return <NavbarView links={links} logoUrl={logoUrl} logoAlt={logoAlt} activeIndex={activeIndex} />;
 };
 
 export default withRouter(Navbar);

@@ -20,6 +20,11 @@ const Input = styled.input<IInput>`
   &::placeholder {
     color: ${(p) => p.theme.contactForm.input.placeholder.color};
   }
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    width: ${(p) => p.theme.contactForm.input.root.width};
+    text-align: center;
+  }
 `;
 interface IInputTextView {
   type: string;

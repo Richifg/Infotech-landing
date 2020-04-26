@@ -25,6 +25,9 @@ const BannerContent = styled.div`
   max-width: ${(p) => p.theme.banner.content.maxWidth};
   display: flex;
   flex-direction: column;
+  & > h1 {
+    text-shadow: ${(p) => p.theme.banner.content.textShadow};
+  }
 `;
 
 const ButtonContainer = styled.div`

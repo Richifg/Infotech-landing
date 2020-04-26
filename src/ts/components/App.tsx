@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import content from '../../../content.json';
 import theme from 'theme/defaultTheme';
 
-import Navbar from 'components/Navbar';
+import Navbar from 'components/Navbar/NavbarController';
 import PageBanner from 'components/PageBanner';
 import PageSection from 'components/PageSection';
 

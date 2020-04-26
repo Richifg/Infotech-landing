@@ -8,7 +8,7 @@ import { TAsyncState } from 'interfaces/types';
 const Container = styled.label`
   cursor: pointer;
   position: relative;
-  width: ${(p) => p.theme.contactForm.input.root.width};
+  width: ${(p) => p.theme.contactForm.input.small.width};
   margin-bottom: ${(p) => p.theme.contactForm.input.root.marginBottom};
   border: none;
   border-radius: ${(p) => p.theme.contactForm.input.root.borderRadius};
@@ -21,6 +21,10 @@ const Container = styled.label`
   &:active,
   &:focus {
     outline: 2px solid ${(p) => p.theme.contactForm.input.root.outlineColor};
+  }
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    width: ${(p) => p.theme.contactForm.input.root.width};
   }
 `;
 const Input = styled.input`

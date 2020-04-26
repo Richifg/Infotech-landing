@@ -12,6 +12,7 @@ const Section = styled.section`
 interface IStyledColumn {
   background: boolean;
   full: boolean;
+  mobile: boolean;
 }
 
 const Column = styled.div<IStyledColumn>`
@@ -28,13 +29,24 @@ const Column = styled.div<IStyledColumn>`
   flex-direction: column;
   justify-content: center;
   align-items: ${(p) => (p.full ? 'center' : 'left')};
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    display: ${(p) => (p.mobile ? 'flex' : 'none')};
+    padding: ${(p) => p.theme.column.mobile.root.padding};
+    flex: 1 0 100%;
+  }
 `;
 
 const PageSection = ({ id, columns }: ISection): ReactElement => (
   <ContentContainer>
     <Section id={id}>
       {columns.map((column, index) => (
-        <Column key={index} background={column.background} full={columns.length === 1}>
+        <Column
+          key={index}
+          background={column.background}
+          full={columns.length === 1}
+          mobile={column.mobile}
+        >
           {column.elements.map((element, index) => (
             <SectionElement key={index} {...element} />
           ))}

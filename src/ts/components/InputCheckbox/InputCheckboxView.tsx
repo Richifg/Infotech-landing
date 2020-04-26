@@ -6,10 +6,19 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 const Label = styled.label`
   display: flex;
   cursor: pointer;
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    flex: 0 1 50%;
+    text-align: left;
+  }
 `;
 const Input = styled.input`
   display: none;

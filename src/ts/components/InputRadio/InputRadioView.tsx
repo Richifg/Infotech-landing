@@ -5,12 +5,24 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    flex-direction: column;
+    max-width: 280px;
+    margin: 0 auto;
+  }
 `;
 const Label = styled.label`
   display: flex;
+  text-align: left;
   cursor: pointer;
   &:not(:first-child) {
     margin-left: 1em;
+  }
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    &:not(:first-child) {
+      margin-left: 0;
+      margin-top: 1em;
+    }
   }
 `;
 const Input = styled.input`

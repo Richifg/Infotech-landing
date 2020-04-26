@@ -291,7 +291,7 @@
                 {
                   "name": "experiencia",
                   "title": "Experiencia laboral",
-                  "subtitle": "Mínimo un año de eperiencia como docente luego de obtener el título de bachillerato. Puede agregar más de una experiencia.",
+                  "subtitle": "Mínimo un año de eperiencia como docente luego de obtener el título de bachillerato.</br> Puede agregar más de una experiencia.",
                   "expandable": true,
                   "inputs": [
                     {
@@ -380,7 +380,7 @@
                 {
                   "name": "interes",
                   "title": "Zonas de Interés",
-                  "subtitle": "Indique las zonas en las que le interesa impartir clases. Puede elejir más de una.",
+                  "subtitle": "Indique las zonas en las que le interesa impartir clases.</br> Puede elejir más de una zona.",
                   "expandable": false,
                   "inputs": [
                     {
@@ -389,16 +389,16 @@
                       "label": "Zonas",
                       "options": [
                         {
-                          "label": "Liberia",
-                          "value": "Liberia"
-                        },
-                        {
                           "label": "Ciudad Quesada",
                           "value": "Ciudad Quesada"
                         },
                         {
                           "label": "Puntarenas",
                           "value": "Puntarenas"
+                        },
+                        {
+                          "label": "Liberia",
+                          "value": "Liberia"
                         },
                         {
                           "label": "Quepos",
@@ -415,7 +415,7 @@
                 {
                   "name": "archivos",
                   "title": "Archivos",
-                  "subtitle": "Es necesario adjuntar su CV y su título de Bachillerato de Inglés o afín. Solo se aceptan archivos tipos PDF de máximo 3MB.",
+                  "subtitle": "Es necesario adjuntar su CV y su título de Bachillerato de Inglés o afín.</br> Solo se aceptan archivos tipos PDF de máximo 3MB.",
                   "expandable": false,
                   "inputs": [
                     {

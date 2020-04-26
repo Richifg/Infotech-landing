@@ -27,6 +27,7 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
+  margin: 0;
   padding: ${(p) => p.theme.navbar.root.padding};
   & li {
     margin: 0 1em;
@@ -37,7 +38,7 @@ const Ul = styled.ul`
 `;
 
 const Logo = styled.img`
-  max-width: ${(p) => p.theme.navlogo.root.maxWidth};
+  max-width: ${(p) => p.theme.navbar.logo.maxWidth};
 `;
 
 const Navbar = ({ logoUrl, logoAlt, links, activeIndex }: INavbar): React.ReactElement => (
