@@ -61,6 +61,7 @@ const IconButton = ({ name, type, onClick }: IIconButton): ReactElement => (
 
 IconButton.defaultProps = {
   type: 'button',
+  onClick: () => {},
 };
 
 export default IconButton;

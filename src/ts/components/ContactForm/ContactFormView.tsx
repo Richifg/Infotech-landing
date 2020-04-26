@@ -97,6 +97,7 @@ const SubmitContainer = styled.div`
 `;
 
 interface IContactFormView {
+  groupCounts: number[];
   onAddGroup?(index: number): void;
   onRemoveGroup?(index: number): void;
   register: ReturnType<typeof useForm>['register'];
@@ -108,6 +109,7 @@ interface IContactFormView {
 }
 
 const ContactFormView = ({
+  groupCounts,
   onAddGroup,
   onRemoveGroup,
   register,
@@ -151,7 +153,9 @@ const ContactFormView = ({
                 {section.expandable && inputIndex === section.inputs.length - 1 && (
                   <ButtonsContainer>
                     <IconButton name="plus" onClick={() => onAddGroup(sectionIndex)} />
-                    <IconButton name="minus" onClick={() => onRemoveGroup(sectionIndex)} />
+                    {groupCounts[sectionIndex] > 1 && (
+                      <IconButton name="minus" onClick={() => onRemoveGroup(sectionIndex)} />
+                    )}
                   </ButtonsContainer>
                 )}
               </InputContainer>

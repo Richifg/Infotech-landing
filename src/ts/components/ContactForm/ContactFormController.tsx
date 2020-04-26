@@ -73,6 +73,7 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
         errors={flattenErrors}
         sections={sectionToRender}
         buttonText={buttonText}
+        groupCounts={groupCounts}
         onAddGroup={addGroup}
         onRemoveGroup={removeGroup}
       />
