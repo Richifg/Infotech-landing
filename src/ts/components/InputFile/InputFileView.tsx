@@ -1,24 +1,9 @@
 import React, { ReactElement } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Typography from 'components/Typography';
 import Icon from 'components/Icon';
-import { TFileState } from 'interfaces/types';
-
-// MOVE LOADER TO ITS OWN SEPARATE COMPONENT
-const rotate = keyframes`
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-
-const Loader = styled.span`
-  width: 15px;
-  height: 15px;
-  border-radius: 10px;
-  display: block;
-  border-top: 2px solid orange;
-  animation: ${rotate} 1s linear infinite;
-`;
+import Loader from 'components/Loader';
+import { TAsyncState } from 'interfaces/types';
 
 const Container = styled.label`
   cursor: pointer;
@@ -49,7 +34,7 @@ const TextContainer = styled.span<Pick<IInputFileView, 'state'>>`
   top: 50%;
   transform: translateY(-50%);
   color: ${(p) => {
-    if (p.state === 'EMPTY') return p.theme.colors.black.lighter;
+    if (p.state === 'INIT') return p.theme.colors.black.lighter;
     else return p.theme.colors.black.base;
   }};
   white-space: nowrap;
@@ -64,8 +49,8 @@ const IconContainer = styled.span<Pick<IInputFileView, 'state'>>`
   transform: translateY(-50%);
   transition: font-size 0.2s;
   color: ${(p) => {
-    if (p.state === 'EMPTY') return p.theme.colors.black.base;
-    if (p.state === 'LOADED') return p.theme.colors.success.base;
+    if (p.state === 'INIT') return p.theme.colors.black.base;
+    if (p.state === 'SUCCESS') return p.theme.colors.success.base;
     if (p.state === 'ERROR') return p.theme.colors.alert.base;
   }};
 `;
@@ -74,7 +59,7 @@ interface IInputFileView {
   type: string;
   name: string;
   text: string;
-  state: TFileState;
+  state: TAsyncState;
   onChange(): void;
 }
 
@@ -87,9 +72,9 @@ const InputFileView = ({ type, name, text, state, onChange }: IInputFileView): R
       </Typography>
     </TextContainer>
     <IconContainer state={state}>
-      {state === 'EMPTY' && <Icon name="upload" />}
-      {state === 'LOADING' && <Loader />}
-      {state === 'LOADED' && <Icon name="check" />}
+      {state === 'INIT' && <Icon name="upload" />}
+      {state === 'LOADING' && <Loader size="small" />}
+      {state === 'SUCCESS' && <Icon name="check" />}
       {state === 'ERROR' && <Icon name="alert" />}
     </IconContainer>
   </Container>

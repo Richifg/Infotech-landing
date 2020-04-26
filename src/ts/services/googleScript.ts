@@ -10,7 +10,16 @@ const axiosInstance = axios.create({
 });
 
 const googleScript = {
-  send: (data: any) => axiosInstance.post('', data),
+  send: (data: any) =>
+    axiosInstance
+      .post('', data)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+        return { result: 'error', error: err };
+      }),
 };
 
 export default googleScript;

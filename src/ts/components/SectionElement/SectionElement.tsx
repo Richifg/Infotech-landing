@@ -18,6 +18,7 @@ const SectionElement = ({
   icons,
   buttonText,
   formSections,
+  messages,
 }: ISectionElement): ReactElement => {
   let Element = null;
   switch (type) {
@@ -37,7 +38,7 @@ const SectionElement = ({
       Element = <IconList icons={icons} />;
       break;
     case 'contact-form':
-      Element = <ContactForm sections={formSections} buttonText={buttonText} />;
+      Element = <ContactForm sections={formSections} buttonText={buttonText} messages={messages} />;
       break;
     default:
       console.log(`WARNING: uknown element type: ${type}. Retuning null...`);

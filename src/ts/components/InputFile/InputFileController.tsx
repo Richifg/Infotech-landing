@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, ReactElement, ReactType } from 'rea
 import { useForm } from 'react-hook-form';
 import { getValidFunctionFile } from 'shared/validationRules';
 import { IRules, IFileInfo } from 'interfaces';
-import { TFileState } from 'interfaces/types';
+import { TAsyncState } from 'interfaces/types';
 import DefaultView from './InputFileView';
 
 interface IInputFile {
@@ -28,7 +28,7 @@ const InputFileController = ({
 }: IInputFile): ReactElement => {
   const FR = useRef(new FileReader());
   const file = useRef(null);
-  const [fileState, setFileState] = useState<TFileState>('EMPTY');
+  const [fileState, setFileState] = useState<TAsyncState>('INIT');
   console.log(file);
 
   // configure file reader on mount
@@ -43,16 +43,16 @@ const InputFileController = ({
           url: e.target.result,
         };
         setValue(name, fileValue, true);
-        setFileState('LOADED');
+        setFileState('SUCCESS');
       }
     };
   }, []);
 
   // errors from react-hook-form validation can override fileState
   useEffect(() => {
-    if (fileState !== 'LOADING' && fileState !== 'EMPTY') {
+    if (fileState !== 'LOADING' && fileState !== 'INIT') {
       if (Object.keys(errors).includes(name)) setFileState('ERROR');
-      else setFileState('LOADED');
+      else setFileState('SUCCESS');
     }
   }, [errors, fileState]);
 

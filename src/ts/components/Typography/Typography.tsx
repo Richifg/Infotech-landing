@@ -41,7 +41,7 @@ const Typography = ({
   children,
   style,
 }: ITypography): React.ReactElement => {
-  const textToRender = Array.isArray(children) ? children.join('') : children;
+  const textToRender = Array.isArray(children) ? children.filter((i) => i).join('') : children;
   return (
     <Typo
       as={tag}

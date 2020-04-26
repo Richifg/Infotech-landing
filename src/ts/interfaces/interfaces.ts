@@ -39,6 +39,7 @@ export interface ISectionElement {
   icons?: IIcon[];
   buttonText?: string;
   formSections?: IFormSection[];
+  messages?: IMessages;
 }
 
 export interface ICard {
@@ -59,6 +60,17 @@ export interface IFormSection {
   subtitle?: string;
   expandable: boolean;
   inputs: IInput[];
+}
+
+export interface IMessages {
+  success: IMessage;
+  error: IMessage;
+  loading: IMessage;
+}
+
+export interface IMessage {
+  title: string;
+  text: string;
 }
 
 export interface IInput {
@@ -88,8 +100,4 @@ export interface IFileInfo {
   name: string;
   size: number;
   url: string | ArrayBuffer;
-}
-
-export function isFileInfo(data: any): data is IFileInfo {
-  return !!(data.name && data.size && data.url);
 }

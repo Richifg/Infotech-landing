@@ -1,4 +1,4 @@
-export type TFileState = 'EMPTY' | 'ERROR' | 'LOADED' | 'LOADING';
+export type TAsyncState = 'INIT' | 'LOADING' | 'ERROR' | 'SUCCESS';
 
 export type TIconName =
   | 'check'
@@ -10,4 +10,5 @@ export type TIconName =
   | 'teamwork'
   | 'calendar'
   | 'plus'
-  | 'minus';
+  | 'minus'
+  | 'x';

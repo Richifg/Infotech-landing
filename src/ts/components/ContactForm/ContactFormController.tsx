@@ -1,24 +1,38 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import googleScript from 'services/googleScript';
-import { IFormSection } from 'interfaces';
+import { IFormSection, IMessages } from 'interfaces';
+import { TAsyncState } from 'interfaces/types';
 import { useArrayCounter } from 'shared/customHooks';
 import ContactFormView from './ContactFormView';
+
+import Dialog from 'components/Dialog/Dialog';
 
 interface IContactForm {
   sections: IFormSection[];
   buttonText: string;
+  messages?: IMessages;
 }
 
-const ContactForm = ({ sections, buttonText }: IContactForm): ReactElement => {
+const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactElement => {
   const [groupCounts, addGroup, removeGroup] = useArrayCounter(sections.length);
-  const { register, unregister, setValue, errors, handleSubmit } = useForm();
+  const [submitState, setSubmitState] = useState<TAsyncState>('INIT');
+  const [showMessage, setShowMessage] = useState(false);
+  const { register, unregister, setValue, errors, handleSubmit, reset } = useForm();
 
-  // some complicated shit conecting to the email server
-  const doFancyShit = (data: any): void => {
+  const postForm = async (data: any): Promise<void> => {
     console.log(data);
-    googleScript.send(data);
+    setSubmitState('LOADING');
+    setShowMessage(true);
+    const result = await googleScript.send(data);
+    if (result === 'error') {
+      setSubmitState('ERROR');
+    } else {
+      setSubmitState('SUCCESS');
+      reset();
+    }
+    console.log(result);
   };
 
   // set each section's inputs based on group count
@@ -51,7 +65,7 @@ const ContactForm = ({ sections, buttonText }: IContactForm): ReactElement => {
   console.log(errors, flattenErrors);
 
   return (
-    <form onSubmit={handleSubmit(doFancyShit)}>
+    <form onSubmit={handleSubmit(postForm)}>
       <ContactFormView
         register={register}
         unregister={unregister}
@@ -62,6 +76,9 @@ const ContactForm = ({ sections, buttonText }: IContactForm): ReactElement => {
         onAddGroup={addGroup}
         onRemoveGroup={removeGroup}
       />
+      {showMessage && (
+        <Dialog state={submitState} messages={messages} onClose={() => setShowMessage(false)} />
+      )}
     </form>
   );
 };

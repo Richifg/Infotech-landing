@@ -6,7 +6,7 @@ const colors = {
   black: {
     lighter: '#656565',
     light: '#444',
-    base: '#000',
+    base: '#222',
   },
   // dark blue
   primary: {
@@ -155,7 +155,7 @@ const theme = {
     root: {
       backgroundColor: colors.white.base,
       height: '120px',
-      opacity: '0.95',
+      opacity: '1',
       padding: '0 2em',
     },
   },
@@ -385,6 +385,37 @@ const theme = {
     error: {
       color: colors.alert.base,
       minHeight: '1.4em',
+    },
+  },
+  message: {
+    root: {
+      backgroundColor: 'rgba(0,0,0,0.8)',
+      padding: '16px',
+    },
+    content: {
+      color: colors.black.base,
+      backgroundColor: colors.white.base,
+      borderRadius: '12px',
+      padding: '5em 2em',
+    },
+    closeButton: {
+      position: '12px',
+      color: colors.black.light,
+    },
+    icon: {
+      fontSize: '60px',
+      marginBotton: '42px',
+    },
+  },
+  loader: {
+    medium: {
+      size: '25px',
+    },
+    small: {
+      size: '15px',
+    },
+    large: {
+      size: '60px',
     },
   },
 };
