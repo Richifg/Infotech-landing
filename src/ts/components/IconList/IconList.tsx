@@ -31,6 +31,7 @@ const Item = styled.li`
 `;
 
 const CaptionContainer = styled.div`
+  text-align: center;
   max-width: ${(p) => p.theme.iconList.caption.maxWidth};
   margin-top: ${(p) => p.theme.iconList.caption.marginTop};
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {

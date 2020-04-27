@@ -21,6 +21,10 @@ const StyledButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    padding: ${(p) => p.theme.button.mobile.root.padding};
+  }
 `;
 
 const Button = (props: any): ReactElement => (

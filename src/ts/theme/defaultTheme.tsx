@@ -5,9 +5,9 @@ const colors = {
     darker: '#DDD',
   },
   black: {
-    lighter: '#656565',
-    light: '#444',
-    base: '#222',
+    lighter: '#777',
+    light: '#555',
+    base: '#383838',
   },
   // dark blue
   primary: {
@@ -66,10 +66,10 @@ const theme = {
     root: {},
     headline1: {
       fontSize: `${64 / 16}rem`,
-      lineHeight: '1.2',
-      letterSpacing: '1px',
+      lineHeight: '0.9',
+      letterSpacing: '0.3px',
       fontWeight: '700',
-      textTransform: 'none',
+      textTransform: 'uppercase',
     },
     headline2: {
       fontSize: `${42 / 16}rem`,
@@ -114,19 +114,19 @@ const theme = {
       textTransform: 'none',
     },
     button: {
-      fontSize: `${16 / 16}rem`,
+      fontSize: `${17 / 16}rem`,
       lineHeight: '1.5',
-      letterSpacing: '1.25px',
+      letterSpacing: '0px',
       fontWeight: '700',
       textTransform: 'uppercase',
     },
     mobile: {
       headline1: {
-        fontSize: `${40 / 16}rem`,
-        lineHeight: '1.2',
-        letterSpacing: '1px',
+        fontSize: `${36 / 16}rem`,
+        lineHeight: '1',
+        letterSpacing: '-0.5px',
         fontWeight: '700',
-        textTransform: 'none',
+        textTransform: 'uppercase',
       },
       headline2: {
         fontSize: `${32 / 16}rem`,
@@ -173,7 +173,7 @@ const theme = {
       button: {
         fontSize: `${16 / 16}rem`,
         lineHeight: '1.5',
-        letterSpacing: '1.25px',
+        letterSpacing: '0px',
         fontWeight: '700',
         textTransform: 'uppercase',
       },
@@ -193,6 +193,11 @@ const theme = {
     },
     active: {
       backgroundColor: colors.secondary.dark,
+    },
+    mobile: {
+      root: {
+        padding: '1em 2.5em',
+      },
     },
   },
   iconButton: {

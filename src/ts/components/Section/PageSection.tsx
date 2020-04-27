@@ -40,6 +40,7 @@ const Column = styled.div<IStyledColumn>`
     padding: ${(p) => p.theme.column.mobile.root.padding};
     flex: 1 0 100%;
     margin: ${(p) => p.theme.column.mobile.alt.margin};
+    text-align: left;
   }
 `;
 

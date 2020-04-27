@@ -30,6 +30,7 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
       setSubmitState('ERROR');
     } else {
       setSubmitState('SUCCESS');
+      console.log('resetting');
       reset();
     }
     console.log(result);

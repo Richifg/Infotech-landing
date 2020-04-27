@@ -27,7 +27,7 @@
   },
   "banner": {
     "url": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
-    "text": "Buscamos profesores de inglés capacitados </br><span>para impartir cursos avalados por el INA<span>",
+    "text": "Buscamos profesores de ingles capacitados </br><span>para impartir cursos avalados por el INA<span>",
     "buttonText": "Aplicá aquí",
     "buttonTo": "aplique"
   },
@@ -247,11 +247,11 @@
               "buttonText": "Enviar",
               "messages": {
                 "success": {
-                  "title": "ÉXITO!",
-                  "text": "Su aplicación fue enviada exitosamente! Gracias por contactarnos. </br> Pronto recibirá un correo de confirmación."
+                  "title": "¡ÉXITO!",
+                  "text": "¡Su aplicación fue enviada exitosamente! Gracias por contactarnos. </br> Pronto recibirá un correo de confirmación."
                 },
                 "error": {
-                  "title": "OH NO",
+                  "title": "¡OH NO!",
                   "text": "Lo sentimos, parece que hubo un error con la aplicación. </br> Intente más tarde o contáctenos directamente a <b>correo@infotech.com</b>."
                 },
                 "loading": {
