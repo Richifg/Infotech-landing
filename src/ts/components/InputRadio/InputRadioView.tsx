@@ -28,16 +28,14 @@ const Label = styled.label`
 const Input = styled.input`
   display: none;
 `;
-const Radio = styled.button`
+const Radio = styled.span`
   width: ${(p) => p.theme.contactForm.radio.root.width};
   height: ${(p) => p.theme.contactForm.radio.root.height};
   border-radius: ${(p) => p.theme.contactForm.radio.root.borderRadius};
   border: ${(p) => p.theme.contactForm.radio.root.border};
   background-color: ${(p) => p.theme.contactForm.radio.root.backgroundColor};
   margin-right: ${(p) => p.theme.contactForm.radio.root.marginRight};
-  outline: none !important;
   box-sizing: border-box;
-  pointer-events: none;
   flex-shrink: 0;
   position: relative;
 
@@ -106,7 +104,7 @@ const InputRadioView = forwardRef(function InputRadioView(
             id={option.id}
             defaultChecked={option.checked}
           />
-          <Radio type="button" />
+          <Radio />
           <Typography type="body2" tag="span">
             {option.label}
           </Typography>

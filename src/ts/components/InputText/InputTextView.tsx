@@ -37,7 +37,7 @@ const InputTextView = forwardRef(function InputTextView(
   props: IInputTextView,
   ref: Ref<HTMLInputElement>,
 ): ReactElement {
-  return <Input {...props} ref={ref} />;
+  return <Input {...props} ref={ref} id={props.name} />;
 });
 
 export default InputTextView;

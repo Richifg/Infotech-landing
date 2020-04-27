@@ -23,7 +23,7 @@ const Label = styled.label`
 const Input = styled.input`
   display: none;
 `;
-const Checkbox = styled.button`
+const Checkbox = styled.span`
   width: ${(p) => p.theme.contactForm.checkbox.root.width};
   height: ${(p) => p.theme.contactForm.checkbox.root.height};
   border-radius: ${(p) => p.theme.contactForm.checkbox.root.borderRadius};
@@ -31,11 +31,10 @@ const Checkbox = styled.button`
   background-color: ${(p) => p.theme.contactForm.checkbox.root.backgroundColor};
   margin-right: ${(p) => p.theme.contactForm.checkbox.root.marginRight};
   margin-bottom: ${(p) => p.theme.contactForm.checkbox.root.marginBottom};
-  outline: none !important;
   box-sizing: border-box;
-  pointer-events: none;
   flex-shrink: 0;
   position: relative;
+  padding: 8px;
 
   &::after,
   &::before {
@@ -51,11 +50,11 @@ const Checkbox = styled.button`
 
   &::after {
     width: var(--size);
-    transform: rotate(-44deg) translate(-7%, -82%);
+    transform: rotate(-44deg) translate(-17%, -63%);
   }
   &::before {
     width: calc(var(--size) * 0.5);
-    transform: rotate(-134deg) translate(37%, -107%);
+    transform: rotate(-134deg) translate(29%, -148%);
   }
 
   label:hover > & {
@@ -76,6 +75,7 @@ const Checkbox = styled.button`
   input:focus + & {
     border-color: ${(p) => p.theme.contactForm.checkbox.active.root.borderColor};
     border-width: ${(p) => p.theme.contactForm.checkbox.active.root.borderWidth};
+    padding: 7px;
     background-color: ${(p) => p.theme.contactForm.checkbox.active.root.backgroundColor};
     &::after,
     &::before {
@@ -109,7 +109,7 @@ const InputCheckboxView = forwardRef(function InputCheckboxView(
             id={option.name}
             value={option.value}
           />
-          <Checkbox type="button" />
+          <Checkbox />
           <Typography type="body2" tag="span">
             {option.label}
           </Typography>

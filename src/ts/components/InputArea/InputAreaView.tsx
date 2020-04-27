@@ -27,7 +27,7 @@ const InputAreaView = forwardRef(function InputTextInputAreaViewiew(
   props: IInputAreaView,
   ref: Ref<HTMLTextAreaElement>,
 ): ReactElement {
-  return <Input {...props} ref={ref} />;
+  return <Input {...props} ref={ref} id={props.name} />;
 });
 
 export default InputAreaView;

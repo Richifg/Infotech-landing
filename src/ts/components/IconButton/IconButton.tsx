@@ -47,15 +47,21 @@ const StyledButton = styled.button`
   }
 `;
 
+const TextContainer = styled.div`
+  font-size: 0px;
+`;
+
 interface IIconButton {
   name: TIconName;
+  text: string;
   type?: 'button' | 'submit' | 'reset';
   onClick?(): void;
 }
 
-const IconButton = ({ name, type, onClick }: IIconButton): ReactElement => (
+const IconButton = ({ name, text, type, onClick }: IIconButton): ReactElement => (
   <StyledButton onClick={onClick} type={type}>
     <Icon name={name} />
+    <TextContainer>{text}</TextContainer>
   </StyledButton>
 );
 

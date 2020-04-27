@@ -69,7 +69,7 @@ interface IInputFileView {
 
 const InputFileView = ({ type, name, text, state, onChange }: IInputFileView): ReactElement => (
   <Container tabIndex={0}>
-    <Input type={type} name={name} onChange={onChange} tabIndex={-1} />
+    <Input type={type} name={name} onChange={onChange} tabIndex={-1} id={name} />
     <TextContainer state={state}>
       <Typography type="body2" tag="span">
         {text}

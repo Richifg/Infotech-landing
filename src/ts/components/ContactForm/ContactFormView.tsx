@@ -126,7 +126,9 @@ const ContactFormView = ({
       {sections.map((section, sectionIndex) => (
         <FormSection key={sectionIndex}>
           <SectionTitle>
-            <Typography type="headline3">{section.title}</Typography>
+            <Typography type="headline3" tag="h3">
+              {section.title}
+            </Typography>
           </SectionTitle>
           <SectionSubtitle>
             <Typography type="body2">{section.subtitle}</Typography>
@@ -134,7 +136,9 @@ const ContactFormView = ({
           {section.inputs.map((input, inputIndex) => (
             <InputGroup key={inputIndex}>
               <LabelContainer>
-                <Typography type="body1">{input.label}:</Typography>
+                <Typography type="body1" tag="label" htmlFor={input.name}>
+                  {input.label}:
+                </Typography>
               </LabelContainer>
               <InputContainer>
                 <ContactFormInput
@@ -153,9 +157,17 @@ const ContactFormView = ({
                 </ErrorContainer>
                 {section.expandable && inputIndex === section.inputs.length - 1 && (
                   <ButtonsContainer>
-                    <IconButton name="plus" onClick={() => onAddGroup(sectionIndex)} />
+                    <IconButton
+                      name="plus"
+                      text="agregar"
+                      onClick={() => onAddGroup(sectionIndex)}
+                    />
                     {groupCounts[sectionIndex] > 1 && (
-                      <IconButton name="minus" onClick={() => onRemoveGroup(sectionIndex)} />
+                      <IconButton
+                        name="minus"
+                        text="remover"
+                        onClick={() => onRemoveGroup(sectionIndex)}
+                      />
                     )}
                   </ButtonsContainer>
                 )}

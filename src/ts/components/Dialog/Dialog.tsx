@@ -85,7 +85,7 @@ const Dialog = ({ state, messages, onClose }: IMessage): ReactElement => (
     <Content>
       {state !== 'LOADING' && (
         <ButtonContainer>
-          <Iconbutton name="x" onClick={onClose} />
+          <Iconbutton name="x" onClick={onClose} text="cerrar" />
         </ButtonContainer>
       )}
       {state === 'LOADING' && (
