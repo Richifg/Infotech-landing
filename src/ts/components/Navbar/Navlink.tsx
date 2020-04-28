@@ -5,7 +5,7 @@ import Typography from 'components/Typography';
 
 interface INavlink extends ILinkContent {
   active: boolean;
-  onClick(): void;
+  onClick: any;
 }
 
 const Link = styled.a`
@@ -30,7 +30,7 @@ const Link = styled.a`
 `;
 
 const Navlink = ({ to, text, active, onClick }: INavlink): React.ReactElement => (
-  <Link className={active && 'active'} href={`#${to}`} onClick={onClick}>
+  <Link className={active && 'active'} href={`#${to}`} onClick={onClick(to)}>
     <Typography tag="span" type="body1">
       {text}
     </Typography>

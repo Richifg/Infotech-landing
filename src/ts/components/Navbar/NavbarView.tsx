@@ -98,6 +98,7 @@ interface INavbar extends INavbarContent {
   isOpen: boolean;
   onClose(): void;
   onToggle(): void;
+  onLinkClick(id: string): void;
 }
 
 const Navbar = ({
@@ -108,6 +109,7 @@ const Navbar = ({
   isOpen,
   onClose,
   onToggle,
+  onLinkClick,
 }: INavbar): React.ReactElement => (
   <Nav>
     <LogoMobile src={logoUrl} alt={logoAlt} />
@@ -119,7 +121,12 @@ const Navbar = ({
       </LogoContainer>
       {links.map((link, index) => (
         <NavLinkContainer key={index} isOpen={isOpen}>
-          <Navlink to={link.to} text={link.text} active={index === activeIndex} onClick={onClose} />
+          <Navlink
+            to={link.to}
+            text={link.text}
+            active={index === activeIndex}
+            onClick={onLinkClick}
+          />
         </NavLinkContainer>
       ))}
     </Ul>
