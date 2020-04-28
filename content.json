@@ -179,7 +179,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Estos programas de capacitación serán desarrollados a partir del 2020 en Liberia, Ciudad Quesada, Puntarenas y Quepos."
+              "text": "Estos programas de capacitación serán desarrollados a partir del 2020 en Liberia, Ciudad Quesada, Puntarenas, Quepos y."
             }
           ]
         },
@@ -188,7 +188,39 @@
           "mobile": true, 
           "elements": [
             {
-              "type": "map"
+              "type": "map",
+              "markers": [
+                {
+                  "title": "Ciudad Quesada",
+                  "text": "3 aulas",
+                  "x": 42,
+                  "y": 29
+                },
+                {
+                  "title": "Cartago",
+                  "text": "10 aulas",
+                  "x": 59,
+                  "y": 45
+                },
+                {
+                  "title": "Liberia",
+                  "text": "6 aulas",
+                  "x": 15,
+                  "y": 19
+                },
+                {
+                  "title": "Puntarenas",
+                  "text": "2 aulas",
+                  "x": 34,
+                  "y": 41
+                },
+                {
+                  "title": "Quepos",
+                  "text": "2 aulas",
+                  "x": 52,
+                  "y": 58
+                }
+              ]
             }
           ]
         }       

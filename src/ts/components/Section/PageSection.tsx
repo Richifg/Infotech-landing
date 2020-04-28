@@ -5,7 +5,7 @@ import { ISection } from 'interfaces';
 import SectionElement from 'components/SectionElement';
 import ContentContainer from 'components/ContentContainer';
 
-const Section = styled.section`
+const ColumnsContainer = styled.div`
   display: flex;
 `;
 
@@ -47,24 +47,26 @@ const Column = styled.div<IStyledColumn>`
 const PageSection = ({ id, columns }: ISection): ReactElement => {
   const theme = useContext(ThemeContext);
   return (
-    <ContentContainer
-      color={columns.length === 1 && !columns[0].background ? theme.colors.white.base : ''}
-    >
-      <Section id={id}>
-        {columns.map((column, index) => (
-          <Column
-            key={index}
-            background={column.background}
-            full={columns.length === 1}
-            mobile={column.mobile}
-          >
-            {column.elements.map((element, index) => (
-              <SectionElement key={index} {...element} />
-            ))}
-          </Column>
-        ))}
-      </Section>
-    </ContentContainer>
+    <section id={id}>
+      <ContentContainer
+        color={columns.length === 1 && !columns[0].background ? theme.colors.white.base : ''}
+      >
+        <ColumnsContainer>
+          {columns.map((column, index) => (
+            <Column
+              key={index}
+              background={column.background}
+              full={columns.length === 1}
+              mobile={column.mobile}
+            >
+              {column.elements.map((element, index) => (
+                <SectionElement key={index} {...element} />
+              ))}
+            </Column>
+          ))}
+        </ColumnsContainer>
+      </ContentContainer>
+    </section>
   );
 };
 

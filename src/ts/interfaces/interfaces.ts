@@ -40,6 +40,7 @@ export interface ISectionElement {
   buttonText?: string;
   formSections?: IFormSection[];
   messages?: IMessages;
+  markers?: IMarker[];
 }
 
 export interface ICard {
@@ -100,4 +101,11 @@ export interface IFileInfo {
   name: string;
   size: number;
   url: string | ArrayBuffer;
+}
+
+export interface IMarker {
+  title: string;
+  text: string;
+  x: number;
+  y: number;
 }

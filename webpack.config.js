@@ -39,6 +39,13 @@ module.exports = () => ({
           name: 'assets/fonts/[name].[ext]',
         },
       },
+      {
+        test: /\.(svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/images/[name].[ext]',
+        },
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' }), new MiniCssExtractplugin()],

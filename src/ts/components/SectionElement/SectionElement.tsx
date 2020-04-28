@@ -7,6 +7,7 @@ import SectionImage from 'components/SectionImage';
 import CardsCarousel from 'components/CardsCarousel';
 import ContactForm from 'components/ContactForm';
 import IconList from 'components/IconList';
+import Map from 'components/Map';
 
 const SectionElement = ({
   type,
@@ -19,6 +20,7 @@ const SectionElement = ({
   buttonText,
   formSections,
   messages,
+  markers,
 }: ISectionElement): ReactElement => {
   let Element = null;
   switch (type) {
@@ -40,6 +42,8 @@ const SectionElement = ({
     case 'contact-form':
       Element = <ContactForm sections={formSections} buttonText={buttonText} messages={messages} />;
       break;
+    case 'map':
+      Element = <Map markers={markers} />;
     default:
       console.log(`WARNING: uknown element type: ${type}. Retuning null...`);
   }

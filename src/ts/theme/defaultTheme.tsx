@@ -93,7 +93,7 @@ const theme = {
       textTransform: 'none',
     },
     subtitle2: {
-      fontSize: `${15 / 16}rem`,
+      fontSize: `${14 / 16}rem`,
       lineHeight: '1.5',
       letterSpacing: '0.1px',
       fontWeight: '400',
@@ -300,7 +300,7 @@ const theme = {
   sectionParagraph: {
     root: {
       marginBottom: '1em',
-      maxWidth: '600px',
+      maxWidth: '500px',
     },
   },
   sectionImage: {
@@ -542,6 +542,21 @@ const theme = {
     },
     large: {
       size: '60px',
+    },
+  },
+  map: {
+    root: {
+      width: '100%',
+      maxWidth: '500px',
+    },
+    marker: {
+      width: '5%',
+    },
+    tooltip: {
+      border: `2px solid ${colors.primary.dark}`,
+      padding: '.5em',
+      borderRadius: '8px 8px 8px 0',
+      backgroundColor: colors.white.base,
     },
   },
 };
