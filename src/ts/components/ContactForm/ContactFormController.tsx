@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 
 import googleScript from 'services/googleScript';
@@ -19,8 +19,25 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
   const [groupCounts, addGroup, removeGroup] = useArrayCounter(sections.length);
   const [submitState, setSubmitState] = useState<TAsyncState>('INIT');
   const [showMessage, setShowMessage] = useState(false);
-  const { register, unregister, setValue, errors, handleSubmit, reset } = useForm();
+  const { register, unregister, watch, setValue, errors, handleSubmit, reset } = useForm();
 
+  // find all inputs that are part of some other input condition
+  // only watch those inputs to reduce re-renders
+  const fieldsToWatch = useMemo(() => {
+    const fields: string[] = [];
+    sections.forEach((section) =>
+      section.inputs.forEach((input) => {
+        if (input.conditions) {
+          fields.push(...input.conditions.map((condition) => condition.name));
+        }
+      }),
+    );
+    return fields;
+  }, [sections]);
+  const fields = watch(fieldsToWatch);
+  console.log('FIELDS', fields);
+
+  // TODO: turn this into a hook
   const postForm = async (data: any): Promise<void> => {
     console.log(data);
     setSubmitState('LOADING');
@@ -40,10 +57,20 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
   const sectionToRender = sections.map((section, index) => {
     const sectionInputs = [];
     for (let i = 0; i < groupCounts[index]; i++) {
+      // add conditional inputs only if all their conditions are met
+      const inputsToPush = section.inputs.filter(
+        (input) =>
+          !input.conditions ||
+          input.conditions.reduce(
+            (prev, condition) => prev && fields[condition.name] === condition.value,
+            true,
+          ),
+      );
+
       // react-hook-form field array name notation
       const nameSuffix = section.expandable ? `[${i}]` : '';
       sectionInputs.push(
-        ...section.inputs.map((input) => ({
+        ...inputsToPush.map((input) => ({
           ...input,
           name: input.name + nameSuffix,
         })),
@@ -63,7 +90,6 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
       flattenErrors[key] = errors[key];
     }
   });
-  console.log(errors, flattenErrors);
 
   return (
     <form onSubmit={handleSubmit(postForm)}>

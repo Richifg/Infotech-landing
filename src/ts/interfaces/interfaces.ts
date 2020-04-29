@@ -81,6 +81,7 @@ export interface IInput {
   placeholder?: string;
   options?: IOption[];
   rules?: IRules;
+  conditions?: ICondition[];
   register?: any;
 }
 
@@ -95,6 +96,11 @@ export interface IRules {
   minLength?: number;
   size?: number;
   fileType?: string;
+}
+
+export interface ICondition {
+  name: string;
+  value: string;
 }
 
 export interface IFileInfo {

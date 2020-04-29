@@ -376,6 +376,19 @@
                       ]
                     },
                     {
+                      "name": "colypro_archivo",
+                      "type": "file",
+                      "label": "Prueba de COLYPRO",
+                      "placeholder": "Colypro.pdf",
+                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "conditions": [
+                        {
+                          "name": "colypro",
+                          "value": "si"
+                        }
+                      ]
+                    },
+                    {
                       "name": "c1",
                       "type": "radio",
                       "label": "Certificado C1",
@@ -392,6 +405,19 @@
                       ]
                     },
                     {
+                      "name": "c1_archivo",
+                      "type": "file",
+                      "label": "Prueba de C1",
+                      "placeholder": "C1.pdf",
+                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "conditions": [
+                        {
+                          "name": "c1",
+                          "value": "si"
+                        }
+                      ]
+                    },
+                    {
                       "name": "avalIna",
                       "type": "radio",
                       "label": "Aval del INA",
@@ -404,6 +430,19 @@
                         {
                           "value": "si",
                           "label": "Sí"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "avalInao_archivo",
+                      "type": "file",
+                      "label": "Prueba de aval",
+                      "placeholder": "aval.pdf",
+                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "conditions": [
+                        {
+                          "name": "avalIna",
+                          "value": "si"
                         }
                       ]
                     }

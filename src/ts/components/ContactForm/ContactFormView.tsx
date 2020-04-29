@@ -134,7 +134,7 @@ const ContactFormView = ({
             <Typography type="body2">{section.subtitle}</Typography>
           </SectionSubtitle>
           {section.inputs.map((input, inputIndex) => (
-            <InputGroup key={inputIndex}>
+            <InputGroup key={input.name}>
               <LabelContainer>
                 <Typography type="body1" tag="label" htmlFor={input.name}>
                   {input.label}:

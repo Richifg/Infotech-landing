@@ -11,9 +11,8 @@ interface IMap {
   column: number;
 }
 
-// many styles not in theme because they depend on map size & ratio
-// gotta be tweak for different maps
-
+// many styles are not in theme because they depend on map size & ratio
+// gotta be tweaked for each specific map
 const MapOuterContainer = styled.div<Pick<IMap, 'column'>>`
   position: absolute;
   width: 50%;
