@@ -7,12 +7,16 @@ import ContentContainer from 'components/ContentContainer';
 
 const ColumnsContainer = styled.div`
   display: flex;
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    flex-wrap: wrap;
+  }
 `;
 
 interface IStyledColumn {
   background: boolean;
   full: boolean;
   mobile: boolean;
+  columnCount: number;
 }
 
 const Column = styled.div<IStyledColumn>`
@@ -28,7 +32,7 @@ const Column = styled.div<IStyledColumn>`
   }};
   color: ${(p) => (p.background ? p.theme.column.alt.color : p.theme.column.root.color)};
   margin: ${(p) => (p.background ? p.theme.column.alt.margin : p.theme.column.root.margin)};
-  z-index: ${(p) => (p.background ? 2 : 1)};
+  z-index: ${(p) => (p.columnCount > 1 ? 2 : 0)};
 
   display: flex;
   flex-direction: column;
@@ -52,15 +56,20 @@ const PageSection = ({ id, columns }: ISection): ReactElement => {
         color={columns.length === 1 && !columns[0].background ? theme.colors.white.base : ''}
       >
         <ColumnsContainer>
-          {columns.map((column, index) => (
+          {columns.map((column, columnIndex) => (
             <Column
-              key={index}
+              key={columnIndex}
               background={column.background}
               full={columns.length === 1}
               mobile={column.mobile}
+              columnCount={columns.length}
             >
-              {column.elements.map((element, index) => (
-                <SectionElement key={index} {...element} />
+              {column.elements.map((element, elementIndex) => (
+                <SectionElement
+                  key={elementIndex}
+                  {...element}
+                  column={columns.length > 1 ? columnIndex + 1 : columnIndex}
+                />
               ))}
             </Column>
           ))}

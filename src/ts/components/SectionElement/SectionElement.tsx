@@ -9,6 +9,10 @@ import ContactForm from 'components/ContactForm';
 import IconList from 'components/IconList';
 import Map from 'components/Map';
 
+interface IElement extends ISectionElement {
+  column: number;
+}
+
 const SectionElement = ({
   type,
   text,
@@ -21,7 +25,8 @@ const SectionElement = ({
   formSections,
   messages,
   markers,
-}: ISectionElement): ReactElement => {
+  column,
+}: IElement): ReactElement => {
   let Element = null;
   switch (type) {
     case 'title':
@@ -43,9 +48,9 @@ const SectionElement = ({
       Element = <ContactForm sections={formSections} buttonText={buttonText} messages={messages} />;
       break;
     case 'map':
-      Element = <Map markers={markers} />;
+      Element = <Map markers={markers} column={column} />;
     default:
-      console.log(`WARNING: uknown element type: ${type}. Retuning null...`);
+      console.log(`WARNING: unknown element type: ${type}. Retuning null...`);
   }
 
   return Element;

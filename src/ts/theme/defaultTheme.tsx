@@ -42,7 +42,7 @@ const theme = {
     root: {
       color: colors.black.base,
       backgroundColor: 'transparent',
-      padding: '6em 4em',
+      padding: '96px 64px 64px',
       margin: 0,
     },
     alt: {
@@ -55,7 +55,7 @@ const theme = {
     },
     mobile: {
       root: {
-        padding: '3em 1.5em',
+        padding: '48px 24px 28px',
       },
       alt: {
         margin: 0,
@@ -545,10 +545,7 @@ const theme = {
     },
   },
   map: {
-    root: {
-      width: '100%',
-      maxWidth: '500px',
-    },
+    root: {},
     marker: {
       width: '5%',
     },

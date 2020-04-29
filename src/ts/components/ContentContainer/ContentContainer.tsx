@@ -6,6 +6,7 @@ const Container = styled.div<Pick<IContentContainer, 'color'>>`
   display: flex;
   justify-content: center;
   background-color: ${(p) => p.color};
+  position: relative;
 `;
 
 const Content = styled.div`

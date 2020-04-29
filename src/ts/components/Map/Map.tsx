@@ -8,12 +8,38 @@ const markerPath = require('../../../assets/images/marker.svg').default;
 
 interface IMap {
   markers: IMarker[];
+  column: number;
 }
 
-const MapContainer = styled.div`
+// many styles not in theme because they depend on map size & ratio
+// gotta be tweak for different maps
+
+const MapOuterContainer = styled.div<Pick<IMap, 'column'>>`
+  position: absolute;
+  width: 50%;
+  left: ${(p) => {
+    if (p.column === 1) return '25%';
+    if (p.column === 2) return '75%';
+    return '50%';
+  }};
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 700px;
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    position: relative;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.45);
+  }
+`;
+
+const MapInnerContainer = styled.div`
   align-self: center;
   position: relative;
-  width: ${(p) => p.theme.map.root.width};
+  width: 100%;
   height: 0;
   padding-bottom: ${(100 * 150) / 164}%;
 `;
@@ -33,7 +59,7 @@ const Tooltip = styled.div`
   transform-origin: left bottom;
   transform: scale(0);
   opacity: 0;
-  transition: transform 0.2s ease-out, opacity 0.2s linear;
+  transition: transform 0.2s ease-in, opacity 0.2s linear;
   z-index: 2;
 `;
 
@@ -51,6 +77,7 @@ const Marker = styled.div<Pick<IMarker, 'x' | 'y'>>`
     & > ${Tooltip} {
       transform: scale(1);
       opacity: 1;
+      transition: transform 0.2s 0.2s ease-out, opacity 0.2s 0.2s linear;
     }
   }
 `;
@@ -70,25 +97,27 @@ const textStyle: CSSProperties = {
   whiteSpace: 'nowrap',
 };
 
-const Map = ({ markers }: IMap): ReactElement => {
+const Map = ({ markers, column }: IMap): ReactElement => {
   //console.log(mapPath);
   return (
-    <MapContainer>
-      <MapImage src={mapPath} alt="Mapa de Costa Rica" />
-      {markers.map((marker, index) => (
-        <Marker x={marker.x} y={marker.y} key={index}>
-          <MarkerImage src={markerPath} />
-          <Tooltip>
-            <Typography type="subtitle2" style={titleStyle}>
-              {marker.title}
-            </Typography>
-            <Typography type="subtitle2" style={textStyle}>
-              {marker.text}
-            </Typography>
-          </Tooltip>
-        </Marker>
-      ))}
-    </MapContainer>
+    <MapOuterContainer column={column}>
+      <MapInnerContainer>
+        <MapImage src={mapPath} alt="Mapa de Costa Rica" />
+        {markers.map((marker, index) => (
+          <Marker x={marker.x} y={marker.y} key={index}>
+            <MarkerImage src={markerPath} />
+            <Tooltip>
+              <Typography type="subtitle2" style={titleStyle}>
+                {marker.title}
+              </Typography>
+              <Typography type="subtitle2" style={textStyle}>
+                {marker.text}
+              </Typography>
+            </Tooltip>
+          </Marker>
+        ))}
+      </MapInnerContainer>
+    </MapOuterContainer>
   );
 };
 
