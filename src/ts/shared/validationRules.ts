@@ -22,8 +22,8 @@ export const getValidFunctionFile = (rules: IRules): Validate => (data: IFileInf
       const ext = data.name.split('.').reverse()[0];
       if (rules.fileType && ext !== rules.fileType)
         return `Archivo debe ser de tipo ${rules.fileType}`;
-      if (rules.size && data.size > rules.size)
-        return `Archivo excede el tamáño máximo de ${rules.size}`;
+      if (rules.size && data.size > rules.size * 1024 * 1024)
+        return `Archivo excede el tamáño máximo de ${rules.size} MB`;
     } else {
       if (rules.required) return 'Archivo requerido';
     }

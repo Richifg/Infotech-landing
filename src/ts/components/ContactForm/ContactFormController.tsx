@@ -35,22 +35,23 @@ const ContactForm = ({ sections, buttonText, messages }: IContactForm): ReactEle
     return fields;
   }, [sections]);
   const fields = watch(fieldsToWatch);
-  console.log('FIELDS', fields);
 
   // TODO: turn this into a hook
   const postForm = async (data: any): Promise<void> => {
     console.log(data);
     setSubmitState('LOADING');
     setShowMessage(true);
-    const result = await googleScript.send(data);
-    if (result === 'error') {
+    const res = await googleScript.send(data);
+    if (res.result === 'error') {
       setSubmitState('ERROR');
+      console.log(res.error);
     } else {
       setSubmitState('SUCCESS');
       console.log('resetting');
       reset();
+      window.scrollTo({ top: 0 });
     }
-    console.log(result);
+    console.log(res);
   };
 
   // set each section's inputs based on group count

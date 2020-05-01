@@ -380,7 +380,7 @@
                       "type": "file",
                       "label": "Prueba de COLYPRO",
                       "placeholder": "Colypro.pdf",
-                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [
                         {
                           "name": "colypro",
@@ -409,7 +409,7 @@
                       "type": "file",
                       "label": "Prueba de C1",
                       "placeholder": "C1.pdf",
-                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [
                         {
                           "name": "c1",
@@ -438,7 +438,7 @@
                       "type": "file",
                       "label": "Prueba de aval",
                       "placeholder": "aval.pdf",
-                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [
                         {
                           "name": "avalIna",
@@ -494,14 +494,14 @@
                       "type": "file",
                       "label": "Curriculum Vitae",
                       "placeholder": "curriculum.pdf",
-                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" }
+                      "rules": { "required": true, "size": 3, "fileType": "pdf" }
                     },
                     {
                       "name": "titulo",
                       "type": "file",
                       "label": "Título",
                       "placeholder": "titulo.pdf",
-                      "rules": { "required": true, "size": 3000000, "fileType": "pdf" }
+                      "rules": { "required": true, "size": 3, "fileType": "pdf" }
                     }
                   ]
                 }
