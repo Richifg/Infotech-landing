@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
+import { observer, inject } from 'mobx-react';
 import styled, { keyframes } from 'styled-components';
-import { IMessages } from 'interfaces';
 import { TAsyncState } from 'interfaces/types';
+import { IDialogStore } from 'interfaces';
 
 import Typography from 'components/Typography';
 import Iconbutton from 'components/IconButton';
@@ -9,7 +10,7 @@ import Loader from 'components/Loader';
 import Icon from 'components/Icon/Icon';
 import { colors } from 'theme/defaultTheme';
 
-const Container = styled.div`
+const Background = styled.div`
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -40,6 +41,7 @@ const Content = styled.div`
   opacity: 0;
   transform: translateY(50%);
   animation: ${slideUp} 0.2s ease-out forwards;
+  text-align: center;
 `;
 
 const ButtonContainer = styled.div`
@@ -54,7 +56,10 @@ const pop = keyframes`
   100% { transform: scale(1)}
 `;
 
-const IconContainer = styled.div<Pick<IMessage, 'state'>>`
+interface IIconContainer {
+  state: TAsyncState;
+}
+const IconContainer = styled.div<IIconContainer>`
   display: flex;
   justify-content: center;
   font-size: ${(p) => p.theme.message.icon.fontSize};
@@ -74,57 +79,41 @@ const LoaderContainer = styled.div`
   margin-bottom: ${(p) => p.theme.message.icon.marginBotton};
 `;
 
-interface IMessage {
-  state: TAsyncState;
-  messages?: IMessages;
-  onClose(): void;
-}
-
-const Dialog = ({ state, messages, onClose }: IMessage): ReactElement => (
-  <Container>
-    <Content>
-      {state !== 'LOADING' && (
-        <ButtonContainer>
-          <Iconbutton name="x" onClick={onClose} text="cerrar" />
-        </ButtonContainer>
-      )}
-      {state === 'LOADING' && (
-        <>
-          <LoaderContainer>
-            <Loader size="large" />
-          </LoaderContainer>
-          <Typography type="headline3">{messages.loading.title}</Typography>
-          <Typography type="body1">{messages.loading.text}</Typography>
-        </>
-      )}
-      {state === 'ERROR' && (
-        <>
-          <IconContainer state={state}>
-            <Icon name="alert" />
-          </IconContainer>
-          <Typography type="headline3">{messages.error.title}</Typography>
-          <Typography type="body1">{messages.error.text}</Typography>
-        </>
-      )}
-      {state === 'SUCCESS' && (
-        <>
-          <IconContainer state={state}>
-            <Icon name="check" />
-          </IconContainer>
-          <Typography type="headline3">{messages.success.title}</Typography>
-          <Typography type="body1">{messages.success.text}</Typography>
-        </>
-      )}
-    </Content>
-  </Container>
+const Dialog = inject('dialog')(
+  observer(
+    ({ dialog }: IDialogStore): ReactElement => {
+      const { text, title, visible, state } = dialog;
+      if (!visible) return null;
+      return (
+        <Background>
+          <Content>
+            {!dialog.isLoading() && (
+              <ButtonContainer>
+                <Iconbutton name="x" onClick={() => (dialog.visible = false)} text="cerrar" />
+              </ButtonContainer>
+            )}
+            {dialog.isLoading() && (
+              <LoaderContainer>
+                <Loader size="large" />
+              </LoaderContainer>
+            )}
+            {dialog.isFailure() && (
+              <IconContainer state={state}>
+                <Icon name="alert" />
+              </IconContainer>
+            )}
+            {dialog.isSuccess() && (
+              <IconContainer state={state}>
+                <Icon name="check" />
+              </IconContainer>
+            )}
+            <Typography type="headline3">{title}</Typography>
+            <Typography type="body1">{text}</Typography>
+          </Content>
+        </Background>
+      );
+    },
+  ),
 );
-
-Dialog.defaultProps = {
-  messages: {
-    success: { title: 'SUCCESS', text: '' },
-    error: { title: 'ERROR', text: '' },
-    loading: { title: 'LOADING', text: '' },
-  },
-};
 
 export default Dialog;

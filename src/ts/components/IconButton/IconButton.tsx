@@ -31,15 +31,21 @@ const StyledButton = styled.button`
     background-color: ${(p) => p.theme.iconButton.decoration.backgroundColor};
     transition: width 0.2s ease-out, height 0.2 ease-out;
   }
-  &:hover::before {
-    width: ${(p) => p.theme.iconButton.hover.decoration.size};
-    height: ${(p) => p.theme.iconButton.hover.decoration.size};
-    background-color: ${(p) => p.theme.iconButton.hover.decoration.backgroundColor};
+  &:hover {
+    color: ${(p) => p.theme.colors.white.base};
+    ::before {
+      width: ${(p) => p.theme.iconButton.hover.decoration.size};
+      height: ${(p) => p.theme.iconButton.hover.decoration.size};
+      background-color: ${(p) => p.theme.iconButton.hover.decoration.backgroundColor};
+    }
   }
-  &:active::before {
-    width: ${(p) => p.theme.iconButton.active.decoration.size};
-    height: ${(p) => p.theme.iconButton.active.decoration.size};
-    background-color: ${(p) => p.theme.iconButton.active.decoration.backgroundColor};
+  &:active {
+    color: ${(p) => p.theme.colors.white.base};
+    ::before {
+      width: ${(p) => p.theme.iconButton.active.decoration.size};
+      height: ${(p) => p.theme.iconButton.active.decoration.size};
+      background-color: ${(p) => p.theme.iconButton.active.decoration.backgroundColor};
+    }
   }
   &:focus,
   &:active {

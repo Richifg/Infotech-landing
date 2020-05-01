@@ -1,4 +1,17 @@
-// content interfaces
+import DialogStore from 'store/dialogStore';
+
+// ------------------- //
+//  STORE INTERFACES  //
+// ----------------  //
+
+export interface IDialogStore {
+  dialog?: DialogStore;
+}
+
+// --------------------- //
+//  CONTENT INTERFACES  //
+// ------------------  //
+
 export interface INavbarContent {
   logoUrl: string;
   logoAlt: string;
@@ -115,3 +128,4 @@ export interface IMarker {
   x: number;
   y: number;
 }
+
