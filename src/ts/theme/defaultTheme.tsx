@@ -1,7 +1,7 @@
 const colors = {
   white: {
-    base: '#F8F8F8',
-    dark: '#E1E1E1',
+    base: '#F5F5F5',
+    dark: '#F0F0F0',
     darker: '#DDD',
   },
   black: {
@@ -231,7 +231,7 @@ const theme = {
   },
   navbar: {
     root: {
-      backgroundColor: colors.white.base,
+      backgroundColor: colors.white.dark,
       height: '100px',
       padding: '0 32px',
     },
@@ -244,16 +244,22 @@ const theme = {
     },
     mobile: {
       root: {
-        backgroundColor: colors.white.base,
-        height: '50px',
-        padding: '0 32px',
+        backgroundColor: colors.white.dark,
+        height: '60px',
+        padding: '0 24px',
       },
       menu: {
-        padding: '32px 0 128px',
-        backgroundColor: colors.white.darker,
+        padding: '32px 24px',
+        backgroundColor: colors.primary.base,
+      },
+      backdrop: {
+        backgroundColor: 'rgba(0,0,0,0.8)',
       },
       logo: {
         maxWidth: '150px',
+      },
+      burger: {
+        size: '20px',
       },
     },
   },
@@ -267,6 +273,11 @@ const theme = {
       height: '2px',
       width: '100%',
       backgroundColor: colors.secondary.base,
+    },
+    mobile: {
+      root: {
+        color: colors.white.base,
+      },
     },
   },
   banner: {

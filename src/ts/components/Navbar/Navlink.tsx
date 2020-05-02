@@ -27,6 +27,10 @@ const Link = styled.a`
   &.active::after {
     width: ${(p) => p.theme.navlink.activeBar.width};
   }
+
+  @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
+    color: ${(p) => p.theme.navlink.mobile.root.color};
+  }
 `;
 
 const Navlink = ({ to, text, active, onClick }: INavlink): React.ReactElement => (
