@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractplugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = () => ({
   entry: './src/ts/main.tsx',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'app.js',
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -24,6 +25,14 @@ module.exports = () => ({
         test: /\.tsx?$/,
         exclude: '/node_modules/',
         use: 'ts-loader',
+      },
+      {
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.scss$/,
@@ -50,8 +59,8 @@ module.exports = () => ({
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }), 
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
     new MiniCssExtractplugin(),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin(),
   ],
 });

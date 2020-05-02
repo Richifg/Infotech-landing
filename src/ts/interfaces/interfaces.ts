@@ -12,6 +12,12 @@ export interface IDialogStore {
 //  CONTENT INTERFACES  //
 // ------------------  //
 
+export interface IContent {
+  navbar: INavbarContent;
+  banner: IBannerContent;
+  sections: ISection[];
+}
+
 export interface INavbarContent {
   logoUrl: string;
   logoAlt: string;

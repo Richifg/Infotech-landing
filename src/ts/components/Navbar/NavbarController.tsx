@@ -17,7 +17,7 @@ const Navbar = ({ links, logoAlt, logoUrl }: INavbarContent): React.ReactElement
   // update activeIndex on page load
   useEffect(() => {
     updatedActiveIndex();
-  });
+  }, []);
 
   const theme = useContext(ThemeContext);
 
@@ -62,7 +62,7 @@ const Navbar = ({ links, logoAlt, logoUrl }: INavbarContent): React.ReactElement
     const throttledUpadateHash = throttleFunction(updateHash, 200);
     window.addEventListener('scroll', throttledUpadateHash);
     return () => window.removeEventListener('scroll', throttledUpadateHash);
-  });
+  }, []);
 
   return (
     <NavbarView
