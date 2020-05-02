@@ -1,4 +1,4 @@
-import DialogStore from 'store/dialogStore';
+import DialogStore from 'store/DialogStore';
 
 // ------------------- //
 //  STORE INTERFACES  //

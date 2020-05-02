@@ -2,8 +2,8 @@
   "name": "infotech-landing",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development"
+    "build": "webpack -p --mode=production",
+    "start": "webpack-dev-server --mode=development"
   },
   "repository": {
     "type": "git",
