@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractplugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = () => ({
   entry: './src/ts/main.tsx',
@@ -51,5 +52,6 @@ module.exports = () => ({
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }), 
     new MiniCssExtractplugin(),
+    new BundleAnalyzerPlugin()
   ],
 });
