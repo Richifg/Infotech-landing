@@ -303,21 +303,21 @@
                       "type": "text",
                       "label": "Nombre completo",
                       "placeholder": "Nombre Apellidos",
-                      "rules": { "required": true }
+                      "rules": { "required": true, "maxLength": 60 }
                     },
                     {
                       "name": "correo",
                       "type": "email",
                       "label": "Correo electrónico",
                       "placeholder": "correo@email.com",
-                      "rules": { "required": true }
+                      "rules": { "required": true, "maxLength": 40 }
                     },
                     {
                       "name": "telefono",
-                      "type": "number",
+                      "type": "tel",
                       "label": "Teléfono",
-                      "placeholder": "00000000",
-                      "rules": { "required": true, "minLength": 8, "maxLength": 11 }
+                      "placeholder": "0000 0000",
+                      "rules": { "required": true, "minLength": 8, "maxLength": 14 }
                     }
                   ]
                 },
@@ -331,7 +331,8 @@
                       "name": "empresa",
                       "type": "text",
                       "label": "Empresa",
-                      "rules": { "required": true }
+                      "placeholder": "Empresa",
+                      "rules": { "required": true, "maxLength": 30 }
                     },
                     {
                       "name": "fechaInicio",
@@ -452,7 +453,7 @@
                 {
                   "name": "interes",
                   "title": "Zonas de Interés",
-                  "subtitle": "Indique las zonas en las que le interesa impartir clases.</br> Puede elejir más de una zona.",
+                  "subtitle": "Indique las zonas en las que le interesa impartir clases. Puede elejir más de una zona.",
                   "expandable": false,
                   "inputs": [
                     {

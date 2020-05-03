@@ -39,7 +39,7 @@ const Card = ({ url, alt, title, subtitle }: ICard): ReactElement => (
         <Image src={url} alt={alt} />
       </ImageContainer>
       <Typography type="subtitle1">{title}</Typography>
-      <Typography type="subtitle2" color={colors.black.light}>
+      <Typography type="subtitle2" style={{ opacity: 0.65 }}>
         {subtitle}
       </Typography>
     </CardInnerContainer>

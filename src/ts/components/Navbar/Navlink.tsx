@@ -35,7 +35,7 @@ const Link = styled.a`
 
 const Navlink = ({ to, text, active, onClick }: INavlink): React.ReactElement => (
   <Link className={active && 'active'} href={`#${to}`} onClick={onClick(to)}>
-    <Typography tag="span" type="body1">
+    <Typography tag="span" type="body2">
       {text}
     </Typography>
   </Link>

@@ -37,6 +37,7 @@ const ContactFormInput = ({
     case 'email':
     case 'number':
     case 'date':
+    case 'tel':
       return (
         <InputText
           name={name}

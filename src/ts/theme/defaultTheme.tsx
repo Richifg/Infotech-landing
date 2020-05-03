@@ -23,7 +23,7 @@ const colors = {
   },
   // red
   alert: {
-    base: 'red',
+    base: '#ff3737',
   },
   success: {
     base: 'green',
@@ -73,28 +73,28 @@ const theme = {
     },
     headline2: {
       fontSize: `${42 / 16}rem`,
-      lineHeight: '1.5',
-      letterSpacing: '1.5px',
+      lineHeight: '1',
+      letterSpacing: '0.6px',
       fontWeight: '600',
       textTransform: 'uppercase',
     },
     headline3: {
       fontSize: `${28 / 16}rem`,
       lineHeight: '1.5',
-      letterSpacing: '1px',
+      letterSpacing: '2px',
       fontWeight: '600',
       textTransform: 'none',
     },
     subtitle1: {
-      fontSize: `${19 / 16}rem`,
-      lineHeight: '1.5',
-      letterSpacing: '0.15px',
+      fontSize: `${18 / 16}rem`,
+      lineHeight: '1.1',
+      letterSpacing: '1px',
       fontWeight: '600',
       textTransform: 'none',
     },
     subtitle2: {
       fontSize: `${14 / 16}rem`,
-      lineHeight: '1.5',
+      lineHeight: '1.2',
       letterSpacing: '0.1px',
       fontWeight: '400',
       textTransform: 'none',
@@ -102,14 +102,14 @@ const theme = {
     body1: {
       fontSize: `${16 / 16}rem`,
       lineHeight: '1.7',
-      letterSpacing: '0.5px',
+      letterSpacing: '0.7px',
       fontWeight: '500',
       textTransform: 'none',
     },
     body2: {
-      fontSize: `${15 / 16}rem`,
+      fontSize: `${14 / 16}rem`,
       lineHeight: '1.7',
-      letterSpacing: '0.25px',
+      letterSpacing: '1px',
       fontWeight: '500',
       textTransform: 'none',
     },
@@ -130,7 +130,7 @@ const theme = {
       },
       headline2: {
         fontSize: `${32 / 16}rem`,
-        lineHeight: '1.2',
+        lineHeight: '1.1',
         letterSpacing: '1.25px',
         fontWeight: '600',
         textTransform: 'uppercase',
@@ -144,29 +144,29 @@ const theme = {
       },
       subtitle1: {
         fontSize: `${16 / 16}rem`,
-        lineHeight: '1.5',
-        letterSpacing: '0.15px',
+        lineHeight: '1.2',
+        letterSpacing: '0.8px',
         fontWeight: '600',
         textTransform: 'none',
       },
       subtitle2: {
-        fontSize: `${14 / 16}rem`,
-        lineHeight: '1.5',
-        letterSpacing: '0.1px',
+        fontSize: `${10 / 16}rem`,
+        lineHeight: '1.1',
+        letterSpacing: '0.4px',
         fontWeight: '400',
         textTransform: 'none',
       },
       body1: {
         fontSize: `${17 / 16}rem`,
-        lineHeight: '1.9',
-        letterSpacing: '0.5px',
+        lineHeight: '1.7',
+        letterSpacing: '0.7px',
         fontWeight: '500',
         textTransform: 'none',
       },
       body2: {
         fontSize: `${16 / 16}rem`,
-        lineHeight: '1.7',
-        letterSpacing: '0.25px',
+        lineHeight: '1.5',
+        letterSpacing: '1.5px',
         fontWeight: '500',
         textTransform: 'none',
       },
@@ -303,15 +303,21 @@ const theme = {
     decoration: {
       height: '4px',
       width: '150px',
-      top: '-4px',
+      top: '-9px',
       left: '0',
       backgroundColor: colors.secondary.base,
     },
   },
   sectionParagraph: {
     root: {
-      marginBottom: '1em',
+      marginBottom: '1.2em',
       maxWidth: '500px',
+    },
+    mobile: {
+      root: {
+        marginBottom: '1.4em',
+        maxWidth: '500px',
+      },
     },
   },
   sectionImage: {
@@ -359,7 +365,7 @@ const theme = {
     },
     caption: {
       maxWidth: '200px',
-      marginTop: '2em',
+      marginTop: '0',
     },
     mobile: {
       root: {
@@ -371,7 +377,7 @@ const theme = {
       },
       caption: {
         maxWidth: '120px',
-        marginTop: '1em',
+        marginTop: '.7em',
       },
     },
   },
@@ -394,7 +400,7 @@ const theme = {
     },
     sectionTitle: {
       borderBottom: '2px solid white',
-      maxWidth: '45%',
+      maxWidth: '65%',
       marginBottom: '.5em',
     },
     sectionSubtitle: {

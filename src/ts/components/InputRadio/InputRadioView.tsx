@@ -43,11 +43,13 @@ const Radio = styled.span`
     content: '';
     display: block;
     border-radius: inherit;
-    transition: all 0.2s ease-out;
+    transition: width 0.2s ease-out, height 0.2s ease-out;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
   }
 
   label:hover > & {
@@ -59,8 +61,8 @@ const Radio = styled.span`
     border-width: ${(p) => p.theme.contactForm.radio.checked.root.borderWidth};
     background-color: ${(p) => p.theme.contactForm.radio.checked.root.backgroundColor};
     &::after {
-      width: ${(p) => p.theme.contactForm.radio.checked.dot.size} !important;
-      height: ${(p) => p.theme.contactForm.radio.checked.dot.size} !important;
+      width: ${(p) => p.theme.contactForm.radio.checked.dot.size};
+      height: ${(p) => p.theme.contactForm.radio.checked.dot.size};
       background-color: ${(p) => p.theme.contactForm.radio.checked.dot.backgroundColor};
     }
   }

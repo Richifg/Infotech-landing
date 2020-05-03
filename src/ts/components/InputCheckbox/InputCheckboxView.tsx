@@ -40,7 +40,7 @@ const Checkbox = styled.span`
   &::before {
     content: '';
     display: block;
-    transition: all 0.1s ease-out;
+    transition: all 0.15s ease-out;
     position: absolute;
     background-color: ${(p) => p.theme.contactForm.checkbox.checkmark.backgroundColor};
     --size: ${(p) => p.theme.contactForm.checkbox.checkmark.size};

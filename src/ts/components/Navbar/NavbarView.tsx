@@ -75,7 +75,7 @@ const Ul = styled.ul<Pick<INavbar, 'isOpen'>>`
     top: ${(p) => p.theme.navbar.mobile.root.height};
     left: 0;
     width: 100%;
-    transition: transform 0.35s ease-out;
+    transition: transform 0.5s ease-out;
     transform: translateX(${(p) => (p.isOpen ? '0%' : '100%')});
   }
 `;

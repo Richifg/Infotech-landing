@@ -5,7 +5,7 @@ import { IRules } from 'interfaces';
 import DefaultView from './InputTextView';
 
 interface IInputText {
-  type: 'number' | 'date' | 'email' | 'text';
+  type: 'number' | 'date' | 'email' | 'text' | 'tel';
   name: string;
   placeholder: string;
   rules: IRules;
@@ -21,7 +21,7 @@ const InputTextController = ({
   register,
   View,
 }: IInputText): ReactElement => {
-  const isSmall = ['number', 'email', 'date'].includes(type);
+  const isSmall = ['number', 'email', 'date', 'tel'].includes(type);
   return (
     <View
       type={type}

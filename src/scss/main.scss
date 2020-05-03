@@ -31,7 +31,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-// remove button defualt appearance
-button {
-  -webkit-appearance: none;
+// remove button defualt no mobile devices
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }

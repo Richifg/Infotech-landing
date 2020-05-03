@@ -1,5 +1,5 @@
 import React, { ReactElement, CSSProperties } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IMarker } from 'interfaces';
 import Typography from 'components/Typography';
 
@@ -62,17 +62,36 @@ const Tooltip = styled.div`
   z-index: 2;
 `;
 
+const upNdown = keyframes`
+  80% { transform: translate(-50%, -100%); animation-timing-function: ease-out; }
+  85% { transform: translate(-50%, -180%); animation-timing-function: ease-in; }
+  90% { transform: translate(-50%, -100%); animation-timing-function: ease-out; }
+  93% { transform: translate(-50%, -120%); animation-timing-function: ease-in; }
+  96% { transform: translate(-50%, -100%); animation-timing-function: ease-out; }
+  98% { transform: translate(-50%, -105%); animation-timing-function: ease-in; }
+  100% { transform: translate(-50%, -100%); }
+`;
+
+const grow = keyframes`
+  100% { transform: translate(-50%, -100%) scale(1.2); }
+`;
+
 const Marker = styled.div<Pick<IMarker, 'x' | 'y'>>`
   width: ${(p) => p.theme.map.marker.width};
   position: absolute;
   top: ${({ y }) => y}%;
   left: ${({ x }) => x}%;
   transform: translate(-50%, -100%);
-  transition: transform 0.2s ease-out;
   transform-origin: bottom;
+  &:nth-child(2) {
+    animation: ${upNdown} 4s infinite;
+  }
+  &:last-child {
+    animation: ${upNdown} 4s 2s infinite;
+  }
 
   &:hover {
-    transform: translate(-50%, -100%) scale(1.1);
+    animation: ${grow} 0.2s ease-out 1 forwards;
     & > ${Tooltip} {
       transform: scale(1);
       opacity: 1;
@@ -94,6 +113,7 @@ const titleStyle: CSSProperties = {
 };
 const textStyle: CSSProperties = {
   whiteSpace: 'nowrap',
+  opacity: 0.8,
 };
 
 const Map = ({ markers, column }: IMap): ReactElement => {

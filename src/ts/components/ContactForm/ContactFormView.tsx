@@ -79,6 +79,7 @@ const InputGroup = styled.div`
       width: 100%;
       text-align: center;
       margin-right: 0;
+      margin-bottom: ${(p) => p.theme.contactForm.labelColumn.margin};
     }
     & > *:last-child {
       width: 100%;
@@ -168,7 +169,9 @@ const ContactFormView = ({
                     errors={errors}
                   />
                   <ErrorContainer>
-                    <Typography type="body2">{errors?.[input.name]?.message}</Typography>
+                    <Typography type="body2" style={{ fontWeight: 700 }}>
+                      {errors?.[input.name]?.message}
+                    </Typography>
                   </ErrorContainer>
                   {section.expandable && inputIndex === section.inputs.length - 1 && (
                     <ButtonsContainer>

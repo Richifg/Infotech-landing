@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
-// to be bundled in root
-import '../../content.json';
 
 // imports for webpack
+import '../../content.json';
 import 'normalize.css';
 import '../scss/main.scss';
 

@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const Container = styled.div`
   max-width: ${(p) => p.theme.sectionParagraph.root.maxWidth};
   margin-bottom: ${(p) => p.theme.sectionParagraph.root.marginBottom};
+  @media screen and (max-width: ${(p) => p.theme.breakpoint})  {
+    max-width: ${(p) => p.theme.sectionParagraph.mobile.root.maxWidth};
+  margin-bottom: ${(p) => p.theme.sectionParagraph.mobile.root.marginBottom};
+  }
 `;
 
 interface ISectionPragraph {
