@@ -122,7 +122,7 @@ const theme = {
     },
     mobile: {
       headline1: {
-        fontSize: `${36 / 16}rem`,
+        fontSize: `${40 / 16}rem`,
         lineHeight: '1',
         letterSpacing: '-0.5px',
         fontWeight: '700',
@@ -397,6 +397,7 @@ const theme = {
     },
     section: {
       marginBottom: '2em',
+      padding: '0 1em',
     },
     sectionTitle: {
       borderBottom: '2px solid white',
@@ -528,6 +529,9 @@ const theme = {
     mobile: {
       sectionSubtitle: {
         marginBottom: '1.5em',
+      },
+      section: {
+        padding: '0',
       },
     },
   },

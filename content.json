@@ -56,7 +56,7 @@
             },
             {
               "type": "paragraph",
-              "text": "InfoTech es una empresa dedicada a la capacitación fundada 1995 en San Isidro, Pérez Zeledón."
+              "text": "InfoTech es una empresa dedicada a la formación técnica fundada 1995 en San Isidro, Pérez Zeledón."
             },
             {
               "type": "paragraph",
@@ -83,11 +83,15 @@
             },
             {
               "type": "paragraph",
-              "text": "Contamos con <strong>7 años</strong> de experiencia organizando diversos cursos de Inglés en diferentes zonas del país como San Marcos de Tarrazú, Santo Domingo de Heredia y Pérez Zeledón."
+              "text": "Contamos con <strong>7 años</strong> de experiencia impartiendo diversos cursos de Inglés en diferentes zonas del país como San Marcos de Tarrazú, Santo Domingo de Heredia y Pérez Zeledón."
             },
             {
               "type": "paragraph",
-              "text": "En estos años hemos impartido alrededor <strong>50 programas</strong> completos en los que se han graduado aproximadamente <strong>850 estudiantes</strong>."
+              "text": "En estos años hemos impartido alrededor <strong>50 programas</strong> completos de <strong>987 horas</strong> cada uno en los que se han graduado aproximadamente <strong>850 estudiantes</strong>."
+            },
+            {
+              "type": "paragraph",
+              "text": "También hemos ejecutado contratos una gran cantidad de contratos con el INA de cursos cortos en diferentes áreas."
             },
             {
               "type": "slider",
@@ -324,7 +328,7 @@
                 {
                   "name": "experiencia",
                   "title": "Experiencia laboral",
-                  "subtitle": "Mínimo un año de eperiencia como docente luego de obtener el título de bachillerato.</br> Puede agregar más de una experiencia.",
+                  "subtitle": "Mínimo un año de experiencia como docente luego de obtener el título de bachillerato. Puede agregar más de una experiencia.",
                   "expandable": true,
                   "inputs": [
                     {
@@ -358,18 +362,18 @@
                 {
                   "name": "certificaciones",
                   "title": "Certificaciones",
-                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias.</br> En caso de posserlas debe adjuntar la prueba.",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias. En caso de posserlas debe adjuntar la prueba correspondiente.",
                   "expandable": false,
                   "inputs": [
                     {
                       "name": "colypro",
                       "type": "radio",
-                      "label": "Certificación COLYPRO",
+                      "label": "Certificación COLYPRO al día",
                       "placeholder": "no",
                       "options": [
                         {
                           "value": "no",
-                          "label": "No, pero dispuesto a colegiarse con nosotros"
+                          "label": "No, pero dispuesto a cumplir con este requisito"
                         },
                         {
                           "value": "si",
@@ -380,7 +384,7 @@
                     {
                       "name": "colypro_archivo",
                       "type": "file",
-                      "label": "Prueba de COLYPRO",
+                      "label": "Adjunte certificación COLYPRO",
                       "placeholder": "Colypro.pdf",
                       "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [
@@ -393,7 +397,7 @@
                     {
                       "name": "c1",
                       "type": "radio",
-                      "label": "Certificado C1",
+                      "label": "Certificado Speaking C1 vigente",
                       "placeholder": "no",
                       "options": [
                         {
@@ -409,7 +413,7 @@
                     {
                       "name": "c1_archivo",
                       "type": "file",
-                      "label": "Prueba de C1",
+                      "label": "Adjunte certificación C1",
                       "placeholder": "C1.pdf",
                       "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [
@@ -438,7 +442,7 @@
                     {
                       "name": "avalInao_archivo",
                       "type": "file",
-                      "label": "Prueba de aval",
+                      "label": "Adjunte documento de aval",
                       "placeholder": "aval.pdf",
                       "rules": { "required": true, "size": 3, "fileType": "pdf" },
                       "conditions": [

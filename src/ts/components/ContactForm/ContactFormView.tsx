@@ -31,10 +31,13 @@ const SectionsContainer = styled.div`
   }
 `;
 const FormSection = styled.div`
+  box-sizing: border-box;
   width: 50%;
   margin-bottom: ${(p) => p.theme.contactForm.section.marginBottom};
+  padding: ${(p) => p.theme.contactForm.section.padding};
   @media screen and (max-width: 1440px) {
     width: auto;
+    padding: ${(p) => p.theme.contactForm.mobile.section.padding};
   }
 `;
 const SectionTitle = styled.div`
