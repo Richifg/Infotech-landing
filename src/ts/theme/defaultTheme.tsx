@@ -332,6 +332,7 @@ const theme = {
   carousel: {
     root: {
       width: '100%',
+      margin: '0 0 2em',
     },
     arrow: {
       height: '50px',

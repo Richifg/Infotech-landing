@@ -11,6 +11,7 @@ interface ICardsCarousel {
 
 const CarouselContainer = styled.div`
   width: ${(p) => p.theme.carousel.root.width};
+  margin: ${(p) => p.theme.carousel.root.margin};
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
     width: ${(p) => p.theme.carousel.mobile.root.width};
   }

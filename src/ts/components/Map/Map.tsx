@@ -24,7 +24,7 @@ const MapOuterContainer = styled.div<Pick<IMap, 'column'>>`
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  max-width: 700px;
+  max-width: 600px;
 
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
     position: relative;
@@ -104,7 +104,7 @@ const Map = ({ markers, column }: IMap): ReactElement => {
         <MapImage src={mapPath} alt="Mapa de Costa Rica" />
         {markers.map((marker, index) => (
           <Marker x={marker.x} y={marker.y} key={index}>
-            <MarkerImage src={markerPath} />
+            <MarkerImage src={markerPath} alt="" />
             <Tooltip>
               <Typography type="subtitle2" style={titleStyle}>
                 {marker.title}

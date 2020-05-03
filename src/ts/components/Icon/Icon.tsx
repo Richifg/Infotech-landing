@@ -13,10 +13,17 @@ const StyledI = styled.i<IStyledI>`
 
 interface IIcon extends IStyledI {
   name: string;
+  alt?: string;
 }
 
-const Icon = ({ name, size, color }: IIcon): ReactElement => (
-  <StyledI className={`icon-${name}`} size={size} color={color} aria-hidden="true" />
+const Icon = ({ name, size, color, alt }: IIcon): ReactElement => (
+  <StyledI
+    className={`icon-${name}`}
+    size={size}
+    color={color}
+    aria-hidden={alt ? 'false' : 'true'}
+    title={alt}
+  />
 );
 
 Icon.defaultProps = {

@@ -17,11 +17,25 @@ const slideUp = keyframes`
 
 const FormContent = styled.div`
   background-color: ${(p) => p.theme.contactForm.root.backgroundColor};
-  max-width: ${(p) => p.theme.contactForm.root.maxWidth};
   text-align: ${(p) => p.theme.contactForm.root.textAlign};
+  @media screen and (max-width: 1440px) {
+    max-width: ${(p) => p.theme.contactForm.root.maxWidth};
+  }
+`;
+const SectionsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1440px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 `;
 const FormSection = styled.div`
+  width: 50%;
   margin-bottom: ${(p) => p.theme.contactForm.section.marginBottom};
+  @media screen and (max-width: 1440px) {
+    width: auto;
+  }
 `;
 const SectionTitle = styled.div`
   border-bottom: ${(p) => p.theme.contactForm.sectionTitle.borderBottom};
@@ -123,59 +137,61 @@ const ContactFormView = ({
   useEffect(() => console.log('RE-RENDER'));
   return (
     <FormContent>
-      {sections.map((section, sectionIndex) => (
-        <FormSection key={sectionIndex}>
-          <SectionTitle>
-            <Typography type="headline3" tag="h3">
-              {section.title}
-            </Typography>
-          </SectionTitle>
-          <SectionSubtitle>
-            <Typography type="body2">{section.subtitle}</Typography>
-          </SectionSubtitle>
-          {section.inputs.map((input, inputIndex) => (
-            <InputGroup key={input.name}>
-              <LabelContainer>
-                <Typography type="body1" tag="label" htmlFor={input.name}>
-                  {input.label}:
-                </Typography>
-              </LabelContainer>
-              <InputContainer>
-                <ContactFormInput
-                  name={input.name}
-                  type={input.type}
-                  placeholder={input.placeholder}
-                  options={input.options}
-                  rules={input.rules}
-                  register={register}
-                  unregister={unregister}
-                  setValue={setValue}
-                  errors={errors}
-                />
-                <ErrorContainer>
-                  <Typography type="body2">{errors?.[input.name]?.message}</Typography>
-                </ErrorContainer>
-                {section.expandable && inputIndex === section.inputs.length - 1 && (
-                  <ButtonsContainer>
-                    <IconButton
-                      name="plus"
-                      text="agregar"
-                      onClick={() => onAddGroup(sectionIndex)}
-                    />
-                    {groupCounts[sectionIndex] > 1 && (
+      <SectionsContainer>
+        {sections.map((section, sectionIndex) => (
+          <FormSection key={sectionIndex}>
+            <SectionTitle>
+              <Typography type="headline3" tag="h3">
+                {section.title}
+              </Typography>
+            </SectionTitle>
+            <SectionSubtitle>
+              <Typography type="body2">{section.subtitle}</Typography>
+            </SectionSubtitle>
+            {section.inputs.map((input, inputIndex) => (
+              <InputGroup key={input.name}>
+                <LabelContainer>
+                  <Typography type="body1" tag="label" htmlFor={input.name}>
+                    {input.label}:
+                  </Typography>
+                </LabelContainer>
+                <InputContainer>
+                  <ContactFormInput
+                    name={input.name}
+                    type={input.type}
+                    placeholder={input.placeholder}
+                    options={input.options}
+                    rules={input.rules}
+                    register={register}
+                    unregister={unregister}
+                    setValue={setValue}
+                    errors={errors}
+                  />
+                  <ErrorContainer>
+                    <Typography type="body2">{errors?.[input.name]?.message}</Typography>
+                  </ErrorContainer>
+                  {section.expandable && inputIndex === section.inputs.length - 1 && (
+                    <ButtonsContainer>
                       <IconButton
-                        name="minus"
-                        text="remover"
-                        onClick={() => onRemoveGroup(sectionIndex)}
+                        name="plus"
+                        alt="agregar"
+                        onClick={() => onAddGroup(sectionIndex)}
                       />
-                    )}
-                  </ButtonsContainer>
-                )}
-              </InputContainer>
-            </InputGroup>
-          ))}
-        </FormSection>
-      ))}
+                      {groupCounts[sectionIndex] > 1 && (
+                        <IconButton
+                          name="minus"
+                          alt="remover"
+                          onClick={() => onRemoveGroup(sectionIndex)}
+                        />
+                      )}
+                    </ButtonsContainer>
+                  )}
+                </InputContainer>
+              </InputGroup>
+            ))}
+          </FormSection>
+        ))}
+      </SectionsContainer>
       <SubmitContainer>
         <Button type="submit">{buttonText}</Button>
       </SubmitContainer>

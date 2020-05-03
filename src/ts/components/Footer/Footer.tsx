@@ -68,13 +68,13 @@ const Footer = ({
   <StyledFooter>
     <IconsContainer>
       <LinkIcon href={`mailto::${email}`}>
-        <Icon name="email" />
+        <Icon name="email" alt="correo" />
       </LinkIcon>
       <LinkIcon href={`tel:${phone}`}>
-        <Icon name="phone" />
+        <Icon name="phone" alt="teléfono" />
       </LinkIcon>
       <LinkIcon href={facebook} target="_blank">
-        <Icon name="facebook" />
+        <Icon name="facebook" alt="facebook" />
       </LinkIcon>
     </IconsContainer>
     <CreditLogoContainer>

@@ -26,7 +26,7 @@
     ]
   },
   "banner": {
-    "url": "https://res.cloudinary.com/richi/image/upload/v1586051179/Infotech/Hero_Banner_pto2to.png",
+    "url": "https://res.cloudinary.com/richi/image/upload/e_blur:50/v1586051179/Infotech/Hero_Banner_pto2to.png",
     "text": "Buscamos profesores de ingles capacitados </br><span>para impartir cursos avalados por el INA<span>",
     "buttonText": "Aplicá aquí",
     "buttonTo": "aplique"
@@ -93,62 +93,62 @@
               "type": "slider",
               "cards": [
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/ingles1_xrupjv.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479088/Infotech/slides/slide-english-1.jpg",
+                  "alt": "",
                   "title": "Inglés",
                   "subtitle": "San Marcos, Tarrazú: 2014-2018"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/ingles2_n2wdtg.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479082/Infotech/slides/slide-english-3.jpg",
+                  "alt": "",
                   "title": "Inglés",
                   "subtitle": "Santo Domingo, Heredia: 2016-2020"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/ingles1_xrupjv.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479085/Infotech/slides/slide-english-2.jpg",
+                  "alt": "",
                   "title": "Inglés",
                   "subtitle": "San Isidro, Pérez Zeledón: 2008"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/aire_comprimido_h6bl1f.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479068/Infotech/slides/slide-air.jpg",
+                  "alt": "",
                   "title": "Sistemas de Aire Comprimido",
                   "subtitle": "San José, Alajuela: 2002-2007"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/preparion_colores_wd02u0.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479083/Infotech/slides/slide-paint.jpg",
+                  "alt": "",
                   "title": "Preparación de Colores Automotrices",
                   "subtitle": "San José: 2002"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707447/Infotech/slides/camarera_hotel_whmyql.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479080/Infotech/slides/slide-hotel.jpg",
+                  "alt": "",
                   "title": "Camarera de Hotel",
                   "subtitle": "Quepos: 2002"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707447/Infotech/slides/cerigrafia_csxpiy.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479072/Infotech/slides/slide-cerigraphy.jpg",
+                  "alt": "",
                   "title": "Serigrafía",
                   "subtitle": "Alajuela: 2003"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/mantenimiento_computadoras_goapqx.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479065/Infotech/slides/slide-computer-3.jpg",
+                  "alt": "",
                   "title": "Mantenimiento de Computadoras",
                   "subtitle": "Ciudad Quesada, Liberia, Santa Cruz: 2001-2002"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707451/Infotech/slides/mantenimiento_computadoras_goapqx.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479076/Infotech/slides/slide-computer-1.jpg",
+                  "alt": "",
                   "title": "Mantenimiento de Computadoras",
                   "subtitle": "San Isidro, Buenos Aires, San Vito, Palmar Norte, Golfito, Ciudad Neily, 1999-2000"
                 },
                 {
-                  "url": "https://res.cloudinary.com/richi/image/upload/v1586707448/Infotech/slides/informatica_ag14sx.png",
-                  "alt": "THIS IS THE ALT",
+                  "url": "https://res.cloudinary.com/richi/image/upload/c_scale,w_700/v1588479060/Infotech/slides/slide-computer-4.jpg",
+                  "alt": "",
                   "title": "Informática",
                   "subtitle": "San Vito: 1998-1999"
                 }
@@ -295,6 +295,7 @@
                 {
                   "name": "datosPersonales",
                   "title": "Datos personales",
+                  "subtitle": "Usaremos esta información para contactarlo una vez hemos revisado su aplicación.",
                   "expandable": false,
                   "inputs": [
                     {
@@ -356,7 +357,7 @@
                 {
                   "name": "certificaciones",
                   "title": "Certificaciones",
-                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias.",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias.</br> En caso de posserlas debe adjuntar la prueba.",
                   "expandable": false,
                   "inputs": [
                     {
@@ -515,7 +516,7 @@
   "footer": {
     "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1588468188/Infotech/logos/Infotech-imagen_lh7ndc.svg",
     "logoAlt": "Logo infotech",
-    "email": "luisagamboa@infotech.com",
+    "email": "infotechcapacitacion@gmail.com",
     "phone": "+506-8825-7520",
     "facebook": "https://www.facebook.com/infotechcapacitacion/",
     "logoCredits": "https://www.flaticon.es/colecciones/MTAzNzgyMjI=",

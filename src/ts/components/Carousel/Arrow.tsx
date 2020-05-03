@@ -37,7 +37,6 @@ const Arrow = styled.button<IArrow>`
     background-color: ${(p) => p.theme.carousel.arrow.color};
     width: ${(p) => p.theme.carousel.arrow.thickness};
     height: ${(p) => p.theme.carousel.arrow.width};
-    border-radius: ${(p) => p.theme.carousel.arrow.thickness};
     transform-origin: bottom center;
     transform: translate(-50%, calc(${(p) => p.theme.carousel.arrow.thickness} / 3)) rotate(40deg);
     opacity: 1 !important;
@@ -50,7 +49,6 @@ const Arrow = styled.button<IArrow>`
     background-color: ${(p) => p.theme.carousel.arrow.color};
     width: ${(p) => p.theme.carousel.arrow.thickness};
     height: ${(p) => p.theme.carousel.arrow.width};
-    border-radius: ${(p) => p.theme.carousel.arrow.thickness};
     transform-origin: bottom center;
     transform: translate(-50%, calc(-${(p) => p.theme.carousel.arrow.thickness} / 3)) rotate(140deg);
   }

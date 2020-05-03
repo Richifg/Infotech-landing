@@ -89,7 +89,7 @@ const Dialog = inject('dialog')(
           <Content>
             {!dialog.isLoading() && (
               <ButtonContainer>
-                <Iconbutton name="x" onClick={() => (dialog.visible = false)} text="cerrar" />
+                <Iconbutton name="x" onClick={() => (dialog.visible = false)} alt="cerrar" />
               </ButtonContainer>
             )}
             {dialog.isLoading() && (
