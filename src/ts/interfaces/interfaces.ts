@@ -16,6 +16,7 @@ export interface IContent {
   navbar: INavbarContent;
   banner: IBannerContent;
   sections: ISection[];
+  footer: IFooterContent;
 }
 
 export interface INavbarContent {
@@ -135,3 +136,12 @@ export interface IMarker {
   y: number;
 }
 
+export interface IFooterContent {
+  logoUrl: string;
+  logoAlt?: string;
+  email: string;
+  phone: string;
+  facebook: string;
+  logoCredits?: string;
+  imageCredits?: string;
+}

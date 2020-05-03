@@ -9,6 +9,7 @@ import DialogStore from 'store/DialogStore';
 import Navbar from 'components/Navbar';
 import Banner from 'components/Banner';
 import Section from 'components/Section';
+import Footer from 'components/Footer';
 import Dialog from 'components/Dialog';
 
 const App = (): React.ReactElement => {
@@ -30,16 +31,14 @@ const App = (): React.ReactElement => {
   return (
     <Provider dialog={dialogStore}>
       <ThemeProvider theme={theme}>
-        <header>
-          <Navbar {...content.navbar} />
-        </header>
-
+        <Navbar {...content.navbar} />
         <main>
           <Banner {...content.banner} />
           {content.sections.map((section) => (
             <Section key={section.id} {...section} />
           ))}
         </main>
+        <Footer {...content.footer} />
         <Dialog />
       </ThemeProvider>
     </Provider>

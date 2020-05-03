@@ -31,7 +31,8 @@ const Column = styled.div<IStyledColumn>`
     return p.theme.column.root.backgroundColor;
   }};
   color: ${(p) => (p.background ? p.theme.column.alt.color : p.theme.column.root.color)};
-  margin: ${(p) => (p.background ? p.theme.column.alt.margin : p.theme.column.root.margin)};
+  margin: ${(p) =>
+    p.background && !p.full ? p.theme.column.alt.margin : p.theme.column.root.margin};
   z-index: ${(p) => (p.columnCount > 1 ? 2 : 0)};
 
   display: flex;
@@ -50,11 +51,15 @@ const Column = styled.div<IStyledColumn>`
 
 const PageSection = ({ id, columns }: ISection): ReactElement => {
   const theme = useContext(ThemeContext);
+  const backgroundColor =
+    columns.length === 1
+      ? !columns[0].background
+        ? theme.colors.white.base
+        : theme.colors.primary.base
+      : '';
   return (
     <section id={id}>
-      <ContentContainer
-        color={columns.length === 1 && !columns[0].background ? theme.colors.white.base : ''}
-      >
+      <ContentContainer color={backgroundColor}>
         <ColumnsContainer>
           {columns.map((column, columnIndex) => (
             <Column

@@ -1,7 +1,7 @@
 {
   "navbar": {
     "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1586028257/Infotech/logos/Infotech-letras-1_pq59qj.png",
-    "logoAlt": "Logo Infotech",
+    "logoAlt": "Infotech Capacitacion",
     "links": [
       {
         "to": "quienes-somos",
@@ -42,7 +42,7 @@
             {
               "type": "image",
               "url": "https://res.cloudinary.com/richi/image/upload/v1586322580/Infotech/logos/Infotech-completo-2_ob7vg1.png",
-              "alt": "Logo Infotech 25 aniversario"
+              "alt": "Infotech Capacitacion 25 aniversario"
             }
           ]
         },
@@ -511,6 +511,15 @@
         }     
       ]
     }
-  ]
+  ],
+  "footer": {
+    "logoUrl": "https://res.cloudinary.com/richi/image/upload/v1588468188/Infotech/logos/Infotech-imagen_lh7ndc.svg",
+    "logoAlt": "Logo infotech",
+    "email": "luisagamboa@infotech.com",
+    "phone": "+506-8825-7520",
+    "facebook": "https://www.facebook.com/infotechcapacitacion/",
+    "logoCredits": "https://www.flaticon.es/colecciones/MTAzNzgyMjI=",
+    "imageCredits": "https://unsplash.com/collections/8250444/infotech-images" 
+  }
 }
 

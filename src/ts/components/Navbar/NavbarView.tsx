@@ -48,8 +48,11 @@ const Ul = styled.ul<Pick<INavbar, 'isOpen'>>`
   list-style: none;
   margin: 0;
   width: 100%;
-  & li {
-    margin: 0 1em;
+  & li:not(:first-child) {
+    margin-left: 1em;
+  }
+  & li:not(:last-child) {
+    margin-right: 1em;
   }
   & li:first-child {
     margin-right: auto;
@@ -130,30 +133,32 @@ const Navbar = ({
   onToggle,
   onLinkClick,
 }: INavbar): React.ReactElement => (
-  <Nav>
-    <LogoMobile src={logoUrl} alt={logoAlt} />
-    <MobileBackdrop isOpen={isOpen} />
-    <Ul isOpen={isOpen}>
-      <LogoContainer>
-        <a href="/" onClick={onClose}>
-          <Logo src={logoUrl} alt={logoAlt} />
-        </a>
-      </LogoContainer>
-      {links.map((link, index) => (
-        <NavLinkContainer key={index} isOpen={isOpen}>
-          <Navlink
-            to={link.to}
-            text={link.text}
-            active={index === activeIndex}
-            onClick={onLinkClick}
-          />
-        </NavLinkContainer>
-      ))}
-    </Ul>
-    <BurgerContainer>
-      <BurgerButton onClick={onToggle} isOpen={isOpen} />
-    </BurgerContainer>
-  </Nav>
+  <header>
+    <Nav>
+      <LogoMobile src={logoUrl} alt={logoAlt} />
+      <MobileBackdrop isOpen={isOpen} />
+      <Ul isOpen={isOpen}>
+        <LogoContainer>
+          <a href="/" onClick={onClose}>
+            <Logo src={logoUrl} alt={logoAlt} />
+          </a>
+        </LogoContainer>
+        {links.map((link, index) => (
+          <NavLinkContainer key={index} isOpen={isOpen}>
+            <Navlink
+              to={link.to}
+              text={link.text}
+              active={index === activeIndex}
+              onClick={onLinkClick}
+            />
+          </NavLinkContainer>
+        ))}
+      </Ul>
+      <BurgerContainer>
+        <BurgerButton onClick={onToggle} isOpen={isOpen} />
+      </BurgerContainer>
+    </Nav>
+  </header>
 );
 
 export default Navbar;

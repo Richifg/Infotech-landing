@@ -16,7 +16,7 @@ interface IIcon extends IStyledI {
 }
 
 const Icon = ({ name, size, color }: IIcon): ReactElement => (
-  <StyledI className={`icon-${name}`} size={size} color={color} />
+  <StyledI className={`icon-${name}`} size={size} color={color} aria-hidden="true" />
 );
 
 Icon.defaultProps = {

@@ -246,7 +246,7 @@ const theme = {
       root: {
         backgroundColor: colors.white.dark,
         height: '60px',
-        padding: '0 24px',
+        padding: '0 16px',
       },
       menu: {
         padding: '32px 24px',
@@ -565,6 +565,29 @@ const theme = {
       padding: '.5em',
       borderRadius: '8px 8px 8px 0',
       backgroundColor: colors.white.base,
+    },
+  },
+  footer: {
+    root: {
+      padding: '16px 32px',
+      color: colors.black.base,
+    },
+    icon: {
+      size: '31px',
+      marginLeft: '22px',
+      color: colors.secondary.base,
+    },
+    logo: {
+      size: '44px',
+    },
+    mobile: {
+      root: {
+        padding: '16px 16px',
+      },
+      icon: {
+        size: '25px',
+        marginLeft: '11px',
+      },
     },
   },
 };
