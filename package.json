@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "favicons-webpack-plugin": "^3.0.1",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "normalize.css": "^8.0.1",

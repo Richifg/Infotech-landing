@@ -37,7 +37,7 @@ const BannerContent = styled.div`
     text-shadow: 1px 1px 2px black;
     & span {
       color: ${(p) => p.theme.colors.primary.base};
-      text-shadow: 1px 1px 1px white;
+      text-shadow: 2px 1px 2px white;
     }
   }
 `;
