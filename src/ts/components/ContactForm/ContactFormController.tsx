@@ -62,7 +62,7 @@ const ContactForm = inject('dialog')(
           console.log(res.error);
         } else {
           dialog.setSuccess();
-          //reset();
+          reset();
           window.scrollTo({ top: 0 });
         }
         console.log(res);
