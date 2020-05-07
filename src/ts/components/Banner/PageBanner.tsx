@@ -30,6 +30,8 @@ const BannerContainer = styled.section<IBannerContainer>`
     height: ${(p) => p.theme.banner.mobile.root.height};
     margin-top: ${(p) => p.theme.navbar.mobile.root.height};
     padding: ${(p) => p.theme.banner.mobile.root.padding};
+    animation: none;
+    background-position: 0% 0%;
   }
 `;
 
