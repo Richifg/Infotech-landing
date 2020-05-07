@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IBannerContent } from 'interfaces/interfaces';
 
 import Typography from 'components/Typography';
@@ -9,12 +9,16 @@ import ContentContainer from 'components/ContentContainer';
 interface IBannerContainer {
   url: string;
 }
+const moveBG = keyframes`
+  100% { background-position: 0% 0%; }}
+`;
 const BannerContainer = styled.section<IBannerContainer>`
   background: url("${(p) => p.url}"), black;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 10% 10%;
   box-sizing: border-box;
+  animation: ${moveBG} 10s ease-out forwards;
 
   max-height: ${(p) => p.theme.banner.root.maxHeight};
   height: calc(${(p) => p.theme.banner.root.height} - ${(p) => p.theme.navbar.root.height});

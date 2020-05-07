@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
-import { colors } from 'theme/defaultTheme';
 import { ICard } from 'interfaces';
 import Typography from 'components/Typography';
 
@@ -39,7 +38,7 @@ const Card = ({ url, alt, title, subtitle }: ICard): ReactElement => (
         <Image src={url} alt={alt} />
       </ImageContainer>
       <Typography type="subtitle1">{title}</Typography>
-      <Typography type="subtitle2" style={{ opacity: 0.65 }}>
+      <Typography type="subtitle2" style={{ opacity: 0.75 }}>
         {subtitle}
       </Typography>
     </CardInnerContainer>

@@ -26,7 +26,7 @@
     ]
   },
   "banner": {
-    "url": "https://res.cloudinary.com/richi/image/upload/e_blur:50/v1586051179/Infotech/Hero_Banner_pto2to.png",
+    "url": "https://res.cloudinary.com/richi/image/upload/v1588812945/Infotech/architecture-1_cfsyzn.jpg",
     "text": "Buscamos profesores de ingles capacitados </br><span>para impartir cursos avalados por el INA<span>",
     "buttonText": "Aplicá aquí",
     "buttonTo": "aplique"
@@ -91,7 +91,7 @@
             },
             {
               "type": "paragraph",
-              "text": "También hemos ejecutado contratos una gran cantidad de contratos con el INA de cursos cortos en diferentes áreas."
+              "text": "También hemos ejecutado una gran cantidad de contratos con el INA de cursos cortos en diferentes áreas."
             },
             {
               "type": "slider",
@@ -288,7 +288,7 @@
                 },
                 "error": {
                   "title": "¡OH NO!",
-                  "text": "Lo sentimos, parece que hubo un error con la aplicación. </br> Intente más tarde o contáctenos directamente a <b>correo@infotech.com</b>."
+                  "text": "Lo sentimos, parece que hubo un error con la aplicación. </br> Intente más tarde o contáctenos directamente a <b>infotechcapacitacion@gmail.com</b>."
                 },
                 "loading": {
                   "title": "ENVIANDO",

@@ -29,6 +29,9 @@ const LinkIcon = styled.a`
       margin-left: ${(p) => p.theme.footer.mobile.icon.marginLeft};
     }
   }
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 const CreditLogoContainer = styled.div`
   display: flex;
