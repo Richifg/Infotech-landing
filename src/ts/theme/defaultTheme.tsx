@@ -65,7 +65,7 @@ const theme = {
   typography: {
     root: {},
     headline1: {
-      fontSize: `${64 / 16}rem`,
+      fontSize: `${60 / 16}rem`,
       lineHeight: '0.9',
       letterSpacing: '-2.5px',
       fontWeight: '700',
@@ -232,7 +232,7 @@ const theme = {
   navbar: {
     root: {
       backgroundColor: colors.white.dark,
-      height: '100px',
+      height: '70px',
       padding: '0 32px',
     },
     menu: {
