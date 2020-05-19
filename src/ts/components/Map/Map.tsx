@@ -117,7 +117,6 @@ const textStyle: CSSProperties = {
 };
 
 const Map = ({ markers, column }: IMap): ReactElement => {
-  //console.log(mapPath);
   return (
     <MapOuterContainer column={column}>
       <MapInnerContainer>

@@ -29,7 +29,6 @@ const InputFileController = ({
   const FR = useRef(new FileReader());
   const file = useRef(null);
   const [fileState, setFileState] = useState<TAsyncState>('INIT');
-  console.log(file);
 
   // configure file reader on mount
   useEffect(() => {

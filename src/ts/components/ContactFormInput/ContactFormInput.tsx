@@ -31,7 +31,6 @@ const ContactFormInput = ({
   setValue,
   errors,
 }: IContactFormInput): ReactElement => {
-  //console.log(name, type, placeholder, options, rules);
   switch (type) {
     case 'text':
     case 'email':

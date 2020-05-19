@@ -53,7 +53,6 @@ const ContactForm = inject('dialog')(
 
       // TODO: turn this into a hook
       const postForm = async (data: any): Promise<void> => {
-        console.log(data);
         dialog.setLoading();
         dialog.visible = true;
         const res = await googleScript.send(data);
@@ -65,7 +64,6 @@ const ContactForm = inject('dialog')(
           reset();
           window.scrollTo({ top: 0 });
         }
-        console.log(res);
       };
 
       // set each section's inputs based on group count

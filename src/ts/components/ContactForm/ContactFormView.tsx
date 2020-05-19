@@ -138,7 +138,6 @@ const ContactFormView = ({
   sections,
   buttonText,
 }: IContactFormView): ReactElement => {
-  useEffect(() => console.log('RE-RENDER'));
   return (
     <FormContent>
       <SectionsContainer>
