@@ -392,7 +392,7 @@
                       "type": "file",
                       "label": "Adjunte certificación COLYPRO",
                       "placeholder": "Colypro.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] },
                       "conditions": [
                         {
                           "name": "colypro",
@@ -421,7 +421,7 @@
                       "type": "file",
                       "label": "Adjunte certificación C1",
                       "placeholder": "C1.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] },
                       "conditions": [
                         {
                           "name": "c1",
@@ -450,7 +450,7 @@
                       "type": "file",
                       "label": "Adjunte documento de aval",
                       "placeholder": "aval.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": "pdf" },
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] },
                       "conditions": [
                         {
                           "name": "avalIna",
@@ -510,14 +510,14 @@
                       "type": "file",
                       "label": "Curriculum Vitae",
                       "placeholder": "curriculum.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": "pdf" }
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx"] }
                     },
                     {
                       "name": "titulo",
                       "type": "file",
                       "label": "Título",
                       "placeholder": "titulo.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": "pdf" }
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] }
                     }
                   ]
                 }
@@ -533,9 +533,7 @@
     "logoAlt": "Logo infotech",
     "email": "infotechcapacitacion@gmail.com",
     "phone": "+506-8825-7520",
-    "facebook": "https://www.facebook.com/infotechcapacitacion/",
-    "logoCredits": "https://www.flaticon.es/colecciones/MTAzNzgyMjI=",
-    "imageCredits": "https://unsplash.com/collections/8250444/infotech-images" 
+    "facebook": "https://www.facebook.com/infotechcapacitacion/"
   }
 }
 

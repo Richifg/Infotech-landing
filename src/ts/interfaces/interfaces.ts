@@ -115,7 +115,7 @@ export interface IRules {
   maxLength?: number;
   minLength?: number;
   size?: number;
-  fileType?: string;
+  fileType?: string | string[];
 }
 
 export interface ICondition {
@@ -142,6 +142,4 @@ export interface IFooterContent {
   email: string;
   phone: string;
   facebook: string;
-  logoCredits?: string;
-  imageCredits?: string;
 }

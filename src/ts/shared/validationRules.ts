@@ -19,9 +19,11 @@ export const getValidFunctionInput = (rules: IRules): Validate => (data) => {
 export const getValidFunctionFile = (rules: IRules): Validate => (data: IFileInfo) => {
   if (rules) {
     if (data) {
-      const ext = data.name.split('.').reverse()[0];
-      if (rules.fileType && ext !== rules.fileType)
-        return `Archivo debe ser de tipo ${rules.fileType}`;
+      const ext = data.name.split('.').reverse()[0].toLowerCase();
+      const fileTypes = Array.isArray(rules.fileType) ? [...rules.fileType] : [rules.fileType];
+      console.log(ext, fileTypes);
+      if (rules.fileType && !fileTypes.includes(ext))
+        return `Solo se permiten archivos de tipo: ${fileTypes.join(', ')}`;
       if (rules.size && data.size > rules.size * 1024 * 1024)
         return `Archivo excede el tamáño máximo de ${rules.size} MB`;
     } else {
