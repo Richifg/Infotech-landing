@@ -51,7 +51,7 @@ const theme = {
       margin: '-32px 0',
     },
     full: {
-      backgroundColor: colors.white.base,
+      backgroundColor: colors.white.dark,
     },
     mobile: {
       root: {
@@ -231,7 +231,7 @@ const theme = {
   },
   navbar: {
     root: {
-      backgroundColor: colors.white.dark,
+      backgroundColor: colors.white.base,
       height: '70px',
       padding: '0 32px',
     },

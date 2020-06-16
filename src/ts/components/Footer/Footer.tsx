@@ -33,23 +33,10 @@ const LinkIcon = styled.a`
     transform: scale(1.05);
   }
 `;
-const CreditLogoContainer = styled.div`
+const LogoContainer = styled.a`
   display: flex;
   margin-left: auto;
   align-items: center;
-`;
-const CreditsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-`;
-const Credit = styled.p`
-  font-size: 9px;
-`;
-const CreditLink = styled.a`
-  color: inherit !important;
-  font-weight: 700;
-  line-height: 1.5;
 `;
 const Logo = styled.img`
   margin-left: 1em;
@@ -59,15 +46,7 @@ const Logo = styled.img`
   }
 `;
 
-const Footer = ({
-  logoUrl,
-  logoAlt,
-  email,
-  phone,
-  facebook,
-  logoCredits,
-  imageCredits,
-}: IFooterContent): ReactElement => (
+const Footer = ({ logoUrl, logoAlt, email, phone, facebook }: IFooterContent): ReactElement => (
   <StyledFooter>
     <IconsContainer>
       <LinkIcon href={`mailto::${email}`}>
@@ -80,23 +59,9 @@ const Footer = ({
         <Icon name="facebook" alt="facebook" />
       </LinkIcon>
     </IconsContainer>
-    <CreditLogoContainer>
-      <CreditsContainer>
-        <Credit>
-          Iconografía de &nbsp;
-          <CreditLink href={logoCredits} target="_blank">
-            Flaticon
-          </CreditLink>
-        </Credit>
-        <Credit>
-          Fotografrías de &nbsp;
-          <CreditLink href={imageCredits} target="_blank">
-            Unsplash
-          </CreditLink>
-        </Credit>
-      </CreditsContainer>
+    <LogoContainer href="#">
       <Logo src={logoUrl} alt={logoAlt} />
-    </CreditLogoContainer>
+    </LogoContainer>
   </StyledFooter>
 );
 

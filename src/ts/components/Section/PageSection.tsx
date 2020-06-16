@@ -54,7 +54,7 @@ const PageSection = ({ id, columns }: ISection): ReactElement => {
   const backgroundColor =
     columns.length === 1
       ? !columns[0].background
-        ? theme.colors.white.base
+        ? theme.colors.white.dark
         : theme.colors.primary.base
       : '';
   return (
