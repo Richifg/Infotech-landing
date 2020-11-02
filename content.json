@@ -334,7 +334,7 @@
                 {
                   "name": "experiencia",
                   "title": "Experiencia laboral",
-                  "subtitle": "Mínimo un año de experiencia como docente luego de obtener el título de bachillerato. Puede agregar más de una experiencia.",
+                  "subtitle": "Mínimo un año de experiencia como docente luego de estar incorporado a COLYPRO. Puede agregar más de una experiencia.",
                   "expandable": true,
                   "inputs": [
                     {
@@ -368,37 +368,15 @@
                 {
                   "name": "certificaciones",
                   "title": "Certificaciones",
-                  "subtitle": "Indique cuáles de las siguientes certificaciones posee, estas no son obligatorias. En caso de posserlas debe adjuntar la prueba correspondiente.",
+                  "subtitle": "Indique cuáles de las siguientes certificaciones posee y adjunte las pruebas correspondientes. La certification de COLYPRO es obligatoria.",
                   "expandable": false,
                   "inputs": [
-                    {
-                      "name": "colypro",
-                      "type": "radio",
-                      "label": "Certificación COLYPRO al día",
-                      "placeholder": "no",
-                      "options": [
-                        {
-                          "value": "no",
-                          "label": "No, pero dispuesto a cumplir con este requisito"
-                        },
-                        {
-                          "value": "si",
-                          "label": "Sí"
-                        }
-                      ]
-                    },
                     {
                       "name": "colypro_archivo",
                       "type": "file",
                       "label": "Adjunte certificación COLYPRO",
                       "placeholder": "Colypro.pdf",
-                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] },
-                      "conditions": [
-                        {
-                          "name": "colypro",
-                          "value": "si"
-                        }
-                      ]
+                      "rules": { "required": true, "size": 3, "fileType": ["pdf", "doc", "docx", "png", "jpg"] }
                     },
                     {
                       "name": "c1",
