@@ -28,6 +28,10 @@ const Link = styled.a`
     width: ${(p) => p.theme.navlink.activeBar.width};
   }
 
+  &:hover {
+    color: ${(p) => p.theme.navlink.hover.color};
+  }
+
   @media screen and (max-width: ${(p) => p.theme.breakpoint}) {
     color: ${(p) => p.theme.navlink.mobile.root.color};
   }

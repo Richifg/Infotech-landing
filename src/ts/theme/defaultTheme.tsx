@@ -8,6 +8,8 @@ const colors = {
     lighter: '#777',
     light: '#555',
     base: '#383838',
+    dark: '#222',
+    darker: '#000',
   },
   // dark blue
   primary: {
@@ -273,6 +275,9 @@ const theme = {
       height: '2px',
       width: '100%',
       backgroundColor: colors.secondary.base,
+    },
+    hover: {
+      color: colors.black.darker,
     },
     mobile: {
       root: {
