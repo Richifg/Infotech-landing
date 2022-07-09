@@ -11,3 +11,6 @@ The website is dynamically built from a provided content.json, all the different
 - styled-components
 - react-hook-form
 - react-slick
+
+## Preview
+https://infotech.vercel.app/
